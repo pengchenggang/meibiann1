@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<!--[5892892285301238595,5894622961008453771,5897290047816018942,6049136502372611912] published at 2015-09-23 16:41:28 by chengganglogin-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=640, user-scalable=no" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+
+    <title>秋团圆</title>
+
+    <link
+      rel="stylesheet"
+      href="http://src.house.sina.com.cn/imp/imp/deal/b2/42/8/70e16aec8df287a88b58f0d00c3_p24_mk24.css"
+    />
+    <!-- <link rel="stylesheet" href="jscss/swiper.3.1.2.min.css"> -->
+    <link
+      rel="stylesheet"
+      href="http://src.house.sina.com.cn/imp/imp/deal/96/52/9/7b2968ca1aa2d9d0cb9dca3ddaf_p24_mk24.css"
+    />
+    <!-- <link rel="stylesheet" href="jscss/animate.min.css"> -->
+    <style>
+      #loading {
+        position: absolute;
+        width: 640px;
+        height: 1080px;
+        background-color: #252525;
+        z-index: 2000;
+      }
+
+      .loadingTxt {
+        color: #ffffff;
+        font-size: 24px;
+        font-family: 微软雅黑;
+        text-align: center;
+      }
+
+      #helper {
+        display: none;
+      }
+      .imgHide {
+        display: none;
+      }
+      html,
+      body {
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        margin: 0 auto;
+        max-width: 640px;
+        background-color: #fff;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+      img {
+        display: inline;
+      }
+      .swiper-container {
+        width: 100%;
+        height: 1080px;
+        max-width: 640px;
+        margin: 0 auto;
+        overflow: hidden;
+        display: none;
+      }
+      /* .swiper-wrapper *{ -webkit-backface-visibility: hidden; } 避免ip4Safari闪动 */
+
+      .swiper-slide {
+        width: 100%;
+        height: 1080px;
+        background-size: cover;
+        /*overflow:hidden;
+*/
+        box-sizing: border-box;
+
+        -webkit-box-orient: vertical;
+        background-repeat: no-repeat;
+        background-position: top center;
+      }
+
+      .page1 {
+      }
+      .page2 {
+      }
+      .page3 {
+      }
+      .page4 {
+      }
+      .page5 {
+      }
+      .page6 {
+      }
+      .page7 {
+      }
+      .page8 {
+      }
+
+      /* 微信音频框 */
+      .weixinAudio {
+        position: absolute;
+        left: 50%;
+        margin-left: -155px;
+        bottom: 100px;
+        width: 350px;
+      }
+      .weixinkuang {
+        background-image: url(http://src.house.sina.com.cn/imp/imp/deal/d9/92/7/58342e7cd73055fcfb1f51d5b01_p24_mk24.png);
+        width: 284px;
+        height: 67px;
+        float: left;
+        overflow: hidden;
+      }
+      .wifiGif {
+        margin-left: 30px;
+        height: 70px;
+      }
+      .weixinTime {
+        height: 67px;
+        width: 46px;
+        float: left;
+        line-height: 67px;
+        color: #ffffff;
+        font-size: 23px;
+        margin-left: 10px;
+      }
+      /* End 微信音频框 */
+
+      @-webkit-keyframes rotate {
+        from {
+          -webkit-transform: rotate(0deg);
+        }
+        to {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @-moz-keyframes rotate {
+        from {
+          -moz-transform: rotate(0deg);
+        }
+        to {
+          -moz-transform: rotate(360deg);
+        }
+      }
+      @-ms-keyframes rotate {
+        from {
+          -ms-transform: rotate(0deg);
+        }
+        to {
+          -ms-transform: rotate(360deg);
+        }
+      }
+      @-o-keyframes rotate {
+        from {
+          -o-transform: rotate(0deg);
+        }
+        to {
+          -o-transform: rotate(360deg);
+        }
+      }
+
+      .xuanzhuan {
+        animation: 9.5s linear 0s normal none infinite rotate;
+        -webkit-animation: 9.5s linear 0s normal none infinite rotate;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="loading">
+      <div style="height: 200px"></div>
+      <div style="width: 159px; margin: 0 auto">
+        <img
+          data-img="http://src.house.sina.com.cn/imp/imp/deal/96/af/3/52c02166e8c5018ca252da62c89_p24_mk24.gif"
+          src="http://src.house.sina.com.cn/imp/imp/deal/96/af/3/52c02166e8c5018ca252da62c89_p24_mk24.gif"
+          width="159"
+          height="159"
+        />
+      </div>
+      <div id="shuzi" class="loadingTxt">加载中</div>
+      <div class="loadingTxt" style="margin-top: 20px">
+        里面有三段中秋祝福哦！
+      </div>
+    </div>
+
+    <div class="swiper-container">
+      <div
+        style="
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          width: 50px;
+          height: 50px;
+          z-index: 1000;
+        "
+        class="xuanzhuan"
+        id="audioBtn"
+      >
+        <img
+          data-img="http://src.house.sina.com.cn/imp/imp/deal/9e/7e/9/2b44ab15463d3d3cac7b61e3228_p24_mk24.png"
+          src="http://src.house.sina.com.cn/imp/imp/deal/9e/7e/9/2b44ab15463d3d3cac7b61e3228_p24_mk24.png"
+          width="50"
+          height="50"
+          id="bgAudioTu"
+        />
+      </div>
+
+      <div class="swiper-wrapper">
+        <!-- page1 -->
+        <section
+          class="swiper-slide page1"
+          data-img="http://src.house.sina.com.cn/imp/imp/deal/8a/db/9/20d028650451631100a8b12e648_p24_mk24.jpg"
+          style="
+            background-image: url(http://src.house.sina.com.cn/imp/imp/deal/8a/db/9/20d028650451631100a8b12e648_p24_mk24.jpg);
+          "
+        >
+          <div
+            class="ani"
+            swiper-animate-effect="fadeInUp"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.3s"
+            style="position: absolute; top: 40px"
+          >
+            <img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/b5/d3/9/2013c538bedf3cb4462abdbeb54_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/b5/d3/9/2013c538bedf3cb4462abdbeb54_p24_mk24.png"
+            />
+          </div>
+        </section>
+        <!-- /page1 -->
+
+        <!-- page2 -->
+        <section
+          class="swiper-slide page2"
+          data-img="http://src.house.sina.com.cn/imp/imp/deal/63/d6/2/cc81622713c75b5a3d61bc621c2_p24_mk24.jpg"
+          style="
+            background-image: url(http://src.house.sina.com.cn/imp/imp/deal/63/d6/2/cc81622713c75b5a3d61bc621c2_p24_mk24.jpg);
+          "
+        >
+          <p
+            class="ani"
+            swiper-animate-effect="bounceInDown"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.3s"
+          >
+            <img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/96/2d/b/3e8b01840d890764a94c66ca01f_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/96/2d/b/3e8b01840d890764a94c66ca01f_p24_mk24.png"
+            />
+          </p>
+        </section>
+        <!-- /page2 -->
+
+        <!-- page3 -->
+        <section
+          class="swiper-slide page3"
+          data-img="http://src.house.sina.com.cn/imp/imp/deal/56/2e/2/1af7e139c84c3ba3b396db70ebe_p24_mk24.jpg"
+          style="
+            background-image: url(http://src.house.sina.com.cn/imp/imp/deal/56/2e/2/1af7e139c84c3ba3b396db70ebe_p24_mk24.jpg);
+          "
+        >
+          <div
+            class="ani"
+            swiper-animate-effect="rotateIn"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.3s"
+          >
+            <img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/12/4d/5/d54f3b8d5a4283f8a4e2ee1bac4_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/12/4d/5/d54f3b8d5a4283f8a4e2ee1bac4_p24_mk24.png"
+            />
+          </div>
+        </section>
+        <!-- /page3 -->
+
+        <!-- page4 -->
+        <section
+          class="swiper-slide page4"
+          data-img="http://src.house.sina.com.cn/imp/imp/deal/6d/e8/a/6019a8c2d4cd9ed1278f7818ff8_p24_mk24.jpg"
+          style="
+            background-image: url(http://src.house.sina.com.cn/imp/imp/deal/6d/e8/a/6019a8c2d4cd9ed1278f7818ff8_p24_mk24.jpg);
+          "
+        >
+          <!-- 主题文字 今年中秋要回家吗 -->
+          <div
+            class="ani"
+            swiper-animate-effect="rotateIn"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.3s"
+            style="position: absolute"
+          >
+            <img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/58/5f/f/40028d2e781f3201350f92971e1_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/58/5f/f/40028d2e781f3201350f92971e1_p24_mk24.png"
+            />
+          </div>
+
+          <!-- 月亮 -->
+          <div
+            class="ani"
+            swiper-animate-effect="fadeIn"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.6s"
+            style="position: absolute"
+          >
+            <img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/b5/7e/5/bed778fd0e97ad538530ac99c41_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/b5/7e/5/bed778fd0e97ad538530ac99c41_p24_mk24.png"
+            />
+          </div>
+
+          <!-- 左房梁 -->
+          <div
+            class="ani"
+            swiper-animate-effect="rubberBand"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.5s"
+            style="top: 360px; position: absolute"
+          >
+            <img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/41/0f/2/760e33452f07e57df5956e6d275_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/41/0f/2/760e33452f07e57df5956e6d275_p24_mk24.png"
+            />
+          </div>
+
+          <!-- 右房梁 -->
+          <div
+            class="ani"
+            swiper-animate-effect="rubberBand"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.6s"
+            style="position: absolute"
+          >
+            <img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/94/88/9/76dd5c004224b89a21d4bd328d5_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/94/88/9/76dd5c004224b89a21d4bd328d5_p24_mk24.png"
+            />
+          </div>
+
+          <!-- 微信语音框 -->
+          <div class="weixinAudio ani">
+            <div class="weixinkuang" id="wxBtn1">
+              <div class="wifiGif">
+                <img
+                  id="wxGif1Play"
+                  data-img="http://src.house.sina.com.cn/imp/imp/deal/91/c8/e/61f8efb41f8e7d9fde5210d2740_p24_mk24.gif"
+                  src="http://src.house.sina.com.cn/imp/imp/deal/91/c8/e/61f8efb41f8e7d9fde5210d2740_p24_mk24.gif"
+                  width="36"
+                  height="67"
+                  alt=""
+                />
+                <img
+                  id="wxGif1Stop"
+                  class="imgHide"
+                  data-img="http://src.house.sina.com.cn/imp/imp/deal/15/ec/9/26d9607f6c3a6841d55c9acf1d0_p24_mk24.jpg"
+                  src="http://src.house.sina.com.cn/imp/imp/deal/15/ec/9/26d9607f6c3a6841d55c9acf1d0_p24_mk24.jpg"
+                  width="36"
+                  height="67"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="weixinTime">33&quot;</div>
+          </div>
+          <!-- End 微信语音框 -->
+        </section>
+        <!-- /page4 -->
+
+        <!-- page5 -->
+        <section
+          class="swiper-slide page5"
+          data-img="http://src.house.sina.com.cn/imp/imp/deal/6d/e8/a/6019a8c2d4cd9ed1278f7818ff8_p24_mk24.jpg"
+          style="
+            background-image: url(http://src.house.sina.com.cn/imp/imp/deal/6d/e8/a/6019a8c2d4cd9ed1278f7818ff8_p24_mk24.jpg);
+          "
+        >
+          <!-- 主题文字 家是什么 -->
+          <div
+            class="ani"
+            swiper-animate-effect="rotateIn"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.3s"
+            style="position: absolute"
+          >
+            <img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/15/b7/7/a91fdfd7b8afea21f772cf4af66_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/15/b7/7/a91fdfd7b8afea21f772cf4af66_p24_mk24.png"
+            />
+          </div>
+
+          <!-- 月亮 -->
+          <div
+            class="ani"
+            swiper-animate-effect="fadeIn"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.6s"
+            style="position: absolute"
+          >
+            <img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/b5/7e/5/bed778fd0e97ad538530ac99c41_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/b5/7e/5/bed778fd0e97ad538530ac99c41_p24_mk24.png"
+            />
+          </div>
+
+          <!-- 左房梁 -->
+          <div
+            class="ani"
+            swiper-animate-effect="rubberBand"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.5s"
+            style="top: 360px; position: absolute"
+          >
+            <img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/41/0f/2/760e33452f07e57df5956e6d275_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/41/0f/2/760e33452f07e57df5956e6d275_p24_mk24.png"
+            />
+          </div>
+
+          <!-- 右房梁 -->
+          <div
+            class="ani"
+            swiper-animate-effect="rubberBand"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.6s"
+            style="position: absolute"
+          >
+            <img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/94/88/9/76dd5c004224b89a21d4bd328d5_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/94/88/9/76dd5c004224b89a21d4bd328d5_p24_mk24.png"
+            />
+          </div>
+
+          <!-- 微信语音框 -->
+          <div class="weixinAudio ani">
+            <div class="weixinkuang" id="wxBtn2">
+              <div class="wifiGif">
+                <img
+                  id="wxGif2Play"
+                  src="http://src.house.sina.com.cn/imp/imp/deal/91/c8/e/61f8efb41f8e7d9fde5210d2740_p24_mk24.gif"
+                  width="36"
+                  height="67"
+                  alt=""
+                />
+                <img
+                  id="wxGif2Stop"
+                  class="imgHide"
+                  src="http://src.house.sina.com.cn/imp/imp/deal/15/ec/9/26d9607f6c3a6841d55c9acf1d0_p24_mk24.jpg"
+                  width="36"
+                  height="67"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="weixinTime">33&quot;</div>
+          </div>
+          <!-- End 微信语音框 -->
+        </section>
+        <!-- /page5 -->
+
+        <!-- page6 -->
+        <section
+          class="swiper-slide page6"
+          data-img="http://src.house.sina.com.cn/imp/imp/deal/6d/e8/a/6019a8c2d4cd9ed1278f7818ff8_p24_mk24.jpg"
+          style="
+            background-image: url(http://src.house.sina.com.cn/imp/imp/deal/6d/e8/a/6019a8c2d4cd9ed1278f7818ff8_p24_mk24.jpg);
+          "
+        >
+          <!-- 主题文字 想对父母说 -->
+          <div
+            class="ani"
+            swiper-animate-effect="rotateIn"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.3s"
+            style="position: absolute"
+          >
+            <img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/0f/17/4/e8a1e8cd7151e95b7943efb3aa1_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/0f/17/4/e8a1e8cd7151e95b7943efb3aa1_p24_mk24.png"
+            />
+          </div>
+
+          <!-- 月亮 -->
+          <div
+            class="ani"
+            swiper-animate-effect="fadeIn"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.6s"
+            style="position: absolute"
+          >
+            <img
+              src="http://src.house.sina.com.cn/imp/imp/deal/b5/7e/5/bed778fd0e97ad538530ac99c41_p24_mk24.png"
+            />
+          </div>
+
+          <!-- 左房梁 -->
+          <div
+            class="ani"
+            swiper-animate-effect="rubberBand"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.5s"
+            style="top: 360px; position: absolute"
+          >
+            <img
+              src="http://src.house.sina.com.cn/imp/imp/deal/41/0f/2/760e33452f07e57df5956e6d275_p24_mk24.png"
+            />
+          </div>
+
+          <!-- 右房梁 -->
+          <div
+            class="ani"
+            swiper-animate-effect="rubberBand"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.6s"
+            style="position: absolute"
+          >
+            <img
+              src="http://src.house.sina.com.cn/imp/imp/deal/94/88/9/76dd5c004224b89a21d4bd328d5_p24_mk24.png"
+            />
+          </div>
+
+          <!-- 微信语音框 -->
+          <div class="weixinAudio ani">
+            <div class="weixinkuang" id="wxBtn3">
+              <div class="wifiGif">
+                <img
+                  id="wxGif3Play"
+                  src="http://src.house.sina.com.cn/imp/imp/deal/91/c8/e/61f8efb41f8e7d9fde5210d2740_p24_mk24.gif"
+                  width="36"
+                  height="67"
+                  alt=""
+                />
+                <img
+                  id="wxGif3Stop"
+                  class="imgHide"
+                  src="http://src.house.sina.com.cn/imp/imp/deal/15/ec/9/26d9607f6c3a6841d55c9acf1d0_p24_mk24.jpg"
+                  width="36"
+                  height="67"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="weixinTime">29&quot;</div>
+          </div>
+          <!-- End 微信语音框 -->
+        </section>
+        <!-- /page6 -->
+
+        <!-- page7 -->
+        <section
+          class="swiper-slide page7"
+          data-img="http://src.house.sina.com.cn/imp/imp/deal/47/a0/9/2c042016f30b77233791a8f40ee_p24_mk24.jpg"
+          style="
+            background-image: url(http://src.house.sina.com.cn/imp/imp/deal/47/a0/9/2c042016f30b77233791a8f40ee_p24_mk24.jpg);
+          "
+        >
+          <div
+            class="ani"
+            swiper-animate-effect="tada"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="1s"
+            style="position: absolute"
+          >
+            <img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/eb/bd/c/2904fdc8dcb1df9be2827385379_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/eb/bd/c/2904fdc8dcb1df9be2827385379_p24_mk24.png"
+            />
+          </div>
+
+          <div
+            class="ani"
+            swiper-animate-effect="tada"
+            swiper-animate-duration="0.6s"
+            swiper-animate-delay="0.4s"
+            style="position: absolute"
+          >
+            <img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/91/71/9/a76ef18056159719008afd1f30f_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/91/71/9/a76ef18056159719008afd1f30f_p24_mk24.png"
+            />
+          </div>
+
+          <!-- 乐居推荐楼盘 -->
+          <a
+            class="ani"
+            swiper-animate-delay="0.6s"
+            swiper-animate-effect="rotateIn"
+            swiper-animate-duration="0.6s"
+            style="position: absolute; top: 320px; left: 0px"
+            href="http://m.leju.com/?site=touch&ctl=topic&act=news_topic_info&city=tj&id=6054548604688054247"
+            ><img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/d1/52/4/db0af0c71c13f04ec08b3d44a6f_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/d1/52/4/db0af0c71c13f04ec08b3d44a6f_p24_mk24.png"
+            />
+          </a>
+        </section>
+        <!-- /page7 -->
+
+        <!-- PAGE8 -->
+        <section
+          class="swiper-slide page8"
+          data-img="http://src.house.sina.com.cn/imp/imp/deal/79/76/3/cf4348babce0f0ca4623704be35_p24_mk24.jpg"
+          style="
+            background-image: url(http://src.house.sina.com.cn/imp/imp/deal/79/76/3/cf4348babce0f0ca4623704be35_p24_mk24.jpg);
+          "
+        >
+          <div
+            class="ani"
+            swiper-animate-effect="rotateIn"
+            swiper-animate-duration="0.6s"
+            swiper-animate-delay="0.2s"
+            style="position: absolute"
+          >
+            <img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/e8/14/7/15e4d8667e0bc1bbf888941c5fa_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/e8/14/7/15e4d8667e0bc1bbf888941c5fa_p24_mk24.png"
+            />
+          </div>
+
+          <div
+            class="ani"
+            swiper-animate-effect="rotateIn"
+            swiper-animate-duration="0.6s"
+            swiper-animate-delay="0.4s"
+            style="position: absolute"
+          >
+            <img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/4a/82/b/14240510dd379c6613488d03804_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/4a/82/b/14240510dd379c6613488d03804_p24_mk24.png"
+            />
+          </div>
+
+          <div
+            class="ani"
+            swiper-animate-effect="tada"
+            swiper-animate-duration="0.6s"
+            swiper-animate-delay="0.6s"
+            style="position: absolute; left: 0px; bottom: 0"
+          >
+            <img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/3b/d6/5/f3d0d99cc26757d0b696060675f_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/3b/d6/5/f3d0d99cc26757d0b696060675f_p24_mk24.png"
+            />
+          </div>
+
+          <div
+            class="ani infinite bounce"
+            swiper-animate-effect="fadeInUp"
+            style="position: absolute; left: 0px; top: 0"
+          >
+            <img
+              data-img="http://src.house.sina.com.cn/imp/imp/deal/3a/f6/2/6e98e31ca55593d696243d5d389_p24_mk24.png"
+              src="http://src.house.sina.com.cn/imp/imp/deal/3a/f6/2/6e98e31ca55593d696243d5d389_p24_mk24.png"
+              alt=""
+            />
+          </div>
+        </section>
+        <!-- /PAGE8 -->
+      </div>
+    </div>
+
+    <audio
+      src="http://src.house.sina.com.cn/imp/imp/deal/af/33/1/7c041dd997dafc877020df39ada_p24_mk24.mp3"
+      id="yinpin1"
+    >
+      您的浏览器不支持 audio 标签。
+    </audio>
+    <!-- 音频1 21秒 音频2 33秒 -->
+    <audio
+      src="http://src.house.sina.com.cn/imp/imp/deal/26/cf/9/14834465be57fdc7f16d77569cb_p24_mk24.mp3"
+      id="yinpin2"
+    >
+      您的浏览器不支持 audio 标签。
+    </audio>
+    <!-- 音频1 21秒 音频2 33秒 -->
+    <audio
+      src="http://src.house.sina.com.cn/imp/imp/deal/b3/cf/5/5f2ddec854f911a08272a677631_p24_mk24.mp3"
+      id="yinpin3"
+    >
+      您的浏览器不支持 audio 标签。
+    </audio>
+    <!-- 音频1 21秒 音频2 33秒 音频3 29秒 -->
+
+    <audio
+      src="http://src.house.sina.com.cn/imp/imp/deal/c0/0c/3/54c67534f229e77e3491ce345be_p24_mk24.mp3"
+      id="bi"
+    >
+      您的浏览器不支持 audio 标签。
+    </audio>
+    <!-- 微信声音 bi -->
+
+    <audio
+      src="http://src.house.sina.com.cn/imp/imp/deal/fb/6c/f/d77bb12b12808e163e2ad178c9b_p24_mk24.mp3"
+      autoplay
+      loop
+      id="bgAudio"
+    >
+      您的浏览器不支持 audio 标签。
+    </audio>
+    <!-- 背景音乐 bi -->
+
+    <script src="http://src.house.sina.com.cn/imp/imp/deal/5e/44/3/f45cace34439108461b2ff9e848_p24_mk24.js"></script>
+    <!-- <script src="jscss/jquery-1.10.1.min.js"></script> -->
+
+    <script src="http://src.house.sina.com.cn/imp/imp/deal/04/63/3/919649c990a71459e473a48a156_p24_mk24.js"></script>
+    <!-- <script src="jscss/swiper.3.1.2.jquery.min.js"></script> -->
+
+    <!-- 需要用到jquery版本的swiper 所以 单独的swiper就不用引用了 -->
+    <!-- <script src="http://src.house.sina.com.cn/imp/imp/deal/be/71/c/f1573a85554b2c553a55fe0ce53_p24_mk24.js"></script> -->
+    <!-- <script src="jscss/swiper.3.1.2.min.js"></script> -->
+
+    <script src="http://src.house.sina.com.cn/imp/imp/deal/5f/f9/5/0087545472af60271f73134ad32_p24_mk24.js"></script>
+    <!-- <script src="jscss/swiper.animate1.0.2.min.js"></script> -->
+
+    <script src="http://src.house.sina.com.cn/imp/imp/deal/c1/c7/2/9ac782c410f5e26a05f84ff2525_p24_mk24.js"></script>
+    <!-- <script src="jscss/0.4.1.preloadjs.min.js"></script> -->
+
+    <script>
+      $(document).ready(function () {
+        loadResource();
+
+        var swiper = new Swiper(".swiper-container", {
+          onInit: function (swiper) {
+            //Swiper2.x的初始化是onFirstInit
+            swiperAnimateCache(swiper); //隐藏动画元素
+            swiperAnimate(swiper); //初始化完成开始动画
+          },
+          onSlideChangeEnd: function (swiper) {
+            swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+          },
+
+          onSlideChangeStart: function (swiper) {
+            var i = swiper.activeIndex;
+            switch (i) {
+              case 2:
+                yinpinStopAll();
+                break;
+              case 3:
+                yinpinStopAll();
+                yinpinPlay("1");
+                break;
+              case 4:
+                yinpinStopAll();
+                yinpinPlay("2");
+                break;
+              case 5:
+                yinpinStopAll();
+                yinpinPlay("3");
+                break;
+              case 6:
+                yinpinStopAll();
+                showAudio();
+                break;
+              case 7:
+                hideAudio();
+                break;
+            }
+          },
+          direction: "vertical",
+          //width: window.innerWidth,
+          mousewheelControl: true,
+          //initialSlide :0,
+          height: window.innerHeight + 4,
+          loop: false,
+        });
+
+        function IsPC() {
+          var userAgentInfo = navigator.userAgent;
+          var Agents = new Array(
+            "Android",
+            "iPhone",
+            "SymbianOS",
+            "Windows Phone",
+            "iPad",
+            "iPod"
+          );
+          var flag = true;
+          for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+              flag = false;
+              break;
+            }
+          }
+          return flag;
+        }
+        var isPcStat = IsPC();
+        function getTouchstart() {
+          if (isPcStat) {
+            return "mousedown";
+          } else {
+            return "touchstart";
+          }
+        }
+
+        function yinpinGifPlay(n) {
+          if ($("#wxGif" + n + "Play").hasClass("imgHide")) {
+            $("#wxGif" + n + "Play").removeClass("imgHide");
+            $("#wxGif" + n + "Stop").addClass("imgHide");
+          }
+        }
+
+        function yinpinGifStop(n) {
+          if ($("#wxGif" + n + "Stop").hasClass("imgHide")) {
+            $("#wxGif" + n + "Play").addClass("imgHide");
+            $("#wxGif" + n + "Stop").removeClass("imgHide");
+          }
+        }
+
+        function yinpinPlay(n) {
+          //num 1
+          yinpinGifPlay(n);
+          $("#yinpin" + n).get(0).currentTime = 0;
+          $("#yinpin" + n)
+            .get(0)
+            .play();
+        }
+
+        function yinpinStop(n) {
+          //num 1
+          yinpinGifStop(n);
+          $("#yinpin" + n)
+            .get(0)
+            .pause();
+        }
+
+        function yinpinStopAll() {
+          yinpinStop("1");
+          yinpinStop("2");
+          yinpinStop("3");
+        }
+
+        $("#wxBtn1").bind(getTouchstart(), function (e) {
+          //e.preventDefault();
+          //e.stopPropagation();
+          if ($("#yinpin1").get(0).paused) yinpinPlay("1");
+          else yinpinStop("1");
+        });
+
+        $("#wxBtn2").bind(getTouchstart(), function (e) {
+          //e.preventDefault();
+          //e.stopPropagation();
+          if ($("#yinpin2").get(0).paused) yinpinPlay("2");
+          else yinpinStop("2");
+        });
+
+        $("#wxBtn3").bind(getTouchstart(), function (e) {
+          //e.preventDefault();
+          //e.stopPropagation();
+          if ($("#yinpin3").get(0).paused) yinpinPlay("3");
+          else yinpinStop("3");
+        });
+
+        $("#yinpin1").bind("ended", function (e) {
+          $("#bi").attr("rel", "1");
+          $("#bi").get(0).play();
+        });
+
+        $("#yinpin2").bind("ended", function (e) {
+          $("#bi").attr("rel", "2");
+          $("#bi").get(0).play();
+        });
+
+        $("#yinpin3").bind("ended", function (e) {
+          $("#bi").attr("rel", "3");
+          $("#bi").get(0).play();
+        });
+
+        $("#bi").bind("ended", function (e) {
+          var n = $("#bi").attr("rel");
+          yinpinStop(n);
+        });
+
+        $("#bgAudio").bind("play", function (e) {
+          $("#bgAudio").get(0).volume = 0.3;
+        });
+
+        $("#audioBtn").bind(getTouchstart(), function (e) {
+          var bgA = document.getElementById("bgAudio");
+          var bgT = document.getElementById("bgAudioTu");
+          if (bgA.paused) {
+            //播放
+            bgT.src =
+              "http://src.house.sina.com.cn/imp/imp/deal/9e/7e/9/2b44ab15463d3d3cac7b61e3228_p24_mk24.png";
+            bgA.play();
+            //$("#audioBtn").addClass("xuanzhuan");
+          } else {
+            //暂停
+            bgT.src =
+              "http://src.house.sina.com.cn/imp/imp/deal/2b/d4/2/5defe02bfa1fe23af6787bcc3e3_p24_mk24.png";
+            bgA.pause();
+            //$("#audioBtn").removeClass("xuanzhuan");
+          }
+        });
+        //audioBtn
+
+        function hideAudio() {
+          $("#audioBtn").hide();
+        }
+
+        function showAudio() {
+          $("#audioBtn").show();
+        }
+
+        //Loading加载模块--------------------------------------
+        //preloadjs-0.3.1.min.js
+
+        function loadResource() {
+          var manifest = [
+            {
+              id: "imgAudioNo",
+              src: "http://src.house.sina.com.cn/imp/imp/deal/2b/d4/2/5defe02bfa1fe23af6787bcc3e3_p24_mk24.png",
+            },
+            {
+              id: "audio1",
+              src: "http://src.house.sina.com.cn/imp/imp/deal/af/33/1/7c041dd997dafc877020df39ada_p24_mk24.mp3",
+            },
+            {
+              id: "audio2",
+              src: "http://src.house.sina.com.cn/imp/imp/deal/26/cf/9/14834465be57fdc7f16d77569cb_p24_mk24.mp3",
+            },
+            {
+              id: "audio3",
+              src: "http://src.house.sina.com.cn/imp/imp/deal/b3/cf/5/5f2ddec854f911a08272a677631_p24_mk24.mp3",
+            },
+            {
+              id: "audio4",
+              src: "http://src.house.sina.com.cn/imp/imp/deal/c0/0c/3/54c67534f229e77e3491ce345be_p24_mk24.mp3",
+            },
+            {
+              id: "audio5Bg",
+              src: "http://src.house.sina.com.cn/imp/imp/deal/fb/6c/f/d77bb12b12808e163e2ad178c9b_p24_mk24.mp3",
+            },
+          ];
+          var id = 1;
+          var tt = "";
+          $("*").each(function () {
+            if ($(this).data("img")) {
+              var src = $(this).data("img");
+              var sign = true;
+              for (var i = 0; i < manifest.length; i++) {
+                if (manifest[i].src == src) {
+                  sign = false;
+                  break;
+                }
+              }
+              if (sign) {
+                manifest.push({ id: id, src: src });
+                id++;
+              }
+            }
+          });
+
+          loadQueue = new createjs.LoadQueue(false);
+          //注意加载音频文件需要调用如下代码行
+          loadQueue.installPlugin(createjs.Sound);
+          loadQueue.loadManifest(manifest);
+          loadQueue.addEventListener("progress", function (evt) {
+            var loaded = evt.loaded;
+            var percent = Math.floor(loaded.toFixed(2) * 100) + "%";
+            $("#shuzi").html(percent);
+          });
+          loadQueue.addEventListener("complete", function () {
+            $("#loading").fadeOut("fast", function () {
+              $(".swiper-container").fadeIn();
+            });
+          });
+        }
+
+        //End Loading加载模块--------------------------------------
+      });
+    </script>
+
+    <script src="http://m.leju.com/resources/scripts/wx_share.js?v1.1"></script>
+    <script type="text/javascript">
+      weixinApi.share.init({
+        title: "秋·团圆",
+        desc: "2015中秋节马上就到了，还不快快转发祝福！",
+        link: "http://tj.house.sina.com.cn/mobile/qiutuanyuan150914/",
+        imgUrl:
+          "http://src.house.sina.com.cn/imp/imp/deal/f3/4c/b/5a603f3e91b4afbb187ad0e73d1_p24_mk24.jpg",
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>大富翁</title>
+    <style>
+      body {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        background-color: #dfdfdf;
+      }
+      .m {
+        width: 640px;
+        margin: 0 auto;
+      }
+      #cover {
+        width: 800px;
+        height: 1545px;
+        background-image: url(images/coverBg.jpg);
+        background-repeat: no-repeat;
+        background-position: center top;
+        position: absolute;
+        margin: 0 auto;
+      }
+      #game {
+        position: fixed;
+        margin: 0 auto;
+        display: none;
+      }
+      #guize {
+        background-image: url(images/gzBg.jpg);
+        position: absolute;
+        margin: 0 auto;
+        width: 800px;
+        height: 1545px;
+        display: none;
+      }
+      #gzReturnBtn {
+        position: absolute;
+        top: 1190px;
+        left: 300px;
+      }
+      #jpReturnBtn {
+        position: absolute;
+        top: 1190px;
+        left: 300px;
+      }
+      #jiangpin {
+        background-image: url(images/jiangpinBg.jpg);
+        position: absolute;
+        margin: 0 auto;
+        width: 800px;
+        height: 1545px;
+        display: none;
+      }
+      #jieguo {
+        background-image: url(images/jieguo.jpg);
+        position: absolute;
+        margin: 0 auto;
+        width: 800px;
+        height: 1545px;
+        display: none;
+      }
+      #resumeBtn {
+        position: absolute;
+        top: 1050px;
+        left: 200px;
+      }
+      #shareBtn {
+        position: absolute;
+        top: 1050px;
+        left: 450px;
+      }
+      #caifuValue {
+        position: absolute;
+        top: 350px;
+        left: 0;
+        font-family: 微软雅黑;
+        font-size: 100px;
+        color: #fcf162;
+        width: 800px;
+        text-align: center;
+      }
+      #shareDiv {
+        width: 800px;
+        height: 1545px;
+        background-color: #000000;
+        position: absolute;
+        margin: 0 auto;
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        display: none;
+      }
+    </style>
+    <meta name="viewport" content="width=800, user-scalable=no" />
+  </head>
+
+  <body>
+    <img src="images/coverBg.jpg" style="display: none" />
+    <img src="images/gzBg.jpg" style="display: none" />
+    <img src="images/jiangpinBg.jpg" style="display: none" />
+    <img src="images/jieguo.jpg" style="display: none" />
+    <img src="images/mainBg.jpg" style="display: none" />
+    <img src="images/car.png" style="display: none" />
+    <img src="images/s150.png" style="display: none" />
+
+    <div id="guize">
+      <div id="gzReturnBtn">
+        <img src="images/return.png" width="192" height="63" alt="" />
+      </div>
+    </div>
+    <div id="jiangpin">
+      <div id="jpReturnBtn">
+        <img src="images/return.png" width="192" height="63" alt="" />
+      </div>
+    </div>
+    <div id="game" class="m">
+      <canvas id="myCanvas" width="800" height="1545"></canvas>
+    </div>
+    <div id="cover">
+      <div
+        id="playBtn"
+        style="
+          width: 215px;
+          height: 229px;
+          position: absolute;
+          top: 995px;
+          left: 290px;
+        "
+      >
+        <img src="images/startButton.png" width="215" height="229" alt="" />
+      </div>
+      <div
+        id="leftButton"
+        style="
+          width: 121px;
+          height: 165px;
+          position: absolute;
+          top: 1110px;
+          left: 50px;
+        "
+      >
+        <img src="images/leftButton.png" width="121" height="165" alt="" />
+      </div>
+      <div
+        id="rightButton"
+        style="
+          width: 123px;
+          height: 165px;
+          position: absolute;
+          top: 1110px;
+          left: 628px;
+        "
+      >
+        <img src="images/rightbutton.png" width="123" height="165" alt="" />
+      </div>
+    </div>
+
+    <div id="jieguo">
+      <div id="caifuValue">80</div>
+      <div id="resumeBtn">
+        <img src="images/resume.png" width="192" height="63" alt="" />
+      </div>
+      <div id="shareBtn">
+        <img src="images/share.png" width="192" height="63" alt="" />
+      </div>
+    </div>
+
+    <div id="shareDiv">
+      <div style="width: 200px; height: 160px; float: right">
+        <img src="images/jiantou.png" width="200" height="160" alt="" />
+      </div>
+    </div>
+
+    <script src="js/easeljs-0.8.2.min.js"></script>
+    <script src="js/tweenjs-0.6.2.min.js"></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#playBtn").click(function () {
+          //alert("t");
+          $("#cover").fadeOut();
+          $("#game").fadeIn();
+        });
+
+        $("#leftButton").click(function () {
+          $("#cover").fadeOut();
+          $("#guize").fadeIn();
+        });
+
+        $("#gzReturnBtn").click(function () {
+          $("#guize").fadeOut();
+          $("#cover").fadeIn();
+        });
+
+        $("#rightButton").click(function () {
+          $("#cover").fadeOut();
+          $("#jiangpin").fadeIn();
+        });
+
+        $("#jpReturnBtn").click(function () {
+          $("#cover").fadeIn();
+          $("#jiangpin").fadeOut();
+        });
+
+        $("#resumeBtn").click(function () {
+          initVar();
+          $("#game").fadeIn();
+          $("#jieguo").fadeOut();
+        });
+
+        $("#shareBtn").click(function () {
+          console.log("j");
+          $("#shareDiv").fadeIn();
+          console.log(caifuzhi);
+          wxTitle =
+            "我获得了" + caifuzhi + "个大元宝在乐居大富翁的游戏里！速来！";
+          weixinApi.reset({ title: wxTitle });
+          console.log(wxTitle);
+          //$(document).attr("title","我获得了"+caifuzhi+"个大元宝在乐居大富翁的游戏里！速来！");
+        });
+
+        $("#shareDiv").click(function () {
+          console.log("shareDiv hide");
+          $("#shareDiv").hide();
+        });
+      });
+
+      /*Javascript代码片段*/
+      var stage;
+
+      var xyArr = [
+        { x: 140, y: 420, k: 0 },
+        { x: 316, y: 420, k: 101 },
+        { x: 486, y: 420, k: 10 },
+        { x: 662, y: 420, k: 80 },
+        { x: 662, y: 590, k: 30 },
+        { x: 662, y: 766, k: 30 },
+        { x: 662, y: 938, k: -60 },
+        { x: 486, y: 938, k: 80 },
+        { x: 316, y: 938, k: 10 },
+        { x: 140, y: 938, k: 901 },
+        { x: 140, y: 758, k: 30 },
+        { x: 140, y: 590, k: 30 },
+      ];
+      var curr = 0;
+      var speed = 300;
+      var shaiziStop = 0;
+      var text;
+      var shengmingzhi = 10;
+      var caifuzhi = 0;
+      var mb = "生命值：$shengmingzhi    财富值：$caifuzhi";
+      var caifuT; //财富文字动画
+      var caifuTmb = "恭喜获得财富 $caifuzhi";
+      var shaiziNum;
+      var firstClear = 0;
+
+      var car;
+
+      var wxTitle;
+
+      function init() {}
+      //获取stage
+      var canvas = document.getElementById("myCanvas");
+      stage = new createjs.Stage(canvas);
+      createjs.Touch.enable(stage);
+
+      var bgImg = new createjs.Bitmap("images/mainBg.jpg");
+      stage.addChild(bgImg);
+      bgImg.x = 0;
+      bgImg.y = 0;
+
+      //创建文本
+      text = new createjs.Text(mb, "24px 微软雅黑", "#ffdd2d");
+      text.x = 72;
+      text.y = 300;
+      stage.addChild(text);
+      updateText();
+
+      //创建提示文字
+      var tip = new createjs.Text("", "36px 微软雅黑", "#ffdd2d");
+      tip.x = 400;
+      tip.y = 500;
+      tip.alpha = 0;
+      tip.textAlign = "center";
+      stage.addChild(tip);
+
+      //筛子 我把筛子的固定取消了，筛子就在原地转，然后停下 这个逻辑
+      /*
+  var shaizi6 = new createjs.Bitmap("images/shaizi6.png");
+  stage.addChild(shaizi6);
+  shaizi6.x = 500;
+  shaizi6.y = 790;
+  */
+
+      //创建小汽车动画
+      var carSheet = new createjs.SpriteSheet({
+        images: ["images/car.png"],
+        frames: { height: 120, count: 4, width: 120 },
+        animations: {
+          right: { frames: [0] },
+          down: { frames: [1] },
+          left: { frames: [2] },
+          up: { frames: [3] },
+        },
+      });
+
+      car = new createjs.Sprite(carSheet, "right");
+      car.x = cc(xyArr[0].x);
+      car.y = cc(xyArr[0].y);
+      stage.addChild(car);
+
+      //筛子s1动画
+      var s1sheet = new createjs.SpriteSheet({
+        images: ["images/s150.png"],
+        frames: { height: 150, count: 8, width: 150 },
+        animations: {
+          z1: {
+            frames: [1, 3, 5, 2, 4, 6, 7],
+            next: "z2",
+          },
+
+          z2: {
+            frames: [1, 3, 5, 2, 4, 6, 7],
+            next: "z3",
+          },
+
+          z3: {
+            frames: [1, 3, 5, 2, 4, 6, 7],
+          },
+
+          z6: {
+            frames: [5],
+          },
+        }, //ani
+      });
+
+      //创建筛子
+      var shaizi = new createjs.Sprite(s1sheet, "z6");
+      shaizi.x = 326;
+      shaizi.y = 1030;
+      stage.addChild(shaizi);
+
+      //筛子点击事件
+      shaizi.addEventListener("click", function (e) {
+        if (shaiziStop == 0) {
+          //用掉一次生命值
+          shengmingzhi = shengmingzhi - 1;
+          updateText();
+
+          shaizi.gotoAndPlay("z1");
+        }
+        shaiziStop = 1; //禁止点击按钮
+      });
+
+      //筛子动画完成后事件
+      shaizi.addEventListener("animationend", function (event) {
+        //修复第一次显示塞子错误
+        if (firstClear == 0) {
+          firstClear = 1;
+          return;
+        }
+
+        shaiziNum = getShaiziNum(); //随机获取筛子数
+        shaizi.gotoAndStop(shaiziNum - 1); //显示筛子图片
+        console.log(shaiziNum);
+
+        run(); //小车开起来
+      });
+
+      //随机获取筛子数字一枚
+      function getShaiziNum() {
+        var cNum = Math.ceil(Math.random() * 6);
+        //cNum = cNum - 1;
+        return cNum;
+      }
+
+      function run() {
+        createjs.Tween.get(car, { loop: false })
+          .to(
+            { x: cc(xyArr[sc(1)].x), y: cc(xyArr[sc(1)].y) },
+            speed,
+            createjs.Ease.quadInOut
+          )
+          .call(handleComplete);
+      }
+
+      function handleComplete() {
+        curr = sc(1); //当前步数加一
+
+        //小车转向动画
+        if (curr == 0) {
+          car.gotoAndStop("right");
+        }
+        if (curr == 3) {
+          car.gotoAndStop("down");
+        }
+        if (curr == 6) {
+          car.gotoAndStop("left");
+        }
+        if (curr == 9) {
+          car.gotoAndStop("up");
+        }
+
+        shaiziNum = shaiziNum - 1; //筛子数减一 递归循环
+
+        //递归 筛子数还有就继续递归
+        if (shaiziNum > 0) {
+          run();
+          console.log(shaiziNum);
+          console.log("curr:" + curr);
+        } else {
+          //这里是当前筛子动画完成后的事件
+
+          //获取财富值
+          var cfzhi = xyArr[curr].k;
+          //财富值显示文字
+          var cfzhiTip;
+
+          cfzhiTip = "财富值增加" + cfzhi;
+
+          if (cfzhi == 101) {
+            //生命+3
+            shengmingzhi = shengmingzhi + 3;
+            cfzhi = 33;
+
+            cfzhiTip = "恭喜生命值+3";
+          }
+
+          if (cfzhi == 901) {
+            //这是一个机会
+            cfzhi = getJihuiNum();
+
+            cfzhiTip = "财富值暴增" + cfzhi;
+          }
+          caifuzhi = caifuzhi + cfzhi;
+          updateText();
+
+          //如果生命值大于0 那么就允许继续玩
+          if (shengmingzhi > 0) shaiziStop = 0; //筛子启用
+
+          //生命值为零 游戏结束
+          if (shengmingzhi == 0) {
+            //这里显示游戏结果页面还有再玩一次按钮
+            //alert("game over");
+
+            $("#caifuValue").text(caifuzhi);
+
+            $("#game").fadeOut();
+            $("#jieguo").fadeIn();
+          } else {
+            //游戏没结束 显示财富值的文字动画
+            if (cfzhi == 0) cfzhiTip = "人生巅峰开始！";
+            if (cfzhi < 0) cfzhiTip = "60没了 可惜了";
+
+            tip.text = cfzhiTip;
+            console.log(tip.width);
+            createjs.Tween.get(tip)
+              .to({ alpha: 1 }, 100)
+              .to({ alpha: 1 }, 800)
+              .to({ alpha: 0 }, 500);
+          }
+        }
+      }
+
+      //获取机会数值 100 200 500
+      function getJihuiNum() {
+        var jNum = Math.ceil(Math.random() * 3);
+        if (jNum == 1) return 100;
+        if (jNum == 2) return 200;
+        if (jNum == 3) return 500;
+      }
+
+      //修正汽车位置
+      function cc(c) {
+        return c - 60;
+      }
+
+      //返回当前步数saveCurr 范围0-11
+      function sc(n) {
+        var t = curr + n;
+        if (t > 11) {
+          return t - 12;
+        } else {
+          return t;
+        }
+      }
+
+      function updateText() {
+        text.text = mb
+          .replace("$shengmingzhi", shengmingzhi)
+          .replace("$caifuzhi", caifuzhi);
+      }
+
+      createjs.Ticker.setFPS(25);
+      createjs.Ticker.addEventListener("tick", update);
+
+      function initVar() {
+        console.log("function initVar()");
+        curr = 0;
+        shaiziStop = 0;
+        shengmingzhi = 10;
+        caifuzhi = 0;
+        firstClear = 0;
+
+        updateText();
+
+        car.x = cc(xyArr[0].x);
+        car.y = cc(xyArr[0].y);
+        car.gotoAndStop("right");
+      }
+
+      function update(event) {
+        stage.update();
+      }
+
+      init();
+    </script>
+
+    <script src="http://m.leju.com/resources/scripts/wx_share.js"></script>
+    <script type="text/javascript">
+      weixinApi.share.init({
+        title: "乐居大富翁",
+        desc: "乐居大富翁",
+        link: "http://tj.game.leju.com/ljdfw/index.html",
+        imgUrl: "http://tj.game.leju.com/ljdfw/images/200-200.jpg",
+      });
+      weixinApi.reset = function (data) {
+        wx.onMenuShareAppMessage({
+          title: data.title,
+          desc: "乐居大富翁",
+          link: "http://tj.game.leju.com/ljdfw/index.html",
+          imgUrl: "http://tj.game.leju.com/ljdfw/images/200-200.jpg",
+        });
+        wx.onMenuShareTimeline({
+          title: data.title,
+          link: "http://tj.game.leju.com/ljdfw/index.html",
+          imgUrl: "http://tj.game.leju.com/ljdfw/images/200-200.jpg",
+        });
+      };
+    </script>
+
+    <!--
+<script src="http://m.leju.com/resources/scripts/wx_share.js?v1.1"></script> 
+<script type="text/javascript"> 
+
+weixinApi.share.init({ 
+title:wxTitle, 
+desc:"乐居大富翁", 
+link:"http://www.meibiann1.com/d/", 
+imgUrl:'http://www.meibiann1.com/d/images/200-200px.jpg' 
+}); 
+</script>
+
+<audio src="images/bg.mp3" id="Jaudio" class="media-audio" autoplay preload loop></audio>  
+-->
+  </body>
+</html>

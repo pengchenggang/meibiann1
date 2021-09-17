@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Wordcopy</title>
+<script src="jquery-1.11.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#sq10Btn").click(function(e) {
+        var cArr = $("#context").val().split(/\n/g);
+		var o = "";
+		for(var i = 0 ; i < cArr.length ; i++)
+		{
+			o += cArr[i].substring(10,cArr[i].length) + "\n";
+		}
+		$("#context").val(o.substring(0,o.length-1));
+    });
+	
+	
+	$("#sq1Btn").click(function(e) {
+        var cArr = $("#context").val().split(/\n/g);
+		var o = "";
+		for(var i = 0 ; i < cArr.length ; i++)
+		{
+			o += cArr[i].substring(1,cArr[i].length) + "\n";
+		}
+		$("#context").val(o.substring(0,o.length-1));
+    });
+	
+	$("#sh1Btn").click(function(e) {
+        var cArr = $("#context").val().split(/\n/g);
+		var o = "";
+		for(var i = 0 ; i < cArr.length ; i++)
+		{
+			o += cArr[i].substring(0,cArr[i].length-1) + "\n";
+		}
+		$("#context").val(o.substring(0,o.length-1));
+    });
+	
+	
+	$("#oBtn").click(function(e) {
+		var jNum = parseInt($("#jNum").val());
+		var jList = $("#jList").val().split(/\n/g);
+		var o = "";
+		for(var i = 0 ; i < jList.length ; i++)
+		{
+			for(var k = 0; k < jNum ;k++)
+				o += jList[i] + "\n";
+		}
+
+		$("#outWordList").val(o.substring(0,o.length-1));
+    });
+	
+	
+	$("#delBtn").click(function(e){
+		var cArr = $("#context").val().split(/\n/g);
+		var m = $("#delInput").val();
+		var o = "";
+		for(var i = 0 ; i < cArr.length ; i++)
+		{
+			o += m.replace("$1",cArr[i]) + "\n";
+		}
+		$("#outBat").val(o.substring(0,o.length-1));
+	});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+});
+</script>
+<style>
+body { margin:0; padding:0; border:0; background-color:#374152;}
+
+.youqing {color:#BDBDBD; margin-top:5px; font-size:12px; display:block; text-decoration:none;}
+.youqing:hover { text-decoration:underline;}
+div img { -moz-border-radius: 11px; -khtml-border-radius: 11px; -webkit-border-radius: 11px; border-radius: 11px;}
+
+</style>
+</head>
+
+<body>
+<div style="width:1004px; margin:0 auto; background-color:#8b98ae;">
+	<div style="width:250px; background-color:#4e5c74; float:left;">
+    	<div style="height:35px; background-color:#2b3442;"></div>
+        <div style="height:800px;">
+       	  <div style="padding:15px; color:#B3B3B3; font-family:微软雅黑; font-size:14px;">
+            	<div style="height:200px; text-align:center;">
+                <div style="height:55px;"></div>
+                <img src="wordcopy.jpg" alt="" width="90" height="90"/></div>
+                程序名称：Wordcopy<br>
+                制作时间：2017年11月17日<br>
+				开发人员：彭成刚<br>
+<br>官方主站：<br>
+<a href="http://www.meibianN1.com/" class="youqing" target="_blank">美编N1 http://www.meibiann1.com/</a></div>
+        </div>
+    </div>
+    <div style="float:left; width:754px;">
+    	<div style="height:35px; background-color:#434f65;"></div>
+      <div style="padding:0 25px;">
+        <div style="height:80px; line-height:80px; font-size:40px; font-family:微软雅黑;">WordCopy</div>
+        <div style="font-size:14px; font-family:微软雅黑; color:#3D3D3D;">将英文单词每一行复制N行
+        </div>
+        <div style="margin-top:10px;">
+            	复制个数：（2 3 4）<br>
+           	  <input name="jNum" type="text" id="jNum" style="height:40px; width:660px; margin:5px 0; padding:0 10px;" value="3">
+          </div>
+          
+          <div style="margin-top:10px;">
+          输入单词list：
+                <textarea name="jList" id="jList" style="width:660px; height:150px;">butterfly
+wasp
+trampoline
+flowers
+plant
+shower
+tap
+bath
+cage
+guinea pig</textarea>
+        </div>
+        
+        <div style="margin-top:10px;">
+       	  <input name="oBtn" type="button" id="oBtn" style="height:40px; width:150px; margin:5px 10px 5px 0;" value="输出Wordcopy单词"><br>
+                <textarea name="outWordList" id="outWordList" style="width:660px; height:150px;"></textarea><br>
+                </span>
+        </div>
+          
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+
+</body>
+</html> 

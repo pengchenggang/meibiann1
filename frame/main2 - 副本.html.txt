@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>main1</title>
+<style>
+ul,ul li p { margin:0; padding:0; border:0;}
+body { background-image:url(../images/main2/bg1.jpg); padding:30px; padding-right:0px; padding-top:10px;}
+ul li img { width:90px; height:90px; border:0;}
+ul li a p { font-size:14px; display:block; width:140px; text-align:center; line-height:25px;text-shadow:black 1px 1px 1px;}
+ul li a { text-decoration:none; color:#fff; font-family:"微软雅黑"; display:block; padding-top:20px; width:140px; height:130px; }
+ul li a:hover {background-image:url(../images/main2/ahover.png); background-repeat:no-repeat;}
+ul li { list-style-type:none; width:140px; text-align:center; float:left; margin-right:10px; margin-bottom:15px; height:150px;}
+ul li a.e1 {
+	width:10px;
+	height:10px;
+	margin:-140px 0 0 120px;
+	padding:0;
+	display:none;
+	background-image:url(../images/core/dd.png);
+	opacity: .3;  
+}
+ul li:hover a.e1 { display:block;}
+ul li:hover a.e1:hover { opacity: .9;  }
+
+
+ul li a.e2 {
+	width:10px;
+	height:10px;
+	margin:5px 0 0 120px;
+	padding:0;
+	display:none;
+	background-image:url(../images/core/dd.png);
+	opacity: .3;  
+}
+ul li:hover a.e2 { display:block;}
+ul li:hover a.e2:hover { opacity: .9;}
+
+ul li a img { -moz-border-radius: 11px; -khtml-border-radius: 11px; -webkit-border-radius: 11px; border-radius: 11px;}
+
+</style>
+    <script src="../jquery-1.11.0.min.js"></script>
+    <script src="../showLeft.js"></script>
+</head>
+
+<body>
+<ul>
+<li><a href="https://www.eteams.cn/" target="_blank"><img src="../images/main2/eTeams.jpg" /><p>eTeams</p></a></li>
+
+<li><a href="http://mp.leju.com/" target="_blank"><img src="../images/main2/zaixianxuanfang.jpg" /><p>在线选房</p></a></li>
+
+<li><a href="../zt/tbb/index.html"><img src="../images/main2/tbb.jpg" /><p>Banner模板</p></a></li>
+
+
+    
+    
+	<li><a href="http://tj.house.sina.com.cn/zhuanti/shejibu/index.shtml" target="_blank"><img src="../images/main2/shejibu.png" /><p>设计部首页</p></a>
+    <a href="http://n81.pub.house.sina.com.cn/document/default/edit?d_id=24262&t_id=2865&p_id=154&c_id=1" target="_blank" class="e1"></a></li>
+    <!-- js组件 http://n81.pub.house.sina.com.cn/document/default/edit?d_id=24263&t_id=2865&p_id=154&c_id=1 -->
+    <!-- 优秀设计 http://n81.pub.house.sina.com.cn/document/default/edit?d_id=24260&t_id=2865&p_id=154&c_id=1 -->
+    
+    
+    <li><a href="http://tj.house.sina.com.cn/" target="_blank"><img src="../images/main2/sinaleju.png" /><p>天津新浪乐居</p></a></li>
+    
+    <!-- <li><a href="https://pub.sina.com.cn/" target="_blank"><img src="../images/main2/nrfabupt.png" /><p>老内容发布平台</p></a></li> -->
+  
+    <li><a href="http://pub.leju.com/" target="_blank"><img src="../images/main2/pubhousesina.png" /><p>新内容发布平台</p></a></li>
+    <li><a href="http://mp.leju.com/" target="_blank"><img src="../images/main2/yidongyingxiao.jpg" /><p>移动营销开放平台</p></a></li>
+    <li><a href="http://s.pub.leju.com/document/default/search?c_id=5892892285301238595&p_id=5894622961008453771&t_id=5897531906047945248" target="_blank"><img src="../images/main2/yidongkuaida.jpg" alt="" /><p>移动快搭平台</p></a></li>
+    
+    
+    <li><a href="http://tj.house.sina.com.cn/zhuanti/shejibu/yidongshoucekuaida/" target="_blank"><img src="../images/main2/yidongshouce.jpg" />
+    <p>m.移动快搭手册</p></a>
+    <a href="http://n81.pub.house.sina.com.cn/document/default/edit?d_id=35914&t_id=2865&p_id=154&c_id=1" target="_blank" class="e1"></a></li>
+    
+    <li><a href="http://sinaleju.sinaapp.com/meibiann1/jqueryT/jReplaceYidongPath/index.html" target="_blank"><img src="../jqueryT/jReplaceYidongPath/tihuanm.jpg" /><p>替换m.移动专题</p></a></li>
+    
+    <li><a href="http://admin.eju.com/" target="_blank"><img src="../images/main2/admineju.jpg" /><p>电商专题后台</p></a></li>
+    
+    
+    
+    
+    <li><a href="http://pub.leju.com/resource/resource/index?p_id=5894622961008453771&c_id=5892892285301238595" target="_blank"><img src="../images/main2/xinshangchuan.png" /><p>新上传资源</p></a></li>
+    
+    
+    <li><a href="http://huaban.com/boards/26211873/" target="_blank"><img src="../images/main2/kuaixun.jpg" /><p>快讯</p></a></li>
+    
+    <li><a href="http://huaban.com/boards/17969773/" target="_blank"><img src="../images/main3/psbox.jpg" /><p>PS截屏教程</p></a></li>
+        <li><a href="http://huaban.com/boards/29709908/" target="_blank"><img src="../images/main2/c4dtips.jpg" /><p>C4D Tips</p></a></li>
+        <li><a href="http://huaban.com/boards/17836968/" target="_blank"><img src="../images/main2/aejiaocheng.jpg" /><p>AE截屏教程</p></a></li>
+         <li><a href="http://tj.house.sina.com.cn/zhuanti/lejuneiguangchicun2016/" target="_blank"><img src="../images/main2/ggchicun.jpg" /><p>内广广告尺寸</p></a>
+         <a href="http://n.pub.leju.com/document/default/edit?d_id=6143344490238490232&t_id=5897290047816018942&p_id=5894622961008453771&c_id=5892892285301238595" target="_blank" class="e1"></a></li>
+         
+         <li><a href="http://huaban.com/boards/30507020/" target="_blank"><img src="../images/main2/wo2016.jpg" /><p>从心开始</p></a></li>
+    
+    <li><a href="https://tinypng.com/" target="_blank"><img src="../images/main2/tinypng.jpg" />
+    <p>tinypng 图片压缩</p></a></li>
+    
+    <li><a href="http://huaban.com/boards/26417217/" target="_blank"><img src="../images/main2/kxqposter.jpg" /><p>看心情海报</p></a></li>
+    
+    <li><a href="/zt/fonts/" target="_blank"><img src="../images/main2/tuijianfonts.jpg" /><p>ft推荐字体</p></a></li>
+    
+    <li><a href="http://svnpub.intra.leju.com/" target="_blank"><img src="../images/main2/bushu.jpg" /><p>项目部署系统</p></a></li>
+    
+    
+    <li><a href="http://admin.hi.news.sina.com.cn/Login.php" target="_blank"><img src="../images/main2/adminhinews.png" /><p>新投票系统</p></a></li>
+    <li><a href="http://admin.survey.news.sina.com.cn/" target="_blank"><img src="../images/main2/newsdiaocha.png" />
+    <p>新闻调查系统</p></a></li>
+    <li><a href="https://erp.leju.com/" target="_blank"><img src="../images/main2/erp.png" /><p>ERP报销系统</p></a></li>
+    <li><a href="http://pan.baidu.com/s/1sjpr5rn" target="_blank"><img src="../images/main2/erpXiu.jpg" /><p>rj-4 ERP修复</p></a></li>
+    <li><a href="http://misc.intra.leju.com/epm/epm4/" target="_blank"><img src="../images/main2/epm.png" /><p>EPM管理系统</p></a></li>
+    <li><a href="http://10.207.0.21/" target="_blank"><img src="../images/main2/renliziyuan.png" /><p>人力资源系统</p></a></li>
+    <li><a href="http://intra.leju.com/" target="_blank"><img src="../images/main2/intraleju.png" /><p>乐居内网首页</p></a></li>
+    <li><a href="http://10.207.0.60/portal/login.jsp" target="_blank"><img src="../images/main2/xinjidukaoshi.png" /><p>新季度考试系统</p></a></li>
+    <!-- 账号 邮件前缀，不带@leju.com 密码8个1 -->
+    
+    <li><a href="../jqueryT/jWordcopy/index.html" target="_blank"><img src="../jqueryT/jWordcopy/wordcopy.jpg" /><p>Wordcopy</p></a></li>
+    
+    
+<li><a href="http://mail.leju.com/" target="_blank"><img src="../images/main2/lejumail.png" /><p>乐居新邮箱</p></a></li>
+    <li><a href="http://misc.intra.leju.com/exam/" target="_blank"><img src="../images/main2/kaoshi.png" /><p>考试系统</p></a></li>
+    <li><a href="https://vpninfo.leju.com/" target="_blank"><img src="../images/main2/lejuVpn.jpg" /><p>lejuVPN系统</p></a></li>
+    <!-- <li><a href="http://vpn.sina.com/" target="_blank"><img src="../images/main2/vpn.png" /><p>新浪VPN系统</p></a></li> -->
+    <li><a href="http://bj.house.sina.com.cn/2012-05-23/36/10609.html" target="_blank"><img src="../images/main2/mantis.png" /><p>Mantis系统</p></a></li>
+    <li><a href="http://bj.house.sina.com.cn/2010-05-06/36/7910.html" target="_blank"><img src="../images/main2/zongbutoutu.png" /><p>总部美编头图汇总</p></a></li>
+    <li><a href="http://note.youdao.com/share/?id=8808dcd9c6aeff5a141c3b7d9b6b86f9&type=note" target="_blank"><img src="../images/main2/youdao.png" /><p>乐居专题列表</p></a></li>
+   
+    <li><a href="http://sinaleju.sinaapp.com/meibiann1/codelib/myfocus/index.html" target="_blank"><img src="../images/main2/myfocus.png" /><p>myfocus焦点图代码</p></a></li>
+    <li><a href="http://sinaleju.sinaapp.com/meibiann1/codelib/hotfocus/index.html" target="_blank"><img src="../images/main2/hotfocus.png" /><p>商业地产焦点图</p></a></li>
+    <li><a href="http://sinaleju.sinaapp.com/meibiann1/codelib/fzjfocus/index.html" target="_blank"><img src="../images/main2/fzjfocus.png" /><p>风筝节焦点图</p></a></li>
+    <li><a href="http://sae.sina.com.cn/" target="_blank"><img src="../images/main2/sae.png" /><p>SAE新浪云空间</p></a></li>
+    <li><a href="http://tj.house.sina.com.cn/focus/special2010/" target="_blank"><img src="../images/main2/xinwenhuizong.png" /><p>新闻专题汇总</p></a></li>
+    <li><a href="http://pm.leju.com/" target="_blank"><img src="../images/main2/chanpinbu.png" /><p>新浪乐居产品部</p></a></li>
+    <li><a href="http://huaban.com/boards/3642102/" target="_blank"><img src="../images/main2/tjlejusj2013.png" /><p>2013设计稿汇总</p></a></li>    
+    <li><a href="http://tj.house.sina.com.cn/zhuanti/ztbaipishu/index.shtml" target="_blank"><img src="../images/main2/ztbaipishu.png" /><p>专题白皮书</p></a></li>
+    <li><a href="http://stock.finance.sina.com.cn/usstock/quotes/LEJU.html" target="_blank"><img src="../images/main2/lejugupiao.png" /><p>上市：乐居股票</p></a></li>
+    
+    <li><a href="../jqueryT/jDWCodeReplace/index.html" target="_blank"><img src="../images/main2/dwCodeReplace.png" /><p>dwCodeReplace</p></a></li>
+    <li><a href="../jqueryT/jShenfenzheng/index.html" target="_blank"><img src="../images/main2/jShenfenzheng.jpg" /><p>身份证转换器</p></a></li>
+    
+    <li><a href="../jqueryT/jToupiao/index.html" target="_blank"><img src="../images/main2/arr2json.png" /><p>数组转换json</p></a></li>
+    
+    <li><a href="../tjsinaleju/toupiao/index.php" target="_blank"><img src="../images/main2/meibiann1toupiao.png" /><p>数组转换json</p></a></li>
+    
+    
+       <li><a href="http://tj.house.sina.com.cn/iframe/wangjiaohui/index.shtml" target="_blank"><img src="../images/main8/iframehengqie.png" /><p>网交会iframe横切</p></a><a href="http://pub.leju.com/document/default/edit?d_id=5908656212924479286&t_id=5897290047816018942&p_id=5894622961008453771&c_id=5892892285301238595" target="_blank" class="e1"></a></li>
+       
+       
+       <li><a href="http://tj.house.sina.com.cn/zhuanti/zujian/jquerywangqihuigu/" target="_blank"><img src="../images/main2/zjWangqihuigu.jpg" />
+       <p>往期回顾 底部组件</p></a><a href="http://n81.pub.house.sina.com.cn/document/default/edit?d_id=34592&t_id=2865&p_id=154&c_id=1" target="_blank" class="e1"></a></li>
+       
+       <li><a href="http://pan.baidu.com/s/1jGC8rsU" target="_blank"><img src="../images/main2/poly.jpg" />
+       <p>图片晶块化 poly软件</p></a></li>
+       
+       <li><a href="http://tj.house.sina.com.cn/iframe/zujian/1004gundongDemo/" target="_blank"><img src="../images/main2/1004gundong.jpg" />
+       <p>1004滚动组件</p></a>
+       <a href="http://n81.pub.house.sina.com.cn/document/default/edit?d_id=34897&t_id=2865&p_id=154&c_id=1" target="_blank" class="e1"></a>
+       <a href="http://n81.pub.house.sina.com.cn/document/default/edit?d_id=34879&t_id=2865&p_id=154&c_id=1" target="_blank" title="组件" class="e2"></a></li>
+       
+       <li><a href="http://tj.house.sina.com.cn/zhuanti/950gundongDemo/" target="_blank"><img src="../images/main2/1004gundong.jpg" />
+       <p>950滚动组件</p></a></li>
+       
+       
+       <li><a href="../jqueryT/tihao/index.html" target="_blank"><img src="../images/main2/tihao.jpg" />
+       <p>摇号踢号程序</p></a></li>
+
+		<li><a href="../jqueryT/jTiaopian/index.html" target="_blank"><img src="../images/main2/jTiaopian.gif" />
+       <p>挑片程序</p></a></li>
+       
+       <li><a href="http://tj.house.sina.com.cn/11466/2014/1013/750.html" target="_blank"><img src="../images/main2/yidongDemo1.jpg" />
+       <p>m.移动快搭Demo</p></a>
+       <a href="http://n81.pub.house.sina.com.cn/document/default/edit?d_id=750&t_id=11466&p_id=154&c_id=1" target="_blank" class="e1"></a></li>
+       
+       <li><a href="http://tj.house.sina.com.cn/mobile/20141013demo1/" target="_blank"><img src="../images/main2/yidongDemo1.jpg" />
+       <p>tj.移动快搭Demo</p></a>
+       <a href="http://n81.pub.house.sina.com.cn/document/default/edit?d_id=35900&t_id=2865&p_id=154&c_id=1" target="_blank" class="e1"></a></li>
+       
+       <li><a href="http://tj.house.sina.com.cn/app/gongju01/" target="_blank"><img src="../images/main2/appgongju.jpg" />
+       <p>app组工具集</p></a></li>
+       
+       <li><a href="http://tj.house.sina.com.cn/mobile/xunzhaochuangyi/" target="_blank"><img src="../images/main2/xunzhaochuangyi.jpg" /><p>寻找创意H5</p></a><a href="http://pub.leju.com/document/default/edit?d_id=5947537306302068085&t_id=5897290047816018942&p_id=5894622961008453771&c_id=5892892285301238595" target="_blank" class="e1"></a></li>
+       
+       <li><a href="http://m.leju.com/?site=touch&ctl=topic&act=news_topic_list" target="_blank"><img src="../images/main2/mLejuList.jpg" /><p>m.leju移动专题列表</p></a></li>
+       
+       <li><a href="http://tj.house.sina.com.cn/mobile/gifH5/" target="_blank"><img src="../images/main2/gifH5.jpg" /><p>GifH5移动专题</p></a><a href="http://s.pub.leju.com/document/default/edit?d_id=5981306701536867390&t_id=5897290047816018942&p_id=5894622961008453771&c_id=5892892285301238595" target="_blank" class="e1"></a></li>
+       
+       <li><a href="http://bj.house.sina.com.cn/2015-05-08/5892968136931879910/6002348681200972608.html" target="_blank"><img src="../images/main2/videoCode.jpg" /><p>视频播放代码 15.5.8</p></a></li>
+       
+       
+       <li><a href="http://tj.house.sina.com.cn/zhuanti/jinlouhui201506/" target="_blank"><img src="../images/main2/jinlouhui.jpg" /><p>津楼汇15年6月刊</p></a><a href="http://n.pub.leju.com/document/default/edit?d_id=6014667643943171940&t_id=5897290047816018942&p_id=5894622961008453771&c_id=5892892285301238595" target="_blank" class="e1"></a></li>
+       
+       
+       
+        <li><a href="http://tj.house.sina.com.cn/mashangzhuanche/" target="_blank"><img src="../images/main2/mszcIndexIframe.jpg" /><p>码上专车首页Iframe</p></a><a href="http://n.pub.leju.com/document/default/edit?d_id=6031241053204690363&t_id=5897290047816018942&p_id=5894622961008453771&c_id=5892892285301238595" target="_blank" class="e1"></a></li>
+        
+        
+        <li><a href="http://www.yibizi.com/" target="_blank"><img src="../images/main2/shouxie.jpg" /><p>在线手写输入法</p></a></li>
+        
+         <li><a href="http://user.qzone.qq.com/76526211/blog/1453963639" target="_blank"><img src="../images/main2/kaoqin.jpg" /><p>2016考勤管理规定</p></a></li>
+         
+         <li><a href="http://tj.house.sina.com.cn/iframe/flexsliderFrame/" target="_blank"><img src="../images/main2/flexslider.jpg" />
+         <p>flexslider焦点图</p></a></li>
+         
+         <li><a href="../jqueryT/xhao/" target="_blank"><img src="../images/main2/xhao.jpg" />
+         <p>xhao</p></a></li>
+         
+         <li><a href="http://chunshanyuhou.lofter.com/" target="_blank"><img src="../images/main2/chunshanyuhou.jpg" />
+         <p>春山雨后</p></a></li>
+         
+         <li><a href="https://www.so.com/s?ie=utf-8&src=360se7_addr&q=ActivInspire" target="_blank"><img src="../images/main1/ActivInspire.jpg" />
+         <p>ActivInspire企鹅英语</p></a></li>
+       
+       
+</ul>
+</body>
+</html>

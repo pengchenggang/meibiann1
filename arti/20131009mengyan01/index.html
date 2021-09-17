@@ -1,0 +1,1065 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="x-ua-compatible" content="ie=7"/>
+<script src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/js/jquery-1.5.1.min.js" type="text/javascript"></script>
+<script src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/js/soChange.js" type="text/javascript"></script><!--切换JS-->
+<script src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/js/ScrollPic.js" type="text/javascript"></script><!--滚动-->
+<title>各种图片文字滚动效果</title>
+<style>
+body{ margin:0px; padding:30px; font-size:12px;}
+img{ border:0px;}
+h3{ padding:0px; margin:0px; overflow:hidden; clear:both; margin-bottom:10px;}
+p{ padding:0px; margin:0px; overflow:hidden; clear:both;}
+</style>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+</head>
+<body><!-- SUDA_CODE_START --> 
+<div style='position:absolute;top:0;left:0;width:0;height:0;z-index:1'><div style='position:absolute;top:0;left:0;width:1;height:1;'><iframe id='SUDA_FC' src='' width=1 height=1 SCROLLING=NO FRAMEBORDER=0></iframe></div><div style='position:absolute;top:0;left:0;width:0;height:0;visibility:hidden' id='SUDA_CS_DIV'></div></div> 
+<script type="text/javascript"> 
+//<!--
+(function(){var win=window,doc=document,nav=navigator,ua=nav.userAgent,scr=win.screen,loc=win.location.href;var prtl=loc.indexOf("https")>-1?"https://":"http://",domain="beacon.sina.com.cn";var a_gif=prtl+domain+"/a.gif?",g_gif=prtl+domain+"/g.gif?",d_gif=prtl+domain+"/d.gif?",e_gif=prtl+domain+"/e.gif?";var sudaCount=0;var sudaRef=doc.referrer.toLowerCase();var cookie_SINAGLOBAL="SINAGLOBAL",cookie_For_Flash="FSINAGLOBAL",cookie_Apache="Apache",cookie_ULV="ULV",cookie_SUP="SUP",cookie_UOR="UOR",cookie__s_acc="_s_acc",cookie__s_tentry="_s_tentry";var count=0;var inFrame=false,isMetaFresh=false;var loginUserInfo="";var commonType=16777215,performance=0,filter,interval=0;var sudaPageid="",sudaExt1="",sudaExt2="";var sudaInfo=[],acTrackInfo=[],uaTrackInfo=[];var sudaGlobalCount=0;var fsudaGlobalCount=0;var storage=(function(){var objDS=window.localStorage,store,STORE_NAME;if(objDS){return{get:function(key){return unescape(objDS.getItem(key))},set:function(key,value){objDS.setItem(key,escape(value))}}}else{if(window.ActiveXObject){store=document.documentElement;STORE_NAME="localstorage";try{store.addBehavior("#default#userdata");store.save("localstorage")}catch(e){}return{set:function(key,value){try{store.setAttribute(key,value);store.save(STORE_NAME)}catch(e){}},get:function(key){try{store.load(STORE_NAME);return store.getAttribute(key)}catch(e){}}}}else{return{get:getCookie,set:setCookie}}}})();var flashData={flashObj:null,id:"sudaDataFrame",status:"loading",$:function(objName){if(document.getElementById){return eval('document.getElementById("'+objName+'")')}else{return eval("document.all."+objName)}},clear:function(){this.flashObj.write("")},read:function(name){if(this.status!="ok"){return""}var nameRule=/[=,;]+/i;if(nameRule.test(name)){return""}var dataScring=this.flashObj.read();if(dataScring==null){dataScring=""}var reg=new RegExp("(?:^|;)"+name+"=(.*?),expires=([^;]*)","i");var value=dataScring.match(reg);if(value==null){value=""}else{if(value.length>=3){var now=new Date();var dd=now.getTime();if(new Number(value[2])>dd){value=value[1];value=value.replace(/\[\$\=\]/g,"=");value=value.replace(/\[\$\;\]/g,";");value=value.replace(/\[\$\,\]/g,",")}else{value=""}}else{value=""}}return value},write:function(name,value,hours){if(this.status!="ok"){return}var nameRule=/[=,;]+/i;if(nameRule.test(name)){return}value=value.toString();value=value.replace(/\\/g,"\\\\");value=value.replace(/\&/g,"&amp;");value=value.replace(/\=/g,"[$$=]");value=value.replace(/\;/g,"[$$;]");value=value.replace(/\,/g,"[$$,]");if(typeof(hours)!="number"){hours=24*30*3}var now=new Date();var expire=new Date(now.getTime()+hours*3600000);expire=",expires="+expire.getTime();var list=this.flashObj.read();if(list==null){list=""}list=list.split(/;(?!\])/i);var newList=[],update=false;var data;for(var i=0;i<list.length;i++){data=list[i].match(/(.*?)\=(.*?),expires=(\d*)/i);if(data==null){continue}if(data.length<4){continue}if(data[1]==name){if(value!=""){newList.push(name+"="+value+expire)}update=true}else{if(new Date(new Number(data[3]))>now&&data[2]!=""){newList.push(list[i])}}}if(!update){newList.push(name+"="+value+expire)}var newStr="";for(var i=0;i<newList.length;i++){if(newStr!=""){newStr+=";"}newStr+=newList[i]}this.flashObj.write(newStr)},load:function(){try{this.flashObj=this.$(this.id).contentWindow.flashData.flashObj;this.status="ok"}catch(e){}if(this.onload){this.onload()}}};var local_unique="";var loaded=false;function createFlashIFrame(){var iframe=document.createElement("iframe");iframe.src="http://beacon.sina.com.cn/data.html";iframe.id="sudaDataFrame";iframe.style.height="0px";iframe.style.width="1px";iframe.style.overflow="hidden";iframe.frameborder="0";iframe.scrolling="no";document.getElementsByTagName("head")[0].appendChild(iframe)}function getMeta(metaName,pidx){var pMeta=doc.getElementsByName(metaName);var idx=(pidx>0)?pidx:0;return(pMeta.length>idx)?pMeta[idx].content:""}function getSudaMeta(){var pMeta=doc.getElementsByName("sudameta");var meta=[];for(var idx=0;idx<pMeta.length;idx++){var content=pMeta[idx].content;if(content){meta.push(content)}}return meta}function stringSplice(src,k,e,sp){if(src==""){return""}sp=(sp=="")?"=":sp;k+=sp;var ps=src.indexOf(k);if(ps<0){return""}ps+=k.length;var pe=src.indexOf(e,ps);if(pe<ps){pe=src.length}return src.substring(ps,pe)}function getCookie(ckName){if(undefined==ckName||""==ckName){return""}return stringSplice(doc.cookie,ckName,";","")}function setCookie(ckName,ckValue,ckDays,ckDomain){if(ckValue!=null){if((undefined==ckDomain)||(null==ckDomain)){ckDomain="sina.com.cn"}if((undefined==ckDays)||(null==ckDays)||(""==ckDays)){doc.cookie=ckName+"="+ckValue+";domain="+ckDomain+";path=/"}else{var now=new Date();var time=now.getTime();time=time+86400000*ckDays;now.setTime(time);time=now.getTime();doc.cookie=ckName+"="+ckValue+";domain="+ckDomain+";expires="+now.toUTCString()+";path=/"}}}function addEvent(sNode,sEventType,oFunc){var oElement=sNode;if(oElement==null){return false}sEventType=sEventType||"click";if((typeof oFunc).toLowerCase()!="function"){return}if(oElement.attachEvent){oElement.attachEvent("on"+sEventType,oFunc)}else{if(oElement.addEventListener){oElement.addEventListener(sEventType,oFunc,false)}else{oElement["on"+sEventType]=oFunc}}return true}function getEvent(){if(window.event!=null){return window.event}else{if(window.event){return window.event}var o=arguments.callee.caller;var e;var n=0;while(o!=null&&n<40){e=o.arguments[0];if(e&&(e.constructor==Event||e.constructor==MouseEvent||e.constructor==KeyboardEvent)){return e}n++;o=o.caller}return e}}function fixEvent(e){e=e||getEvent();if(!e.target){e.target=e.srcElement;e.pageX=e.x;e.pageY=e.y}if(typeof e.layerX=="undefined"){e.layerX=e.offsetX}if(typeof e.layerY=="undefined"){e.layerY=e.offsetY}return e}function trim(str){if(typeof str!=="string"){throw"trim need a string as parameter"}var len=str.length;var s=0;var reg=/(\u3000|\s|\t|\u00A0)/;while(s<len){if(!reg.test(str.charAt(s))){break}s+=1}while(len>s){if(!reg.test(str.charAt(len-1))){break}len-=1}return str.slice(s,len)}function isArray(o){return Object.prototype.toString.call(o)==="[object Array]"}function queryToJson(QS,isDecode){var _Qlist=trim(QS).split("&");var _json={};var _fData=function(data){if(isDecode){return decodeURIComponent(data)}else{return data}};for(var i=0,len=_Qlist.length;i<len;i++){if(_Qlist[i]){var _hsh=_Qlist[i].split("=");var _key=_hsh[0];var _value=_hsh[1];if(_hsh.length<2){_value=_key;_key="$nullName"}if(!_json[_key]){_json[_key]=_fData(_value)}else{if(isArray(_json[_key])!=true){_json[_key]=[_json[_key]]}_json[_key].push(_fData(_value))}}}return _json}function foreach(arr,func){for(var i=0,len=arr.length;i<len;i++){func(arr[i],i)}}function getHost(sUrl){var r=new RegExp("^http(?:s)?://([^/]+)","im");if(sUrl.match(r)){return sUrl.match(r)[1].toString()}else{return""}}var CI={screenSize:function(){return(commonType&8388608==8388608)?scr.width+"x"+scr.height:""},colorDepth:function(){return(commonType&4194304==4194304)?scr.colorDepth:""},appCode:function(){return(commonType&2097152==2097152)?nav.appCodeName:""},appName:function(){return(commonType&1048576==1048576)?((nav.appName.indexOf("Microsoft Internet Explorer")>-1)?"MSIE":nav.appName):""},cpu:function(){return(commonType&524288==524288)?(nav.cpuClass||nav.oscpu):""},platform:function(){return(commonType&262144==262144)?(nav.platform):""},jsVer:function(){if(commonType&131072!=131072){return""}var p,appsign,appver,jsver=1,isN6=0,navigatorAppName=(nav.appName.indexOf("Microsoft Internet Explorer")>-1)?"MSIE":nav.appName,navigatorAppVersion=nav.appVersion;if("MSIE"==navigatorAppName){appsign="MSIE";p=navigatorAppVersion.indexOf(appsign);if(p>=0){appver=window.parseInt(navigatorAppVersion.substring(p+5));if(3<=appver){jsver=1.1;if(4<=appver){jsver=1.3}}}}else{if(("Netscape"==navigatorAppName)||("Opera"==navigatorAppName)||("Mozilla"==navigatorAppName)){jsver=1.3;appsign="Netscape6";p=navigatorAppVersion.indexOf(appsign);if(p>=0){jsver=1.5}}}return jsver},network:function(){if(commonType&65536!=65536){return""}var ct="";ct=(nav.connection&&nav.connection.type)?nav.connection.type:ct;try{doc.body.addBehavior("#default#clientCaps");ct=doc.body.connectionType}catch(e){ct="unkown"}return ct},language:function(){return(commonType&32768==32768)?(nav.systemLanguage||nav.language):""},timezone:function(){return(commonType&16384==16384)?(new Date().getTimezoneOffset()/60):""},flashVer:function(){if(commonType&8192!=8192){return""}var pl=nav.plugins,flash,item,desc;if(pl&&pl.length){for(var key in pl){item=pl[key];if(item.description==null){continue}if(flash!=null){break}desc=item.description.toLowerCase();if(desc.indexOf("flash")!=-1){flash=item.version?parseInt(item.version):desc.match(/\d+/);continue}}}else{if(window.ActiveXObject){for(var i=10;i>=2;i--){try{var object=new ActiveXObject("ShockwaveFlash.ShockwaveFlash."+i);if(object){flash=i;break}}catch(e){}}}else{if(ua.indexOf("webtv/2.5")!=-1){flash=3}else{if(ua.indexOf("webtv")!=-1){flash=2}}}}return flash},javaEnabled:function(){if(commonType&4096!=4096){return""}var pl=nav.plugins,java=nav.javaEnabled(),item,desc;if(java==true){return 1}if(pl&&pl.length){for(var key in pl){item=pl[key];if(item.description==null){continue}if(java!=null){break}desc=item.description.toLowerCase();if(desc.indexOf("java plug-in")!=-1){java=parseInt(item.version);continue}}}else{if(window.ActiveXObject){java=(new ActiveXObject("JavaWebStart.IsInstalled")!=null)}}return java?1:0}};var PI={pageId:function(pageid){var pid=pageid||sudaPageid,defaultPageID="-9999-0-0-1";if((undefined==pid)||(""==pid)){try{var metaTxt=getMeta("publishid");if(""!=metaTxt){var pbidList=metaTxt.split(",");if(pbidList.length>0){if(pbidList.length>=3){defaultPageID="-9999-0-"+pbidList[1]+"-"+pbidList[2]}pid=pbidList[0]}}else{pid="0"}}catch(e){pid="0"}pid=pid+defaultPageID}return pid},sessionCount:function(){var count=getCookie("_s_upa");if(count==""){count=0}return count},excuteCount:function(){return sudaCount},referrer:function(){if(commonType&2048!=2048){return""}var re=/^[^\?&#]*.swf([\?#])?/;if((sudaRef=="")||(sudaRef.match(re))){var ref=stringSplice(loc,"ref","&","");if(ref!=""){return escape(ref)}}return escape(sudaRef)},isHomepage:function(){if(commonType&1024!=1024){return""}var isHome="";try{doc.body.addBehavior("#default#homePage");isHome=doc.body.isHomePage(loc)?"Y":"N"}catch(e){isHome="unkown"}return isHome},PGLS:function(){return(commonType&512==512)?getMeta("stencil"):""},ZT:function(){if(commonType&256!=256){return""}var zt=getMeta("subjectid");zt.replace(",",".");zt.replace(";",",");return escape(zt)},mediaType:function(){return(commonType&128==128)?getMeta("mediaid"):""},domCount:function(){return(commonType&64==64)?doc.getElementsByTagName("*").length:""},iframeCount:function(){return(commonType&32==32)?doc.getElementsByTagName("iframe").length:""}};var UI={visitorId:function(gid){if(!gid){var gid=getCookie(cookie_SINAGLOBAL);return gid}else{setCookie(cookie_SINAGLOBAL,gid,3650)}},fvisitorId:function(fid){if(!fid){var fid=getCookie(cookie_For_Flash);return fid}else{setCookie(cookie_For_Flash,fid,3650)}},sessionId:function(){var sid=getCookie(cookie_Apache);if(""==sid){var now=new Date();sid=Math.random()*10000000000000+"."+now.getTime();setCookie(cookie_Apache,sid)}return sid},flashCookie:function(gid){if(gid){flashData.write("local_unique",gid,24*360)}else{return local_unique}},lastVisit:function(){var sid=getCookie(cookie_Apache);var lvi=getCookie(cookie_ULV);var lva=lvi.split(":");var lvr="",lvn;if(lva.length>=6){if(sid!=lva[4]){lvn=new Date();var lvd=new Date(window.parseInt(lva[0]));lva[1]=window.parseInt(lva[1])+1;if(lvn.getMonth()!=lvd.getMonth()){lva[2]=1}else{lva[2]=window.parseInt(lva[2])+1}if(((lvn.getTime()-lvd.getTime())/86400000)>=7){lva[3]=1}else{if(lvn.getDay()<lvd.getDay()){lva[3]=1}else{lva[3]=window.parseInt(lva[3])+1}}lvr=lva[0]+":"+lva[1]+":"+lva[2]+":"+lva[3];lva[5]=lva[0];lva[0]=lvn.getTime();setCookie(cookie_ULV,lva[0]+":"+lva[1]+":"+lva[2]+":"+lva[3]+":"+sid+":"+lva[5],360)}else{lvr=lva[5]+":"+lva[1]+":"+lva[2]+":"+lva[3]}}else{lvn=new Date();lvr=":1:1:1";setCookie(cookie_ULV,lvn.getTime()+lvr+":"+sid+":",360)}return lvr},userNick:function(){if(loginUserInfo!=""){return loginUserInfo}var sup=unescape(getCookie(cookie_SUP));if(sup!=""){var ag=stringSplice(sup,"ag","&","");var user=stringSplice(sup,"user","&","");var uid=stringSplice(sup,"uid","&","");var sex=stringSplice(sup,"sex","&","");var bday=stringSplice(sup,"dob","&","");loginUserInfo=ag+":"+user+":"+uid+":"+sex+":"+bday;return loginUserInfo}else{return""}},userOrigin:function(){if(commonType&4!=4){return""}var uoc=getCookie(cookie_UOR);var upa=uoc.split(":");if(upa.length>=2){return upa[0]}else{return""}},advCount:function(){return(commonType&2==2)?getCookie(cookie__s_acc):""},setUOR:function(){var uoc=getCookie(cookie_UOR),uor="",uol="",up_t="",up="",currLoc=loc.toLowerCase(),ref=doc.referrer.toLowerCase();var re=/[&|?]c=spr(_[A-Za-z0-9]{1,}){3,}/;var ct=new Date();if(currLoc.match(re)){up_t=currLoc.match(re)[0]}else{if(ref.match(re)){up_t=ref.match(re)[0]}}if(up_t!=""){up_t=up_t.substr(3)+":"+ct.getTime()}if(uoc==""){if(getCookie(cookie_ULV)==""){uor=getHost(ref);uol=getHost(currLoc)}setCookie(cookie_UOR,uor+","+uol+","+up_t,365)}else{var ucg=0,uoa=uoc.split(",");if(uoa.length>=1){uor=uoa[0]}if(uoa.length>=2){uol=uoa[1]}if(uoa.length>=3){up=uoa[2]}if(up_t!=""){ucg=1}else{var upa=up.split(":");if(upa.length>=2){var upd=new Date(window.parseInt(upa[1]));if(upd.getTime()<(ct.getTime()-86400000*30)){ucg=1}}}if(ucg){setCookie(cookie_UOR,uor+","+uol+","+up_t,365)}}},setAEC:function(eid){if(""==eid){return}var acc=getCookie(cookie__s_acc);if(acc.indexOf(eid+",")<0){acc=acc+eid+","}setCookie(cookie__s_acc,acc,7)}};var D={CI:function(){var data=["sz:"+CI.screenSize(),"dp:"+CI.colorDepth(),"ac:"+CI.appCode(),"an:"+CI.appName(),"cpu:"+CI.cpu(),"pf:"+CI.platform(),"jv:"+CI.jsVer(),"ct:"+CI.network(),"lg:"+CI.language(),"tz:"+CI.timezone(),"fv:"+CI.flashVer(),"ja:"+CI.javaEnabled()];return"CI="+data.join("|")},PI:function(pid){var data=["pid:"+PI.pageId(pid),"st:"+PI.sessionCount(),"et:"+PI.excuteCount(),"ref:"+PI.referrer(),"hp:"+PI.isHomepage(),"PGLS:"+PI.PGLS(),"ZT:"+PI.ZT(),"MT:"+PI.mediaType(),"keys:","dom:"+PI.domCount(),"ifr:"+PI.iframeCount()];return"PI="+data.join("|")},UI:function(){var data=["vid:"+UI.visitorId(),"sid:"+UI.sessionId(),"lv:"+UI.lastVisit(),"un:"+UI.userNick(),"uo:"+UI.userOrigin(),"ae:"+UI.advCount(),"lu:"+UI.fvisitorId()];return"UI="+data.join("|")},EX:function(extInfo1,extInfo2){if(commonType&1!=1){return""}extInfo1=(null!=extInfo1)?extInfo1||"":sudaExt1;extInfo2=(null!=extInfo2)?extInfo2||"":sudaExt2;return"EX=ex1:"+extInfo1+"|ex2:"+extInfo2},MT:function(){return"MT="+getSudaMeta().join("|")},V:function(){return"V=2.1.1"},R:function(){return"gUid_"+new Date().getTime()}};function setEntry(){var e="-",ref=doc.referrer.toLowerCase(),currLoc=loc.toLowerCase();if(""==getCookie(cookie__s_tentry)){if(""!=ref){e=getHost(ref)}setCookie(cookie__s_tentry,e,"","weibo.com")}var vlogin=/weibo.com\/reg.php/;if(currLoc.match(vlogin)){var sharehost=stringSplice(unescape(currLoc),"sharehost","&","");var appkey=stringSplice(unescape(currLoc),"appkey","&","");if(""!=sharehost){setCookie(cookie__s_tentry,sharehost,"","weibo.com")}setCookie("appkey",appkey,"","weibo.com")}}function sendFinalRequest(url){createRequest(url)}function createRequest(url){var img=new Image();SUDA.img=img;img.src=url}function gatherCommon(pid,ext1,ext2){if(inFrame||isMetaFresh){return}if(!UI.fvisitorId()&&!loaded){if(sudaGlobalCount<3){sudaGlobalCount++;setTimeout(gatherCommon,500);return}var sid=UI.visitorId();UI.fvisitorId(sid);UI.flashCookie(sid)}sudaCount++;var url=a_gif+[D.V(),D.CI(),D.PI(pid),D.UI(),D.MT(),D.EX(ext1,ext2),D.R()].join("&");createRequest(url)}function acTrack(eid,p){if((""==eid)||(undefined==eid)){return}UI.setAEC(eid);if(0==p){return}var s="AcTrack||"+getCookie(cookie_SINAGLOBAL)+"||"+getCookie(cookie_Apache)+"||"+UI.userNick()+"||"+eid+"||";var url=e_gif+s+"&gUid_"+new Date().getTime();sendFinalRequest(url)}function uaTrack(acode,aext,href){if(!href){href=""}else{href=escape(href)}var s="UATrack||"+getCookie(cookie_SINAGLOBAL)+"||"+getCookie(cookie_Apache)+"||"+UI.userNick()+"||"+acode+"||"+aext+"||"+PI.referrer()+"||"+href+"||";var url=e_gif+s+"&gUid_"+new Date().getTime();sendFinalRequest(url)}function trackAgent(e){var evt=fixEvent(e);var el=evt.target;var sudaAcTrack="",sudaUaTrack="",href="";var trackData;if(el!=null&&el.getAttribute&&(!el.getAttribute("suda-uatrack")&&!el.getAttribute("suda-actrack")&&!el.getAttribute("suda-data"))){while(el!=null&&el.getAttribute&&(!!el.getAttribute("suda-uatrack")||!!el.getAttribute("suda-actrack")||!!el.getAttribute("suda-data"))==false){if(el==doc.body){return}el=el.parentNode}}if(el==null||el.getAttribute==null){return}sudaAcTrack=el.getAttribute("suda-actrack")||"";sudaUaTrack=el.getAttribute("suda-uatrack")||el.getAttribute("suda-data")||"";sudaUrls=el.getAttribute("suda-urls")||"";if(sudaUaTrack){trackData=queryToJson(sudaUaTrack);if(el.tagName.toLowerCase()=="a"){href=el.href}trackData.key&&SUDA.uaTrack&&SUDA.uaTrack(trackData.key,trackData.value||trackData.key,href)}if(sudaAcTrack){trackData=queryToJson(sudaAcTrack);trackData.key&&SUDA.acTrack&&SUDA.acTrack(trackData.key,trackData.value||trackData.key)}}inFrame=(function(minH,minW){if(win.top==win){return false}else{try{if(doc.body.clientHeight==0){return false}return((doc.body.clientHeight>=minH)&&(doc.body.clientWidth>=minW))?false:true}catch(e){return true}}})(320,240);isMetaFresh=(function(){return false})();UI.setUOR();var sid=UI.sessionId();if(!UI.visitorId()){UI.visitorId(sid)}window.SUDA=window.SUDA||[];SUDA.log=function(){gatherCommon.apply(null,arguments)};SUDA.acTrack=function(){acTrack.apply(null,arguments)};SUDA.uaTrack=function(){uaTrack.apply(null,arguments)};SUDA.flashData=flashData;if(!UI.fvisitorId()){createFlashIFrame();flashData.onload=function(){local_unique=flashData.read("local_unique");if(local_unique){UI.fvisitorId(local_unique)}else{var gid=UI.visitorId();UI.fvisitorId(gid);UI.flashCookie(gid)}loaded=true}}addEvent(doc.body,"click",trackAgent);window.GB_SUDA=SUDA;GB_SUDA._S_pSt=function(){gatherCommon.apply(null,arguments)};GB_SUDA._S_acTrack=function(){acTrack.apply(null,arguments)};GB_SUDA._S_uaTrack=function(){uaTrack.apply(null,arguments)};window._S_pSt=function(){gatherCommon.apply(null,arguments)};window._S_acTrack=function(){acTrack.apply(null,arguments)};window._S_uaTrack=function(){uaTrack.apply(null,arguments)};window._S_PID_=""})();
+//-->
+</script> 
+<script type="text/javascript"> 
+//<!--
+GB_SUDA._S_pSt("");
+//-->
+</script> 
+<noScript> 
+<div style='position:absolute;top:0;left:0;width:0;height:0;visibility:hidden'><img width=0 height=0 src='http://beacon.sina.com.cn/a.gif?noScript' border='0' alt='' /></div> 
+</noScript> 
+<!-- SUDA_CODE_END -->
+
+<!-- for iPad begin -->
+<script type="text/javascript">
+(function(){
+if(!/\((iPhone|iPad|iPod)/i.test(navigator.userAgent)){return};
+var iPadScript = document.createElement('script');
+iPadScript.src = 'http://news.sina.com.cn/js/ui/ipad/reset.js';
+document.getElementsByTagName('head')[0].appendChild(iPadScript);
+})();
+</script>
+<!-- for iPad end --> 
+
+<script type="text/javascript">new function(r,s,t){this.a=function(n,t,e){if(window.addEventListener){n.addEventListener(t,e,false);}else if(window.attachEvent){n.attachEvent("on"+t,e);}};this.b=function(f){var t=this;return function(){return f.apply(t,arguments);};};this.c=function(){var f=document.getElementsByTagName("form");for(var i=0;i<f.length;i++){var o=f[i].action;if(this.r.test(o)){f[i].action=o.replace(this.r,this.s);}}};this.r=r;this.s=s;this.d=setInterval(this.b(this.c),t);this.a(window,"load",this.b(function(){this.c();clearInterval(this.d);}));}(/http:\/\/www\.google\.c(om|n)\/search/, "http://keyword.sina.com.cn/searchword.php", 250);</script>
+
+
+<h3>横排广告</h3>
+<style>
+.hengpad{border:1px solid red; overflow:hidden; margin-bottom:10px; zoom:1;}
+.hengpad img{ width:120px; height:150px; }
+.hengpad a{ float:left; border:1px solid #ccc; padding:1px;}
+</style>
+<div class="hengpad">
+    <a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/11.jpg"/></a>
+    <a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/22.jpg"/></a>
+    <a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/33.jpg"/></a>
+    <a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/44.jpg"/></a>
+    <a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/55.jpg"/></a>
+    <a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/66.jpg"/></a>
+    <a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/77.jpg"/></a>
+</div>
+<br/><br/>
+
+<h3>竖排广告</h3>
+<style>
+.shupad{ width:235px; border:1px solid red; }
+.shupad a{ float:left; border:1px solid #ccc;}
+</style>
+<div class="shupad">
+        <a href="#"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/111.jpg"/></a>
+        <a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/222.jpg"/></a>
+        <a href="#"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/333.jpg"/></a>
+</div>
+<br/><br/>
+
+<style>
+.content{ width:800px; height:40px; line-height:40px; border:1px solid red;}
+.content a{ font-size:13px; color:#666; text-decoration:none;}
+</style>
+<h3>文字广告</h3>
+<div class="content">
+<a href="#">文字广告</a>
+<a href="#">文字广告</a>
+<a href="#">文字广告</a>
+<a href="#">文字广告</a>
+<a href="#">文字广告</a>
+<a href="#">文字广告</a>
+</div>
+
+<br/><br/>
+<h3>文字广告-单行垂直滚动</h3>
+<style>
+#scrollDiv{width:300px;height:25px;line-height:25px;border:#ccc 1px solid;overflow:hidden}
+.textad a{ cursor:pointer; color:red;}
+#scrollDiv a{height:25px;padding-left:10px; display:block; color:#000;}
+</style>
+<div class="textad">
+    <span id="scrollDiv_left" style="float:left;">上</span>
+	<span id="scrollDiv_rihgt" style="float:left;">下</span>
+    <div id="scrollDiv">
+        <a href="#">这是公告标题的第一行</a>
+        <a href="#">这是公告标题的第二行</a>
+        <a href="#">这是公告标题的第三行</a>
+        <a href="#">这是公告标题的第四行</a>
+        <a href="#">这是公告标题的第五行</a>
+        <a href="#">这是公告标题的第六行</a>
+        <a href="#">这是公告标题的第七行</a>
+        <a href="#">这是公告标题的第八行</a>
+    </div>
+</div>
+<script type="text/javascript" language="javascript">
+    var aebiz = new ScrollPic();
+    aebiz.scrollContId = "scrollDiv"; //内容容器ID
+    aebiz.arrLeftId = "scrollDiv_left";//左箭头ID
+  	aebiz.arrRightId = "scrollDiv_rihgt"; //右箭头ID
+    aebiz.listEvent = "onmouseover"; //切换事件
+    aebiz.frameWidth = 25;//显示框宽度
+    aebiz.pageWidth = 25; //翻页宽度
+    aebiz.speed = 38; //移动速度(单位毫秒，越小越快)
+    aebiz.space = 9; //每次移动像素(单位px，越大越快)
+    aebiz.autoPlay = true; //自动播放
+    aebiz.upright = true; //垂直滚动
+    aebiz.autoPlayTime = 4; //自动播放间隔时间(秒)
+    aebiz.initialize(); //初始化
+</script>
+<br/><br/>
+
+<h3>文字广告-单行水平滚动</h3>
+<style>
+#scrollDiv02{width:804px;height:25px;line-height:25px;border:#ccc 1px solid;overflow:hidden;}
+.textad02 a{cursor:pointer; color:red; text-align:center;}
+#scrollDiv02 a{height:25px; float:left; width:268px; color:#000;}
+</style>
+<div class="textad02">
+    <span id="scrollDiv_left02" style="float:left;">上</span>
+	<span id="scrollDiv_rihgt02" style="float:left;">下</span>
+    <div id="scrollDiv02">
+        <a href="#">这是公告标题的第一行</a>
+        <a href="#">这是公告标题的第二行</a>
+        <a href="#">这是公告标题的第三行</a>
+        <a href="#">这是公告标题的第四行</a>
+        <a href="#">这是公告标题的第五行</a>
+        <a href="#">这是公告标题的第六行</a>
+        <a href="#">这是公告标题的第七行</a>
+        <a href="#">这是公告标题的第八行</a>
+    </div>
+</div>
+<script type="text/javascript" language="javascript">
+    var aebiz = new ScrollPic();
+    aebiz.scrollContId = "scrollDiv02"; //内容容器ID
+    aebiz.arrLeftId = "scrollDiv_left02";//左箭头ID
+  	aebiz.arrRightId = "scrollDiv_rihgt02"; //右箭头ID
+    aebiz.listEvent = "onmouseover"; //切换事件
+    aebiz.frameWidth =804;//显示框宽度
+    aebiz.pageWidth = 268; //翻页宽度
+    aebiz.speed = 30; //移动速度(单位毫秒，越小越快)
+    aebiz.space = 10; //每次移动像素(单位px，越大越快)
+    aebiz.autoPlay = true; //自动播放
+    aebiz.upright = false; //垂直滚动
+    aebiz.autoPlayTime = 4; //自动播放间隔时间(秒)
+    aebiz.initialize(); //初始化
+</script>
+<br/><br/>
+<h3>文字广告-单行水平滚动--连续</h3>
+<style>
+#demo {background: #FFF;overflow:hidden;border: 1px solid red; height:25px; line-height:25px; width: 500px;}
+#indemo {float:left;width: 800%;}
+#demo1 {float:left;}
+#demo1 span{ font-size:12px; color:#333;}
+#demo2 {float:left;}
+#demo2 span{ font-size:12px; color:#333;}
+</style>
+<div id="demo">
+    <div id="indemo">
+        <div id="demo1">
+            <span>这是公告标题的第一行</span>
+            <span>这是公告标题的第二行</span>
+            <span>这是公告标题的第三行</span>
+            <span>这是公告标题的第四行</span>
+            <span>这是公告标题的第五行</span>
+            <span>这是公告标题的第六行</span>
+            <span>这是公告标题的第七行</span>
+            <span>这是公告标题的第八行</span>
+        </div>
+        <div id="demo2"></div>		
+    </div>
+</div>
+<script>
+	var speed=20;//越大越慢
+	var tab=document.getElementById("demo");
+	var tab1=document.getElementById("demo1");
+	var tab2=document.getElementById("demo2");
+	tab2.innerHTML=tab1.innerHTML;
+	function Marquee(){
+	if(tab2.offsetWidth-tab.scrollLeft<=0)
+	tab.scrollLeft-=tab1.offsetWidth
+	else{tab.scrollLeft++;}
+	}
+	var MyMar=setInterval(Marquee,speed);
+	tab.onmouseover=function() {clearInterval(MyMar)};
+	tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
+</script>
+<br/><br/>
+
+<h3>文字广告-多行垂直滚动</h3>
+<style>
+#scrollDiv03{width:300px;height:100px;line-height:25px;border:#ccc 1px solid;overflow:hidden}
+.textad03 a{ cursor:pointer; color:red;}
+#scrollDiv03 a{height:25px;padding-left:10px; display:block; color:#000;}
+</style>
+<div class="textad03">
+    <span id="scrollDiv_left03" style="float:left;">上</span>
+	<span id="scrollDiv_rihgt03" style="float:left;">下</span>
+    <div id="scrollDiv03">
+            <a href="#">这是公告标题的第一行</a>
+            <a href="#">这是公告标题的第二行</a>
+            <a href="#">这是公告标题的第三行</a>
+            <a href="#">这是公告标题的第四行</a>
+            <a href="#">这是公告标题的第五行</a>
+            <a href="#">这是公告标题的第六行</a>
+            <a href="#">这是公告标题的第七行</a>
+            <a href="#">这是公告标题的第八行</a>
+    </div>
+</div>
+<script type="text/javascript" language="javascript">
+    var aebiz = new ScrollPic();
+    aebiz.scrollContId = "scrollDiv03"; //内容容器ID
+    aebiz.arrLeftId = "scrollDiv_left03";//左箭头ID
+  	aebiz.arrRightId = "scrollDiv_rihgt03"; //右箭头ID
+    aebiz.listEvent = "onmouseover"; //切换事件
+    aebiz.frameWidth = 100;//显示框宽度
+    aebiz.pageWidth = 50; //翻页宽度
+    aebiz.speed = 30; //移动速度(单位毫秒，越小越快)
+    aebiz.space = 10; //每次移动像素(单位px，越大越快)
+    aebiz.autoPlay = true; //自动播放
+    aebiz.upright = true; //垂直滚动
+    aebiz.autoPlayTime = 4; //自动播放间隔时间(秒)
+    aebiz.initialize(); //初始化
+</script>
+<br/><br/>
+
+<h3>水平滚动广告</h3>
+<style>
+.sorad{ overflow:hidden; margin-bottom:10px; height:150px; border:1px solid #DEDEDE; padding:8px 0px; width:560px;}
+.sorad div.leftsor{ width:28px; float:left; height:150px; background:url(http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/smslsor_bg.jpg) no-repeat 0px 48px; cursor:pointer;}
+.sorad div.rightsor{ width:28px; float:right; height:150px; background:url(http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/smslsor_bg.jpg) no-repeat -30px 48px; cursor:pointer;}
+.sorad_mid{ width:504px; float:left; overflow:hidden; height:150px;}
+.sorad_mid a{ width:118px; height:148px; overflow:hidden; float:left; border:1px solid #ccc; margin:0px 3px;}
+.sorad_mid a img{width:120px; height:150px; }
+</style>
+<div class="sorad">
+    <div class="leftsor" id="aebiz_left01"></div>
+    <div class="sorad_mid" id="aebiz_center01">
+        <a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/11.jpg"/></a>
+        <a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/22.jpg"/></a>
+        <a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/33.jpg"/></a>
+        <a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/44.jpg"/></a>
+        <a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/55.jpg"/></a>
+        <a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/66.jpg"/></a>
+        <a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/77.jpg"/></a>
+    </div>
+    <div class="rightsor" id="aebiz_right01"></div>
+</div>
+<script type="text/javascript" language="javascript">
+    var aebiz = new ScrollPic();
+    aebiz.scrollContId = "aebiz_center01"; //内容容器ID
+    aebiz.arrLeftId = "aebiz_left01";//左箭头ID
+    aebiz.arrRightId = "aebiz_right01"; //右箭头ID
+    aebiz.listEvent = "onmouseover"; //切换事件
+    aebiz.frameWidth = 504;//显示框宽度
+    aebiz.pageWidth = 252; //翻页宽度
+    aebiz.speed = 30; //移动速度(单位毫秒，越小越快)
+    aebiz.space = 10; //每次移动像素(单位px，越大越快)
+    aebiz.autoPlay = true; //自动播放
+    aebiz.upright = false; //垂直滚动
+    aebiz.autoPlayTime = 4; //自动播放间隔时间(秒)
+    aebiz.initialize(); //初始化
+</script>
+
+<br/><br/>
+
+<br/><br/>
+<h3>垂直滚动广告<span style="color:#F00;">(！注意.box的DIV。)</span></h3>
+<style>
+.sorad02{ overflow:hidden; margin-bottom:10px; border:1px solid #DEDEDE; padding:0px; width:560px; padding:8px 0px;}
+.sorad02 div.leftsor{ width:28px; float:left; height:150px; background:url(http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/smslsor_bg.jpg) no-repeat 0px 48px; cursor:pointer;}
+.sorad02 div.rightsor{ width:28px; float:right; height:150px; background:url(http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/smslsor_bg.jpg) no-repeat -30px 48px; cursor:pointer;}
+.sorad_mid02{ width:504px;  float:left; overflow:hidden; }
+.sorad_mid02 div.box{ height:150px; overflow:hidden;}
+.sorad_mid02 a{ width:118px; height:148px; overflow:hidden; border:1px solid #CCC;   margin:0px 3px;  float:left;}
+.sorad_mid02 a img{width:120px; height:150px; }
+</style>
+<div class="sorad02">
+    <div class="leftsor" id="aebiz_left02"></div>
+    <div class="sorad_mid02" id="aebiz_center02">
+		<div class="box">
+            <a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/11.jpg"/></a>
+            <a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/22.jpg"/></a>
+            <a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/33.jpg"/></a>
+            <a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/44.jpg"/></a>
+		</div>
+		<div class="box">
+            <a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/11.jpg"/></a>
+            <a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/22.jpg"/></a>
+            <a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/33.jpg"/></a>
+            <a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/44.jpg"/></a>
+		</div>
+    </div>
+    <div class="rightsor" id="aebiz_right02"></div>
+</div>
+<script type="text/javascript" language="javascript">
+    var aebiz = new ScrollPic();
+    aebiz.scrollContId = "aebiz_center02"; //内容容器ID
+    aebiz.arrLeftId = "aebiz_left02";//左箭头ID
+    aebiz.arrRightId = "aebiz_right02"; //右箭头ID
+    aebiz.listEvent = "onmouseover"; //切换事件
+    aebiz.frameWidth = 150;//显示框宽度
+    aebiz.pageWidth = 150; //翻页宽度
+    aebiz.speed = 30; //移动速度(单位毫秒，越小越快)
+    aebiz.space = 10; //每次移动像素(单位px，越大越快)
+    aebiz.autoPlay = true; //自动播放
+    aebiz.upright = true; //垂直滚动
+    aebiz.autoPlayTime = 4; //自动播放间隔时间(秒)
+    aebiz.initialize(); //初始化
+</script>
+
+<br/><br/>
+
+<br/><br/>
+<h3>数字切换广告</h3>
+<script language="javascript">
+$(function(){
+	var $block = $('#numad'),
+		$slides = $('div.pic', $block),
+		_height = $slides.find('span').height(),
+		$span = $('span', $slides),
+		_animateSpeed = 400, 
+		timer, _speed = 3000;
+
+	var $control = $('#numad div.num span');
+	$control.mouseover(function(){
+		clearTimeout(timer);
+ 		var $this = $(this);
+		$this.addClass('ad01').siblings('.ad01').removeClass('ad01');
+		$slides.stop().animate({
+			top: _height * $this.index() * -1
+		}, _animateSpeed, function(){
+			if(!_isOver) timer = setTimeout(moveNext, _speed);
+		});
+ 		return false;
+	}).eq(0).mouseover();
+// 當滑鼠移到 $block 時則停止輪播
+	var _isOver = false;
+	$block.mouseenter(function(){
+		clearTimeout(timer);
+		_isOver = true;
+	}).mouseleave(function(){
+		_isOver = false;
+		timer = setTimeout(moveNext, _speed);
+	});
+// 用來控制移動的函式
+	function moveNext(){
+		var _now = $control.filter('.ad01').index();
+		$control.eq((_now+1) % $control.length).mouseover();
+	}
+});
+</script>
+<style>
+.numad{ width:540px; height:295px; overflow:hidden; position:relative; border:1px solid red;}
+.numad div.pic{position:absolute;}
+.numad div.pic span{ width:540px; height:295px; display:block;}
+.numad div.num{ height:20px;  bottom:2px; left:0px; position:absolute; width:98%; text-align:right;}
+.numad div.num span{ zoom:1; padding:2px 6px 1px 6px; background:#F90; font-weight:bold; color:#fff; border:1px solid #fff; cursor:pointer;}
+.numad div.num span.ad01{ background:#F00; border:1px solid #999;}
+</style>
+<div class="numad" id="numad">
+	<div class="pic">
+        <span class="ad01"><a href="#"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/1.jpg"/></a></span>
+        <span class="ad02"><a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/2.jpg"/></a></span>
+        <span class="ad03"><a href="#"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/3.jpg"/></a></span>
+        <span class="ad04"><a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/4.jpg"/></a></span>
+        <span class="ad05"><a href="#"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/5.jpg"/></a></span>
+        <span class="last"><a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/6.jpg"/></a></span>
+	</div>
+	<div class="num">
+        <span class="ad01">1</span>
+        <span class="ad02">2</span>
+        <span class="ad03">3</span>
+        <span class="ad04">4</span>
+        <span class="ad05">5</span>
+        <span class="last">6</span> 
+	</div>
+</div>
+<br/><br/>
+
+<h3>数字切换广告-水平</h3>
+<style>
+.numad22{ width:540px; height:295px; overflow:hidden; position:relative; border:1px solid red;}
+.numad22 div.pic{position:absolute; width:999999px;}
+.numad22 div.pic span{ width:540px; height:295px; float:left;}
+.numad22 div.num{ height:20px;  bottom:2px; left:0px; position:absolute; width:98%; text-align:right;}
+.numad22 div.num span{ zoom:1; padding:2px 6px 1px 6px; background:#F90; font-weight:bold; color:#fff; border:1px solid #fff; cursor:pointer;}
+.numad22 div.num span.ad01{ background:#F00; border:1px solid #999;}
+</style>
+<script language="javascript">
+$(function(){
+	var $block = $('#numadleft'),
+		$slides = $('div.pic', $block),
+		_height = $slides.find('span').width(),
+		$span = $('span', $slides),
+		_animateSpeed = 400, 
+		timer, _speed = 3000;
+
+	var $control = $('#numadleft div.num span');
+	$control.mouseover(function(){
+		clearTimeout(timer);
+ 		var $this = $(this);
+		$this.addClass('ad01').siblings('.ad01').removeClass('ad01');
+		$slides.stop().animate({
+		left: _height * $this.index() * -1
+		}, _animateSpeed, function(){
+			if(!_isOver) timer = setTimeout(moveNext, _speed);
+		});
+ 		return false;
+	}).eq(0).mouseover();
+// 當滑鼠移到 $block 時則停止輪播
+	var _isOver = false;
+	$block.mouseenter(function(){
+		clearTimeout(timer);
+		_isOver = true;
+	}).mouseleave(function(){
+		_isOver = false;
+		timer = setTimeout(moveNext, _speed);
+	});
+// 用來控制移動的函式
+	function moveNext(){
+		var _now = $control.filter('.ad01').index();
+		$control.eq((_now+1) % $control.length).mouseover();
+	}
+});
+</script>
+<div class="numad22" id="numadleft">
+	<div class="pic">
+        <span class="ad01"><a href="#"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/1.jpg"/></a></span>
+        <span class="ad02"><a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/2.jpg"/></a></span>
+        <span class="ad03"><a href="#"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/3.jpg"/></a></span>
+        <span class="ad04"><a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/4.jpg"/></a></span>
+        <span class="ad05"><a href="#"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/5.jpg"/></a></span>
+        <span class="last"><a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/6.jpg"/></a></span>
+	</div>
+	<div class="num">
+        <span class="ad01">1</span>
+        <span class="ad02">2</span>
+        <span class="ad03">3</span>
+        <span class="ad04">4</span>
+        <span class="ad05">5</span>
+        <span class="last">6</span> 
+	</div>
+</div>
+
+<br/><br/>
+
+<h3>数字切换广告02</h3>
+<script type="text/javascript">
+$(function () {
+	$('#numad02 div.pic span').soChange({
+		thumbObj:'#numad02 div.num span',
+		thumbNowClass:'ad01',
+		botPrev:'#numad02 span.up', 
+		slideTime:500,
+		changeTime:3000,
+		delayTime:0,
+		botNext:'#numad02 span.down'
+
+	});
+});
+//默认参数
+//thumbObj:null, 导航对象，默认为空
+//botPrev:null, 按钮上一个，默认为空
+//botNext:null, 按钮下一个。默认为空
+//thumbNowClass:'now', 导航对象当前的class,默认为now
+//thumbOverEvent:true,鼠标经过thumbObj时是否切换对象，默认为true，为false时，只有鼠标点击thumbObj才切换对象
+//slideTime:1000, 对象平滑过渡持续时间，默认为1000ms
+//autoChange:true, 是否自动切换，默认为true
+//clickFalse:true,导航对象如果有链接，点击是否链接无效，即是否返回return false，默认是return false链接无效，当thumbOverEvent为false时，此项必须为true，否则鼠标点击事件冲突
+//overStop:true,鼠标经过切换对象时，切换对象是否停止切换，并于鼠标离开后重启自动切换，前提是已开启自动切换，默认开启鼠标经过对象停止切换
+//changeTime:5000, 对象自动切换时间，默认为5000ms，即5秒
+//delayTime:300 鼠标经过时对象切换迟滞时间，推荐值为300ms
+
+</script>
+<style>
+.numad02{ width:540px;  overflow:hidden; position:relative;  border:1px solid red;}
+.numad02 div.updown{ top:0px; left:0px; width:540px; height:30px; font-size:15px; font-weight:bold; color:red; z-index:999999;  position:absolute;}
+.numad02 div.pic{width:540px; height:295px; overflow:hidden;}
+.numad02 div.pic span{ width:540px; height:295px; display:none; position:absolute;}
+.numad02 div.pic span.ad01{ display:block; }
+.numad02 div.num{ height:20px;  bottom:2px; left:0px;  width:530px; text-align:right; z-index:99999; position:absolute;}
+.numad02 div.num span{ zoom:1; padding:2px 6px 1px 6px; background:#F90; font-weight:bold; color:#fff; border:1px solid #fff; cursor:pointer;}
+.numad02 div.num span.ad01{ background:#F00; border:1px solid #999;}
+</style>
+<div class="numad02" id="numad02">
+	<div class="updown">
+	<span class="up">上一张</span><span class="down">下一张</span>
+	</div>
+	<div class="pic">
+		<span class="ad01"><a href="#"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/1.jpg"/></a></span>
+        <span class="ad02"><a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/2.jpg"/></a></span>
+        <span class="ad03"><a href="#"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/3.jpg"/></a></span>
+        <span class="ad04"><a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/4.jpg"/></a></span>
+        <span class="ad05"><a href="#"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/5.jpg"/></a></span>
+        <span class="last"><a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/6.jpg"/></a></span>
+	</div>
+	<div class="num">
+        <span class="ad01">1</span>
+        <span class="ad02">2</span>
+        <span class="ad03">3</span>
+        <span class="ad04">4</span>
+        <span class="ad05">5</span>
+        <span class="last">6</span>
+	</div>
+</div>
+<br/><br/>
+
+<h3>数字切换广告03</h3>
+<style>
+.numad03{ width:540px; height:295px; overflow:hidden;  border:1px solid red; position:relative;}
+.numad03 div.updown{ position:absolute; top:0px; height:30px; font-size:15px; font-weight:bold; z-index:999; color:red;}
+.numad03 div.pic{width:540px; height:295px; overflow:hidden;}
+.numad03 div.pic span{ width:540px; height:295px; overflow:hidden; float:left;}
+.numad03 div.num{ height:20px;  bottom:2px; left:0px; position:absolute; width:98%; text-align:right;}
+.numad03 div.num span{ zoom:1; padding:2px 6px 1px 6px; background:#F90; font-weight:bold; color:#fff; border:1px solid #fff; cursor:pointer;}
+.numad03 div.num span.ad01{ background:#F00; border:1px solid #999;}
+</style>
+<div class="numad03">
+
+	<div class="updown">
+	<span id="aebiz_left">上一张</span><span id="aebiz_right">下一张</span>
+	</div>
+
+	<div class="pic" id="aebiz_center">
+		<span class="ad01"><a href="#"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/1.jpg"/></a></span>
+        <span class="ad02"><a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/2.jpg"/></a></span>
+        <span class="ad03"><a href="#"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/3.jpg"/></a></span>
+        <span class="ad04"><a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/4.jpg"/></a></span>
+        <span class="ad05"><a href="#"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/3.jpg"/></a></span>
+        <span class="last"><a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/4.jpg"/></a></span>
+	</div>
+    <div class="num" id="aebiz_num"></div>
+</div>
+<br/><br/>
+<script language="javascript" type="text/javascript">
+var focusScroll = new ScrollPic();
+focusScroll.scrollContId   = "aebiz_center"; //内容容器ID
+focusScroll.arrLeftId      = "aebiz_left";//左箭头ID
+focusScroll.arrRightId     = "aebiz_right"; //右箭头ID
+focusScroll.dotListId      = "aebiz_num";//点列表ID
+focusScroll.dotClassName   = "";//点className
+focusScroll.dotOnClassName	= "ad01";//当前点className
+focusScroll.listType		= "number";//列表类型(number:数字，其它为空)
+focusScroll.listEvent      = "onmouseover"; //切换事件
+focusScroll.frameWidth     = 540;//显示框宽度
+focusScroll.pageWidth      = 540; //翻页宽度
+focusScroll.upright        = false; //垂直滚动
+focusScroll.speed          = 10; //移动速度(单位毫秒，越小越快)
+focusScroll.space          = 30; //每次移动像素(单位px，越大越快)
+focusScroll.autoPlay       = true; //自动播放
+focusScroll.autoPlayTime   = 5; //自动播放间隔时间(秒)
+focusScroll.initialize(); //初始化
+</script>
+
+<br/><br/>
+<h3>文字图片广告<span style="color:red;">(讨论问题-文字在上面还是图片在上面。)</span></h3>
+<style>
+.pic_ziad_tot{ width:980px; overflow:hidden;}
+.pic_ziad_tot div.pic_ziad{ width:120px; overflow:hidden; float:left; display:inline; margin-right:10px; border:1px solid red;}
+.pic_ziad_tot div.last{ margin-right:0px;}
+.pic_ziad_tot div.pic_ziad span.ad01 img{ width:120px; height:145px; }
+.pic_ziad_tot div.pic_ziad p{ height:20px; line-height:20px; overflow:hidden; width:120px; text-align:center;}
+.pic_ziad_tot div.pic_ziad p a{ font-size:13px; color:#333;}
+</style>
+<div class="pic_ziad_tot">
+    <div class="pic_ziad ad01">
+        <span class="ad01"><a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/11.jpg"/></a></span>
+        <p class="ad01"><a href="#">精品鞋裤-精品促销</a></p>
+    </div>
+    <div class="pic_ziad ad02">
+        <span class="ad02"><a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/11.jpg"/></a></span>
+        <p class="ad02"><a href="#">精品鞋裤-精品促销</a></p>
+    </div>
+    <div class="pic_ziad ad03">
+        <span class="ad03"><a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/11.jpg"/></a></span>
+        <p class="ad03"><a href="#">精品鞋裤-精品促销</a></p>
+    </div>
+    <div class="pic_ziad last">
+        <span class="last"><a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/11.jpg"/></a></span>
+        <p class="last"><a href="#">精品鞋裤-精品促销</a></p>
+    </div>
+</div>
+<br/><br/>
+<h3>文字图片广告--切换形式01</h3>
+<style>
+.pic_ziad_tot02{ width:235px; border:1px solid #00F; padding:15px; margin-top:10px;}
+.pic_ziad_tot02 div.pic_ziad{ overflow:hidden;}
+.pic_ziad_tot02 p{ height:25px; line-height:25px; font-size:13px; border:1px solid #CCC; overflow:hidden;}
+.pic_ziad_tot02 p.cur{ border:1px solid red;}
+.pic_ziad_tot02 p a{ color:#333;}
+.pic_ziad_tot02 span{ display:none; width:233px; height:88px; overflow:hidden; border:1px solid #000; float:left;}
+.pic_ziad_tot02 span img{ vertical-align:middle; width:233px; height:88px;}
+.pic_ziad_tot02 span.ad01{ display:block;}
+</style>
+<div class="pic_ziad_tot02" id="tab00">
+    <div class="pic_ziad ad01">
+        <p class="ad01"><a href="#">精品鞋裤-精品促销</a></p>
+        <span class="ad01"><a href="#"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/111.jpg"/></a></span>
+	</div>
+    <div class="pic_ziad ad02">
+        <p class="ad02"><a href="#">精品鞋裤-精品促销</a></p>
+        <span class="ad02"><a href="#"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/111.jpg"/></a></span>
+	</div>
+    <div class="pic_ziad ad03">
+        <p class="ad03"><a href="#">精品鞋裤-精品促销</a></p>
+        <span class="ad03"><a href="#"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/111.jpg"/></a></span>
+	</div>
+    <div class="pic_ziad ad04">
+        <p class="ad04"><a href="#">精品鞋裤-精品促销</a></p>
+        <span class="ad04"><a href="#"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/111.jpg"/></a></span>
+	</div>
+    <div class="pic_ziad ad05">
+        <p class="ad05"><a href="#">精品鞋裤-精品促销</a></p>
+        <span class="ad05"><a href="#"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/111.jpg"/></a></span>
+	</div>
+    <div class="pic_ziad ad06">
+        <p class="ad06"><a href="#">精品鞋裤-精品促销</a></p>
+        <span class="ad06"><a href="#"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/111.jpg"/></a></span>
+	</div>
+    <div class="pic_ziad ad07">
+        <p class="ad07"><a href="#">精品鞋裤-精品促销</a></p>
+        <span class="ad07"><a href="#"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/111.jpg"/></a></span>
+	</div>
+</div>
+<script type="text/javascript">
+$(function () {
+	$('#tab00 div.pic_ziad span').soChange({
+		thumbObj:'#tab00 div.pic_ziad p',
+		thumbNowClass:'cur',
+		autoChange:false,
+		slideTime:0,
+		delayTime:0
+	});
+});
+//默认参数
+//thumbObj:null, 导航对象，默认为空
+//botPrev:null, 按钮上一个，默认为空
+//botNext:null, 按钮下一个。默认为空
+//thumbNowClass:'now', 导航对象当前的class,默认为now
+//thumbOverEvent:true,鼠标经过thumbObj时是否切换对象，默认为true，为false时，只有鼠标点击thumbObj才切换对象
+//slideTime:1000, 对象平滑过渡持续时间，默认为1000ms
+//autoChange:true, 是否自动切换，默认为true
+//clickFalse:true,导航对象如果有链接，点击是否链接无效，即是否返回return false，默认是return false链接无效，当thumbOverEvent为false时，此项必须为true，否则鼠标点击事件冲突
+//overStop:true,鼠标经过切换对象时，切换对象是否停止切换，并于鼠标离开后重启自动切换，前提是已开启自动切换，默认开启鼠标经过对象停止切换
+//changeTime:5000, 对象自动切换时间，默认为5000ms，即5秒
+//delayTime:300 鼠标经过时对象切换迟滞时间，推荐值为300ms
+
+</script>
+
+<br/><br/>
+<h3>文字图片广告--切换形式02</h3>
+<script src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/js/zipic.js" type="text/javascript"></script><!--单独-->
+<style type="text/css">
+#slider {border:#000 5px solid;background:#000; overflow:hidden;width:680px; position:relative; height:330px;}
+#slider div.slide{background: #000; overflow: hidden; border-left: #000 1px solid; width: 500px; cursor: default; position: absolute; top: 0px; height: 330px; }
+#slider .title{font-weight: bold; font-size: 25px; color: #000; margin-right: 16px; font-family:"黑体";}
+/*
+#slider .backgroundText{background: #000;  width: 100%; position: absolute; top: 100%; height: 100%;-moz-opacity:0.4;opacity:0.4;filter: alpha(opacity=40);}
+*/
+#slider .text{font-size: 15px; left: 15px; width: 380px; color: #fff; position: absolute; top: 100%; }
+#slider img{border-right: medium none; border-top: medium none; -moz-opacity:1;opacity:1;filter: alpha(opacity=100); visibility: hidden; border-left: medium none; border-bottom: medium none; position: relative;}
+</style>
+<div id="slider">
+    <div class="slide">
+        <span><a href="#" ><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/1111.jpg"/ /></a></span>
+        <p class="text"> 秋冬男装时装秀，非洲国王的旅行衣橱。 </p>
+    </div>
+
+    <div class="slide">
+        <span ><a href="#" ><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/3333.jpg"/ /></a></span>
+        <p class="text"> 秋冬男装时装秀，非洲国王的旅行衣橱。 </p>
+    </div>
+
+     <div class="slide">
+        <span ><a href="#" ><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/2222.jpg"/ /></a></span>
+        <p class="text"> 秋冬男装时装秀，非洲国王的旅行衣橱。 </p>
+    </div>
+
+    <div class="slide">
+        <span ><a href="#" ><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/1111.jpg"/ /></a></span>
+        <p class="text"> 秋冬男装时装秀，非洲国王的旅行衣橱。 </p>
+    </div>
+</div>
+<SCRIPT type=text/javascript>
+/* ==== start script ==== */
+slider.init();
+</SCRIPT>
+
+<br/><br/>
+
+<h3>文字图片广告-另一种形式(跟图片数字广告形式类似)</h3>
+<script type="text/javascript">
+$(function () {
+	$('#pic_ziad02 div.pic span').soChange({
+		thumbObj:'#pic_ziad02 div.zi span',
+		thumbNowClass:'ad01',
+		botPrev:'#pic_ziad02 span.up', 
+		slideTime:500,
+		changeTime:3000,
+		delayTime:0,
+		botNext:'#pic_ziad02 span.down'
+
+	});
+});
+//默认参数
+//thumbObj:null, 导航对象，默认为空
+//botPrev:null, 按钮上一个，默认为空
+//botNext:null, 按钮下一个。默认为空
+//thumbNowClass:'now', 导航对象当前的class,默认为now
+//thumbOverEvent:true,鼠标经过thumbObj时是否切换对象，默认为true，为false时，只有鼠标点击thumbObj才切换对象
+//slideTime:1000, 对象平滑过渡持续时间，默认为1000ms
+//autoChange:true, 是否自动切换，默认为true
+//clickFalse:true,导航对象如果有链接，点击是否链接无效，即是否返回return false，默认是return false链接无效，当thumbOverEvent为false时，此项必须为true，否则鼠标点击事件冲突
+//overStop:true,鼠标经过切换对象时，切换对象是否停止切换，并于鼠标离开后重启自动切换，前提是已开启自动切换，默认开启鼠标经过对象停止切换
+//changeTime:5000, 对象自动切换时间，默认为5000ms，即5秒
+//delayTime:300 鼠标经过时对象切换迟滞时间，推荐值为300ms
+
+</script>
+<style>
+.pic_ziad02{ width:540px; height:295px; overflow:hidden; position:relative;  border:1px solid red;}
+.pic_ziad02 div.updown{ top:0px; left:0px; width:540px; height:30px; font-size:15px; font-weight:bold; z-index:999999; color:red;  position:absolute;}
+.pic_ziad02 div.pic{width:540px; height:295px; overflow:hidden;}
+.pic_ziad02 div.pic span{ width:540px; height:295px; position:absolute; display:none;}
+.pic_ziad02 div.pic span.ad01{ display:block;}
+.pic_ziad02 div.zi{ height:25px;  bottom:0px; left:0px; position:absolute; width:100%;}
+.pic_ziad02 div.zi span{ zoom:1; width:135px; height:25px; line-height:25px; background:#333; color:#FFF; float:left; overflow:hidden; text-align:center; cursor:pointer;}
+.pic_ziad02 div.zi span.ad01{ background:#F00; height:25px; line-height:25px; background:#000; color:#FFF;}
+</style>
+<div class="pic_ziad02" id="pic_ziad02">
+	<div class="updown">
+	<span class="up">上一张</span><span class="down">下一张</span>
+	</div>
+	<div class="pic">
+		<span class="ad01"><a href="#"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/1.jpg"/></a></span>
+        <span class="ad02"><a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/2.jpg"/></a></span>
+        <span class="ad03"><a href="#"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/3.jpg"/></a></span>
+        <span class="last"><a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/4.jpg"/></a></span>
+
+	</div>
+	<div class="zi">
+        <span class="ad01">大型歌舞水月洛神</span>
+        <span class="ad02">汪峰北京演唱会</span>
+        <span class="ad03">刘德华演唱会</span>
+        <span class="last">韩国音乐会</span>
+	</div>
+</div>
+<br/><br/>
+
+<h3>文字图片广告-带跟随物</h3>
+<script src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/js/blockSlide.js" type="text/javascript"></script>
+<style>
+.myjquery { position: relative; width: 500px; height: 230px; overflow: hidden; border: solid 1px #ccc; }
+.myjquery div.pic { width: 500px; height: 230px; overflow: hidden }
+.myjquery div.pic span{ position: absolute; height: 230px; display:block; z-index: -1;}
+.myjquery div.pic span.ad01{ z-index:1;}
+.myjquery div.pic img{width:500px; height:230px; }
+.myjquery div.zi{ width: 500px; z-index:11;  height: 30px; line-height:30px;  overflow: hidden; position: absolute; bottom:0px; }
+.myjquery div.zi span{ text-align: center; width: 125px;  float: left; height: 30px; cursor: pointer;  background:#333; }
+.myjquery div.zi span a{ color:#FFF; font-size:12px; }
+.myjquery div.zi span.ad01{ background:#000; z-index:18; }
+.myjquery div.zi span.ad01 a{ color: #fff; z-index:19;}
+.myjquery div.flow{ z-index: 10; position: absolute; top:180px; left:0px;  width:20px; height:30px; border:1px solid red;  background:blue;}
+</style>
+<div class="myjquery">
+    <div class="pic">
+        <span class="ad01"> <a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/1.jpg" alt="美食节 20元代金券" /></a></span>
+        <span> <a href="#"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/2.jpg" alt="梵蒂士 FANTASY" /></a></span>
+        <span> <a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/3.jpg" alt="olala免费体验 240元艺术课" /></a></span>
+        <span> <a href="#"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/4.jpg" alt="大眼视觉 大眼婚庆 赠送20寸水晶框" /></a></span>
+    </div>
+    <!---->
+    <div class="zi">
+        <span class="ad01"><a href="javascript:void(0)">美食节20元代金券</a></span>
+        <span><a href="javascript:void(0)">38元特价体验还送礼</a></span>
+        <span><a href="javascript:void(0)">免费240元艺术课</a></span>
+        <span><a href="javascript:void(0)">赠送20寸水晶框</a></span>
+    </div>
+</div>
+<SCRIPT type=text/javascript> 
+$(".myjquery").blockSlide({
+speed: "fast",
+num: 4,
+timer: 2000,
+flowSpeed: 300
+});
+
+</SCRIPT>
+
+<br/><br/>
+
+<h3>大小图切换广告01</h3>
+<style>
+.picxad{ width:540px; height:295px; overflow:hidden; position:relative; border:1px solid red;}
+.picxad div.updown{position:absolute; top:0px; height:30px; font-size:15px; font-weight:bold; z-index:999; color:red;}
+.picxad div.pic{width:540px; height:295px; overflow:hidden;}
+.picxad div.pic span{ width:540px; height:295px; float:left; display:none; position:absolute;}
+.picxad div.pic span.ad01{ display:block;}
+.picxad div.smpicbg{ height:45px;  bottom:0px; left:0px; position:absolute; width:100%; background:#000; -moz-opacity:0.5;opacity:0.5;FILTER:alpha(opacity=50); z-index:1;}
+.picxad div.smpic{ position:absolute; width:100%; bottom:0px; left:0px; z-index:4;}
+.picxad div.smpic span{ width:90px; height:40px; float:left; margin:14px 5px 0px 5px; border:1px solid #999; cursor:pointer;}
+.picxad div.smpic span.ad01{ width:115px; height:60px; border:1px solid #FFF;  margin:0px 5px; }
+.picxad div.smpic span img{ width:90px; height:40px; }
+.picxad div.smpic span.ad01 img{ width:115px; height:60px;}
+</style>
+<div class="picxad" id="picxad">
+	<div class="updown">
+		<span class="up">上一张</span><span class="down">下一张</span>
+	</div>	
+	<div class="pic">
+        <span class="ad01"><a href="#"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/1.jpg"/></a></span>
+        <span class="ad02"><a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/2.jpg"/></a></span>
+        <span class="ad03"><a href="#"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/3.jpg"/></a></span>
+        <span class="ad04"><a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/4.jpg"/></a></span>
+        <span class="ad05"><a href="#"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/5.jpg"/></a></span>
+	</div>
+	<div class="smpic">
+        <span class="ad01"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/1.jpg"/></span>
+        <span class="ad02"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/2.jpg"/></span>
+        <span class="ad03"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/3.jpg"/></span>
+        <span class="ad04"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/4.jpg"/></span>
+        <span class="ad05"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/5.jpg"/></span>
+	</div>
+	<div class="smpicbg"></div><!--下边的灰背景-->
+</div>
+<script type="text/javascript">
+$(function () {
+	$('#picxad div.pic span').soChange({
+		thumbObj:'#picxad div.smpic span',
+		thumbNowClass:'ad01',
+		slideTime:500,
+		changeTime:3000,
+		botPrev:'#picxad02 div.updown span.up',
+		botNext:'#picxad02 div.updown span.down',
+		delayTime:0
+
+	});
+});
+//默认参数
+//thumbObj:null, 导航对象，默认为空
+//botPrev:null, 按钮上一个，默认为空
+//botNext:null, 按钮下一个。默认为空
+//thumbNowClass:'now', 导航对象当前的class,默认为now
+//thumbOverEvent:true,鼠标经过thumbObj时是否切换对象，默认为true，为false时，只有鼠标点击thumbObj才切换对象
+//slideTime:1000, 对象平滑过渡持续时间，默认为1000ms
+//autoChange:true, 是否自动切换，默认为true
+//clickFalse:true,导航对象如果有链接，点击是否链接无效，即是否返回return false，默认是return false链接无效，当thumbOverEvent为false时，此项必须为true，否则鼠标点击事件冲突
+//overStop:true,鼠标经过切换对象时，切换对象是否停止切换，并于鼠标离开后重启自动切换，前提是已开启自动切换，默认开启鼠标经过对象停止切换
+//changeTime:5000, 对象自动切换时间，默认为5000ms，即5秒
+//delayTime:300 鼠标经过时对象切换迟滞时间，推荐值为300ms
+</script>
+<br/><br/>
+
+<h3>大小图切换广告02</h3>
+<style>
+.picxad02{ width:660px; height:295px; overflow:hidden; position:relative; border:1px solid red;}
+.picxad02 div.updown{position:absolute; top:0px; height:30px; font-size:15px; font-weight:bold; z-index:999; color:red; width:80%; display:none;}
+.picxad02 div.pic{width:540px; height:295px; overflow:hidden; float:left; position:relative;}
+.picxad02 div.pic span{ width:540px; height:295px; float:left; display:none; position:absolute;}
+.picxad02 div.pic span.ad01{ display:block;}
+.picxad02 div.smpicbg{ height:45px;  bottom:0px; left:0px; position:absolute; width:100%; background:#000; -moz-opacity:0.5;opacity:0.5;FILTER:alpha(opacity=50); }
+.picxad02 div.smpic{ width:120px; float:right; overflow:hidden;}
+.picxad02 div.smpic span{ width:116px; height:69px; padding:1px; border:1px solid red;  display:block;  cursor:pointer; overflow:hidden;}
+.picxad02 div.smpic span.ad01{ width:114px; height:70px; border:2px solid blue;  }
+.picxad02 div.smpic span img{ width:116px; height:69px; }
+.picxad02 div.smpic span.ad01 img{ width:114px; height:70px;}
+</style>
+<div class="picxad02" id="picxad02">
+	<div class="pic">
+        <span class="ad01"><a href="#"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/1.jpg"/></a></span>
+        <span class="ad02"><a href="#"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/2.jpg"/></a></span>
+        <span class="ad03"><a href="#"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/3.jpg"/></a></span>
+		<span class="last"><a href="#"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/4.jpg"/></a></span>
+	</div>
+	<div class="smpic">
+        <span class="ad01"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/1.jpg"/></span>
+        <span class="ad02"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/2.jpg"/></span>
+        <span class="ad03"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/3.jpg"/></span>
+        <span class="last"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/4.jpg"/></span>
+	</div>
+</div>
+<script type="text/javascript">
+$(function () {
+	$('#picxad02 div.pic span').soChange({
+		thumbObj:'#picxad02 div.smpic span',
+		thumbNowClass:'ad01',
+		slideTime:500,
+		changeTime:3000,
+		delayTime:0
+
+	});
+});
+//默认参数
+//thumbObj:null, 导航对象，默认为空
+//botPrev:null, 按钮上一个，默认为空
+//botNext:null, 按钮下一个。默认为空
+//thumbNowClass:'now', 导航对象当前的class,默认为now
+//thumbOverEvent:true,鼠标经过thumbObj时是否切换对象，默认为true，为false时，只有鼠标点击thumbObj才切换对象
+//slideTime:1000, 对象平滑过渡持续时间，默认为1000ms
+//autoChange:true, 是否自动切换，默认为true
+//clickFalse:true,导航对象如果有链接，点击是否链接无效，即是否返回return false，默认是return false链接无效，当thumbOverEvent为false时，此项必须为true，否则鼠标点击事件冲突
+//overStop:true,鼠标经过切换对象时，切换对象是否停止切换，并于鼠标离开后重启自动切换，前提是已开启自动切换，默认开启鼠标经过对象停止切换
+//changeTime:5000, 对象自动切换时间，默认为5000ms，即5秒
+//delayTime:300 鼠标经过时对象切换迟滞时间，推荐值为300ms
+</script>
+<br/><br/>
+<h3>大小图+文字切换广告 js有冲突-JS已注释掉</h3>
+<!--JS有冲突
+<script src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/js/zipiczi.js" type="text/javascript"></script>
+-->
+<style type="text/css">
+/* Reset style */
+*{margin:0; padding:0;}
+img { border:none; }
+/* iFocus style */
+#ifocus { width:525px; height:245px; margin:20px; border:1px solid #DEDEDE; background:#F8F8F8; }
+#ifocus_pic { display:inline; position:relative; float:left; width:410px; height:225px; overflow:hidden; margin:10px 0 0 10px; }
+#ifocus_piclist { position:absolute; }
+#ifocus_piclist span { width:410px; height:225px; overflow:hidden; display:block;}
+#ifocus_piclist img { width:410px; height:225px; }
+#ifocus_btn { display:inline; float:right; width:91px; margin:9px 9px 0 0; }
+#ifocus_btn span { width:91px; height:57px; cursor:pointer; opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50); display:block;}
+#ifocus_btn img { width:75px; height:45px; margin:7px 0 0 11px; }
+#ifocus_btn span.ad01{ background: url(http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/ifocus_btn_bg.gif) no-repeat; opacity:1; -moz-opacity:1; filter:alpha(opacity=100); display:block;}
+#ifocus_opdiv { position:absolute; left:0; bottom:0; width:410px; height:35px; background:#000; opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50); }
+#ifocus_tx { position:absolute; left:8px; bottom:8px; color:#FFF; }
+#ifocus_tx span{ display:none;}
+#ifocus_tx span.ad01{ display:block;}
+</style>
+
+<div id="ifocus">
+	<div id="ifocus_pic">
+		<div id="ifocus_piclist" style="left:0; top:0;">
+			<ul>
+				<span><a href="http://www.alixixi.com/" target="_blank"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/01.jpg" /></a></span>
+				<span><a href="http://www.alixixi.com/" target="_blank"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/02.jpg" /></a></span>
+				<span><a href="http://www.alixixi.com/" target="_blank"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/03.jpg" /></a></span>
+				<span><a href="http://www.alixixi.com/" target="_blank"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/04.jpg" /></a></span>
+			</ul>
+		</div>
+		<div id="ifocus_opdiv"></div>
+		<div id="ifocus_tx">
+			<ul>
+				<span class="ad01">你好你好你好你好 焦点图 a1</span>
+				<span>你好你好你好你好 焦点图 b2</span>
+				<span>你好你好你好你好 焦点图 c3</span>
+				<span>你好你好你好你好 焦点图 d4</span>
+			</ul>
+		</div>
+	</div>
+
+	<div id="ifocus_btn">
+		<ul>
+			<span class="ad01"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/btn_01.jpg" alt="" /></span>
+			<span><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/btn_02.jpg" alt="" /></span>
+			<span><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/btn_03.jpg" alt="" /></span>
+			<span><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/btn_04.jpg" alt="" /></span>
+		</ul>
+	</div>
+</div>
+
+<h3>大小图+文字切换广告02</h3>
+<style type="text/css">
+/* Reset style */
+*{margin:0; padding:0;}
+img { border:none; }
+/* iFocus style */
+.main{ width:525px; height:245px; margin:20px; border:1px solid #DEDEDE; background:#F8F8F8; }
+.main_pic { display:inline; position:relative; float:left; width:410px; height:225px; overflow:hidden; margin:10px 0 0 10px; }
+.main_pic div.box { width:410px; height:225px; overflow:hidden; display:block; position:absolute; left:0px; top:0;}
+.main_pic div.box p{ color:#FFF; height:35px; line-height:35px; background:#000;left:0; bottom:0; opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50); position:absolute; z-index:2; width:100%;}
+.main_pic div.box span img { width:410px; height:225px; }
+.main_btn { display:inline; float:right; width:91px; margin:9px 9px 0 0; }
+.main_btn span { width:91px; height:57px; cursor:pointer; opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50); display:block;}
+.main_btn img { width:75px; height:45px; margin:7px 0 0 11px; }
+.main_btn span.ad01{ background: url(http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/ifocus_btn_bg.gif) no-repeat; opacity:1; -moz-opacity:1; filter:alpha(opacity=100); display:block;}
+.main_opdiv { position:absolute; left:0; bottom:0; width:410px; height:35px; background:#000; opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50); }
+</style>
+
+<div class="main" id="main">
+	<div class="main_pic">
+        <div class="box">
+            <span><a href="http://www.alixixi.com/" target="_blank"><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/01.jpg" /></a></span>
+            <p>你好你好你好你好你好你好a</p>
+		</div>
+        <div class="box">
+            <span><a href="http://www.alixixi.com/" target="_blank"><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/02.jpg" /></a></span>
+            <p>你好你好你好你好你好你好b</p>
+		</div>
+        <div class="box">
+            <span><a href="http://www.alixixi.com/" target="_blank"><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/03.jpg" /></a></span>
+            <p>你好你好你好你好你好你好c</p>
+		</div>
+        <div class="box">
+            <span><a href="http://www.alixixi.com/" target="_blank"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/04.jpg" /></a></span>
+            <p>你好你好你好你好你好你好d</p>
+		</div>
+	</div>
+
+	<div class="main_btn">
+        <span class="ad01"><img src="http://i0.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/btn_01.jpg" /></span>
+        <span><img src="http://i1.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/btn_02.jpg" /></span>
+        <span><img src="http://i2.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/btn_03.jpg" /></span>
+        <span><img src="http://i3.sinaimg.cn/hs/images/chenshu/yuanzhufangmeng/zzlx9/peixun/guanggao/img/btn_04.jpg" /></span>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+	$('#main div.main_pic div.box').soChange({
+		thumbObj:'#main div.main_btn span',
+		thumbNowClass:'ad01',
+		slideTime:500,
+		changeTime:3000,
+		delayTime:0
+
+	});
+});
+//默认参数
+//thumbObj:null, 导航对象，默认为空
+//botPrev:null, 按钮上一个，默认为空
+//botNext:null, 按钮下一个。默认为空
+//thumbNowClass:'now', 导航对象当前的class,默认为now
+//thumbOverEvent:true,鼠标经过thumbObj时是否切换对象，默认为true，为false时，只有鼠标点击thumbObj才切换对象
+//slideTime:1000, 对象平滑过渡持续时间，默认为1000ms
+//autoChange:true, 是否自动切换，默认为true
+//clickFalse:true,导航对象如果有链接，点击是否链接无效，即是否返回return false，默认是return false链接无效，当thumbOverEvent为false时，此项必须为true，否则鼠标点击事件冲突
+//overStop:true,鼠标经过切换对象时，切换对象是否停止切换，并于鼠标离开后重启自动切换，前提是已开启自动切换，默认开启鼠标经过对象停止切换
+//changeTime:5000, 对象自动切换时间，默认为5000ms，即5秒
+//delayTime:300 鼠标经过时对象切换迟滞时间，推荐值为300ms
+</script>
+
+<br/><br/>
+
+<script type="text/javascript">
+(function(){
+    if(window.top !== window.self || window._thereIsNoRealTimeMessage){return};
+    var script = document.createElement('script');
+    script.setAttribute('charset', 'gb2312');
+    script.src = 'http://news.sina.com.cn/js/694/2012/0830/realtime.js?ver=1.5.1';
+    document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+
+
+</body>
+</html>

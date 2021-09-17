@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>xhao</title>
+    <script src="jquery-1.11.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#doBtn").click(function (e) {
+          var box1 = $("#box1").val();
+          var box2 = $("#box2").val();
+          var box1Arr = box1.replace(/\n/g, "|").split("|");
+          var box2Arr = box2.replace(/\n/g, "|").split("|");
+
+          var outTxt = "";
+
+          j = 0;
+          for (i = 0; i < box1Arr.length; i++) {
+            if (box1Arr[i] == "") {
+              if (j < box2Arr.length) {
+                outTxt += box2Arr[j] + "\n";
+                j++;
+              } else {
+                outTxt += "#" + "\n";
+              }
+            } else {
+              outTxt += box1Arr[i] + "\n";
+            }
+          }
+          $("#box3").val(outTxt);
+        });
+      });
+    </script>
+    <style>
+      body {
+        background-color: #3e3e3e;
+      }
+      textarea {
+        -webkit-appearance: none;
+        outline: 0;
+        border: 0;
+        resize: none;
+      }
+      .doBtn {
+        width: 275px;
+        height: 112px;
+        line-height: 112px;
+        display: block;
+        color: #e8e8e8;
+        background-color: #9c9c9c;
+        margin: 0 auto;
+      }
+      .doBtn:hover {
+        background-color: #565656;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="text-align: center; margin-top: 10px"></div>
+    <div
+      style="
+        width: 985px;
+        height: 301px;
+        margin: 0 auto;
+        margin-top: 10px;
+        background-image: url(images/topBox.png);
+      "
+    >
+      <div style="float: left; margin: 20px 0 0 20px">
+        <textarea
+          name="box1"
+          id="box1"
+          cols="45"
+          rows="5"
+          style="width: 460px; height: 260px"
+        ></textarea>
+      </div>
+      <div style="float: right; margin: 20px 20px 0 0">
+        <textarea
+          name="box2"
+          id="box2"
+          cols="45"
+          rows="5"
+          style="width: 435px; height: 260px"
+        ></textarea>
+      </div>
+    </div>
+
+    <div style="text-align: center; height: 112px; margin-top: 10px">
+      <a href="javascript:void();" class="doBtn" id="doBtn">start</a>
+    </div>
+
+    <div
+      style="
+        width: 985px;
+        height: 161px;
+        margin: 0 auto;
+        margin-top: 10px;
+        background-image: url(images/bottomBox.png);
+      "
+    >
+      <div style="height: 20px"></div>
+      <div style="margin-left: 20px; width: 947px">
+        <textarea
+          name="box3"
+          id="box3"
+          cols="45"
+          rows="5"
+          style="width: 940px; height: 120px"
+        ></textarea>
+      </div>
+    </div>
+  </body>
+</html>

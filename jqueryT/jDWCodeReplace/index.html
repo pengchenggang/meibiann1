@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jDWCodeReplace 高级批量替换工具 - 天津新浪乐居 - 开发：彭成刚</title>
+<script src="jquery-1.11.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#doBtn").click(function(){
+		var dataStr = $("#jichuData").val();
+		var tpStr = $("#toupiaoData").val();
+		var mobanStr = $("#mobanData").val();
+		var tpArr = tpStr.replace(/\n/g,"|").split("|");
+		var dataArr = dataStr.replace(/\n\n/g,"|").split("|");
+		var rs = "";
+		
+		for( i = 0; i<dataArr.length;i++)
+		{
+			//大数组分完 分小数组
+			var dataArrSmall = dataArr[i].replace(/\n/g,"|").split("|");
+			var mb = mobanStr;
+			
+			for (j = 0; j < dataArrSmall.length; j++)
+            {
+
+				mb = mb.replace(new RegExp("\\$"+(j+1),"gmi"), dataArrSmall[j]);
+
+            }
+			
+			if (i < tpArr.length) //容错处理
+			{
+				mb = mb.replace(new RegExp("\\$tp","gmi"), tpArr[i]);
+			}
+			
+			rs =rs + mb + "\n";
+		}
+		
+		$("#htmlData").val(rs);
+		/*
+		string dataStr = this.textBox1.Text.ToString();//基础数据
+            string tpStr = this.textBox2.Text.ToString();//投票数据
+            string mobanStr = this.textBox3.Text.ToString();//模板数据
+            string rs = "";//输出结果
+
+            string[] tpArr = tpStr.Replace("\r\n","|").Split('|');
+            string[] dataArr = dataStr.Replace("\r\n\r\n","|").Split('|');
+            for (int i = 0; i < dataArr.Length; i++)
+            {
+                //
+                //大数组分完 分小数组
+                string[] dataArrSmall = dataArr[i].Replace("\r\n", "|").Split('|');
+                string mb = mobanStr;
+                for (int j = 0; j < dataArrSmall.Length; j++)
+                {
+                    mb = mb.Replace("$L3_" + (j + 1).ToString(), dataArrSmall[j].PadLeft(3).Substring(0,3));
+                    mb = mb.Replace("$R4_" + (j + 1).ToString(), dataArrSmall[j].PadRight(4).Substring(dataArrSmall[j].PadRight(4).Length-4, 4));
+                    mb = mb.Replace("$" + (j+1).ToString(), dataArrSmall[j].ToString());
+                }
+
+                if (i < tpArr.Length) //容错处理
+                {
+                    mb = mb.Replace("$tp", tpArr[i].ToString());
+                }
+
+                rs += mb + "\r\n";
+            }
+
+            this.textBox4.Text = rs;
+		*/
+	});
+});
+</script>
+</head>
+
+<body>
+<div style="width:950px;">说明：根据文本换行转换成数组，批量替换成模板。模板标签：$1 $2 $3... 投票标签：$tp </div>
+<div style="width:950px;">
+
+<div style="width:420px; float:left;">
+	<div>基础数据</div>
+    <div><textarea name="jichuData" id="jichuData" style="width:400px; height:250px;"></textarea></div>
+</div>
+
+
+<div style="width:100px; float:left;">
+	<div>投票数据</div>
+    <div><textarea name="toupiaoData" id="toupiaoData" style="width:80px; height:250px;"></textarea></div>
+</div>
+
+
+<div style="width:420px; float:left;">
+	<div>模板数据</div>
+    <div><textarea name="mobanData" id="mobanData" style="width:400px; height:250px;"></textarea></div>
+</div>
+
+</div>
+
+
+<div style="clear:both;height:120px;text-align:center;width:950px;"><br>
+<input name="doBtn" type="button" id="doBtn" style="width:300px; height:80px; " value="转换HTML数据按钮"></div>
+
+<div style="clear:both; width:950px;"><textarea name="htmlData" id="htmlData" style="width:950px; height:150px;"></textarea></div>
+</body>
+</html>

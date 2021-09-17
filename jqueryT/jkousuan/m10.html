@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="jiajian.png">
+<title>加减法生成器</title>
+<script src="jquery-1.11.0.min.js"></script>
+<script>
+
+//10以内加减法
+var m10 = {
+	getjia1:function(){
+		//加法 形式1 A+B=？
+		var jieguo = this.raNum(4,10);
+		var numA = this.raNum(1,jieguo-1);
+		var NumB = jieguo - numA;
+		return numA + "+" + NumB + "="
+	}
+	,getjia2:function(){
+		var jieguo = this.raNum(4,10);
+		var numA = this.raNum(1,jieguo-1);
+		var NumB = jieguo - numA;
+		var raN = this.raNum(1,2);
+		if(raN == 1)
+		{
+			return "(   )" + "+" + NumB + "=" + jieguo
+		}
+		else
+		{
+			return numA + "+" + "(   )" + "=" + jieguo
+		}
+	}
+	,getjian1:function(){
+		//减法 形式1 ?-A=
+		var jieguo = this.raNum(4,10);
+		var numA = this.raNum(1,jieguo-1);
+		var NumB = jieguo - numA;
+		return jieguo + "-" + numA + "="
+	}
+	,getjian2:function(){
+		//减法 形式1 ?-A=
+		var jieguo = this.raNum(4,10);
+		var numA = this.raNum(1,jieguo-1);
+		var NumB = jieguo - numA;
+		var raN = this.raNum(1,2);
+		if(raN == 1)
+		{
+			return "(   )" + "-" + NumB + "=" + numA
+		}
+		else
+		{
+			return jieguo + "-" + "(   )" + "=" + numA
+		}
+	}
+	,getOne:function(){
+		var raN = this.raNum(1,4);
+		//return this.getjia1();
+		switch(raN)
+		{
+		case 1:
+			return this.getjia1();
+		break;
+		case 2:
+			return this.getjia2();
+		break;
+
+		case 3:
+			return this.getjian1();
+		break;
+
+		default:
+			return this.getjian2();
+		}
+		
+		return raN;
+	}
+	,chuti(n)
+	{
+		var o = "\r\n";
+		for(var i = 0;i<n;i++)
+		{
+			o = o + this.getOne() + "\r\n\r\n";
+		}
+		return o+"\r\n"+new Date().toLocaleString()+"\r\n";
+	}
+	//随机数   1 - 12 b是1 e是12
+	,raNum:function(b,e){   
+		e = e - b+1;
+		if(!b && b!=0 || !e){return "?";}   
+		return Math.floor( ( Math.random() * e ) + b );   
+	}
+};
+
+console.info(m10.getjia1())
+console.info(m10.getjia2())
+console.info(m10.getjian1())
+console.info(m10.getjian2())
+console.info(m10.getOne())
+console.info(m10.chuti(20))
+
+
+
+$(document).ready(function(){
+	$("#tiList").html(m10.chuti(20));
+});
+</script>
+<meta name="viewport" content="width=350, user-scalable=no">
+<style>
+body{background-position:center center; background-attachment:fixed; background-color:#464646;}
+html,body { margin: 0; padding: 0; border: 0;}
+/*.mbox {width:272px; height:97px; background-image:url(images/0.png); line-height:97px; padding-left:40px; font-family:微软雅黑; font-size:48px; float:left; margin-right:30px; margin-bottom:30px;}*/
+</style>
+</head>
+
+<body>
+<textarea name="tiList" id="tiList" cols="40" rows="20" style="height:calc(100vh - 95px);width:calc(100vw - 25px); margin: 10px 0 0 10px"></textarea>
+</body>
+</html> 

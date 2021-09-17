@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>单词卡片</title>
+<style>
+ul,ul li p { margin:0; padding:0; border:0;}
+body { background-image:url(images/bg1.jpg); padding:30px; padding-right:0px; padding-top:10px;}
+ul li img { width:250px; height:200px; border:0;}
+ul li a { text-decoration:none; color:#fff; font-family:"微软雅黑"; display:block; padding-top:10px; width:270px; height:220px; }
+ul li a:hover {background-image:url(images/ahover.png); background-repeat:no-repeat;}
+ul li { list-style-type:none; width:270px; text-align:center; float:left; margin-right:10px; margin-bottom:15px; height:220px;}
+
+ul li a img { -moz-border-radius: 11px; -khtml-border-radius: 11px; -webkit-border-radius: 11px; border-radius: 11px;}
+
+ul li:hover a.e1 { display:block;}
+ul li:hover a.e1:hover { opacity: .9;  }
+
+
+
+</style>
+
+<script src="images/jquery-1.11.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("ul li a").click(function(e) {
+        $("#ePlay").attr("src","mp3/"+$(this).attr("mp3")+".mp3");
+		$("#ePlay")[0].play();
+    });
+});
+
+</script>
+</head>
+
+<body>
+<audio id="ePlay" src="" style="display:none;"></audio>
+<ul>
+    <li><a href="javascript:void(0);" mp3="mushroom"><img src="images/mushroom.jpg" /></a></li>
+    <li><a href="javascript:void(0);" mp3="onion"><img src="images/onion.jpg" /></a></li>
+    <li><a href="javascript:void(0);" mp3="pepper"><img src="images/pepper.jpg" /></a></li>
+    <li><a href="javascript:void(0);" mp3="cucumber"><img src="images/cucumber.jpg" /></a></li>
+    <li><a href="javascript:void(0);" mp3="aubergine"><img src="images/aubergine.jpg" /></a></li>
+    <li><a href="javascript:void(0);" mp3="flour"><img src="images/flour.jpg" /></a></li>
+    <li><a href="javascript:void(0);" mp3="biscuit"><img src="images/biscuit.jpg" /></a></li>
+    <li><a href="javascript:void(0);" mp3="lime"><img src="images/lime.jpg" /></a></li>
+    <li><a href="javascript:void(0);" mp3="raspberry"><img src="images/raspberry.jpg" /></a></li>
+    <li><a href="javascript:void(0);" mp3="lemon"><img src="images/lemon.jpg" /></a></li>
+    <li><a href="javascript:void(0);" mp3="coconut"><img src="images/coconut.jpg" /></a></li>
+    <li><a href="javascript:void(0);" mp3="bush"><img src="images/bush.jpg" /></a></li>
+    <li><a href="javascript:void(0);" mp3="wardrobe"><img src="images/wardrobe.jpg" /></a></li>
+    <li><a href="javascript:void(0);" mp3="torch"><img src="images/torch.jpg" /></a></li>
+</ul>
+</body>
+</html>

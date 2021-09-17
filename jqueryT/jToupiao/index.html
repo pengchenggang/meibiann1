@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>json投票</title>
+    <script src="jquery-1.11.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        /*
+	var t= {
+	"id1":{
+		"id":"1",
+		"Name":"anming",
+		"tp":"2"},
+	"id2":{
+		"id":"2",
+		"Name":"anming",
+		"tp":"3"},
+	};
+	
+	var t1 = $.parseJSON('{	"id1":{		"id":"1",		"Name":"anming",		"tp":"2"},	"id2":{		"id":"2",		"Name":"anming",		"tp":"3"}}');
+	alert(t1.id1.Name);
+	*/
+
+        $("#doBtn").click(function () {
+          var l = $("#tpList").val();
+          //var lArr = l.replace(new RegExp("\\n","gmi"),"|").split("|");
+          var lArr = l.split("\n");
+          var r = "{$c}";
+          //r = r.replace("$c","");
+
+          //alert(lArr.length);
+          var c = "";
+          for (i = 0; i < lArr.length; i++) {
+            var lArr2 = lArr[i].split(",");
+            var r2 =
+              '"id' +
+              lArr2[0] +
+              '":{"id":"' +
+              lArr2[0] +
+              '","lpName":"' +
+              lArr2[1] +
+              '","tp":"' +
+              lArr2[2] +
+              '","tp2":"' +
+              lArr2[3] +
+              '"}';
+            //alert(r2);
+            c = c + r2;
+            if (i + 1 != lArr.length) {
+              c = c + ",\n";
+            }
+          }
+
+          $("#rs").val(r.replace("$c", c));
+        });
+
+        $("#doBtn2").click(function () {
+          var rsTxt = $("#rs").val();
+          var rsJson = $.parseJSON(rsTxt);
+          var r2 = "";
+          $.each(rsJson, function (i, n) {
+            r2 = r2 + n.id + ",";
+            r2 = r2 + n.lpName + ",";
+            r2 = r2 + n.tp + ",";
+            r2 = r2 + n.tp2;
+            r2 = r2 + "\n";
+          });
+          r2 = r2.substring(0, r2.length - 1);
+          $("#rs2").val(r2);
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <textarea name="tpList" id="tpList" cols="100" rows="10">
+1,案名,2,0
+2,案名,3,0</textarea
+    >
+    <br />
+    <br />
+    <input name="doBtn" type="button" id="doBtn" value="转换json" />
+    <br />
+    <br />
+    <textarea name="rs" id="rs" cols="100" rows="10"></textarea>
+    <br />
+    <br />
+    <input name="doBtn2" type="button" id="doBtn2" value="转换文本" />
+    <br />
+    <br />
+    <textarea name="rs2" id="rs2" cols="100" rows="10"></textarea>
+  </body>
+</html>

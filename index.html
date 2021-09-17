@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
+    <title>美编N1</title>
+    <script src="jquery-1.11.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        //z 是 90
+        var stat = 1;
+        $(document).keyup(function (event) {
+          switch (event.keyCode) {
+            case 90:
+              //状态1：正常显示全部
+              if (stat == 1) {
+                $("#mId").attr("cols", "0,*");
+                stat = 2;
+              } else {
+                $("#mId").attr("cols", "300,*");
+                stat = 1;
+              }
+
+              break;
+          } //switch
+        }); //keydown
+
+        function kk() {
+          alert("kk");
+        }
+
+        function getQueryString(name) {
+          var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+          var r = window.location.search.substr(1).match(reg);
+          if (r != null) return unescape(r[2]);
+          return null;
+        }
+
+        if (getQueryString("page") == "work") {
+          $("#leftFrame").attr("src", "frame/left2.html?page=work");
+          $("#mainFrame").attr("src", "frame/main8-2.html");
+        }
+      });
+    </script>
+  </head>
+  <frameset
+    rows="*"
+    id="mId"
+    cols="300,*"
+    framespacing="0"
+    frameborder="no"
+    border="0"
+  >
+    <frame
+      src="frame/left2.html"
+      name="leftFrame"
+      scrolling="No"
+      noresize="noresize"
+      id="leftFrame"
+      title="leftFrame"
+    />
+
+    <frame
+      src="frame/main2.html"
+      name="mainFrame"
+      id="mainFrame"
+      title="mainFrame"
+    />
+  </frameset>
+  <noframes><body></body></noframes>
+</html>
