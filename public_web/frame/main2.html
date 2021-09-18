@@ -181,15 +181,14 @@
               .replace("$href", item.href)
               .replace("$src", item.src)
               .replace("$name", item.name);
-            var t2 = template2
-            var ret2 = ''
+            var t2 = template2;
+            var ret2 = "";
             if (item.e1Href) {
-              ret2 = t2.replace('$e1Href', item.e1Href)
+              ret2 = t2.replace("$e1Href", item.e1Href);
             }
-            return ret1 + ret2
+            return ret1 + ret2;
           })
           .join("");
-          var
         $("#content").html(outHtml);
       });
     </script>
