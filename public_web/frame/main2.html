@@ -92,9 +92,38 @@
     </style>
     <script src="../jquery-1.11.0.min.js"></script>
     <script src="../showLeft.js"></script>
+    <script>
+      $(document).ready(function () {
+        var list = [
+          {
+            name: "eTeams",
+            href: "https://www.eteams.cn/",
+            src: "../images/main2/eTeams.jpg",
+          },
+        ];
+        var template = `
+      <li>
+        <a href="$href" target="_blank"
+          ><img src="$src" />
+          <p>$name</p></a
+        >
+      </li>
+      `;
+        $("#content").innerHTML = list
+          .map(function (item) {
+            var t = template;
+            return t
+              .replace("$href", item.href)
+              .replace("$src", item.src)
+              .replace("$name", item.name);
+          })
+          .join("");
+      });
+    </script>
   </head>
 
   <body>
+    <ul id="content"></ul>
     <!-- <ul>
       <li>
         <a href="https://www.eteams.cn/" target="_blank"
