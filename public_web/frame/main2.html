@@ -94,14 +94,6 @@
     <script src="../showLeft.js"></script>
     <script>
       $(document).ready(function () {
-        console.info("111");
-        var list = [
-          {
-            name: "eTeams",
-            href: "https://www.eteams.cn/",
-            src: "../images/main2/eTeams.jpg",
-          },
-        ];
         var template = `
       <li>
         <a href="$href" target="_blank"
@@ -110,15 +102,94 @@
         >
       </li>
       `;
+        var template2 = `
+      <a
+          href="$e1Href"
+          target="_blank"
+          class="e1"
+        ></a>
+      `;
+        var list = [
+          {
+            name: "eTeams",
+            href: "https://www.eteams.cn/",
+            src: "../images/main2/eTeams.jpg",
+          },
+          {
+            href: "http://mp.leju.com/",
+            src: "../images/main2/zaixianxuanfang.jpg",
+            name: "在线选房",
+          },
+          {
+            href: "../zt/tbb/index.html",
+            src: "../images/main2/tbb.jpg",
+            name: "Banner模板",
+          },
+          {
+            href: "http://tj.house.sina.com.cn/zhuanti/shejibu/index.shtml",
+            src: "../images/main2/shejibu.png",
+            name: "设计部首页",
+            e1Href:
+              "http://n81.pub.house.sina.com.cn/document/default/edit?d_id=24262&t_id=2865&p_id=154&c_id=1",
+          },
+          {
+            href: "kkk",
+            src: "src",
+            name: "name",
+          },
+          {
+            href: "href",
+            src: "src",
+            name: "name",
+          },
+          {
+            href: "href",
+            src: "src",
+            name: "name",
+          },
+          {
+            href: "href",
+            src: "src",
+            name: "name",
+          },
+          {
+            href: "href",
+            src: "src",
+            name: "name",
+          },
+          {
+            href: "href",
+            src: "src",
+            name: "name",
+          },
+          {
+            href: "href",
+            src: "src",
+            name: "name",
+          },
+          {
+            href: "href",
+            src: "src",
+            name: "name",
+          },
+        ];
+
         var outHtml = list
           .map(function (item) {
             var t = template;
-            return t
+            var ret1 = t
               .replace("$href", item.href)
               .replace("$src", item.src)
               .replace("$name", item.name);
+            var t2 = template2
+            var ret2 = ''
+            if (item.e1Href) {
+              ret2 = t2.replace('$e1Href', item.e1Href)
+            }
+            return ret1 + ret2
           })
           .join("");
+          var
         $("#content").html(outHtml);
       });
     </script>
