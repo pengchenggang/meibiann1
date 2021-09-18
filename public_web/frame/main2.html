@@ -94,6 +94,7 @@
     <script src="../showLeft.js"></script>
     <script>
       $(document).ready(function () {
+        console.info("111");
         var list = [
           {
             name: "eTeams",
@@ -109,7 +110,7 @@
         >
       </li>
       `;
-        $("#content").innerHTML = list
+        var outHtml = list
           .map(function (item) {
             var t = template;
             return t
@@ -118,6 +119,7 @@
               .replace("$name", item.name);
           })
           .join("");
+        $("#content").html(outHtml);
       });
     </script>
   </head>
@@ -716,6 +718,6 @@
           <p>ActivInspire企鹅英语</p></a
         >
       </li>
-    </ul> -->111
+    </ul> -->
   </body>
 </html>
