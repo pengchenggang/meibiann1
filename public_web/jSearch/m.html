@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html manifest="offline.appcache">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0"
+      name="viewport"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+
+    <title>美编N1·搜索</title>
+    <script src="jquery-1.11.0.min.js"></script>
+    <script src="jquery.mobile-1.4.3.min.js"></script>
+    <script src="dataJs.php"></script>
+    <script>
+      $(document).ready(function () {
+        //$("#sKey").focus();
+
+        //var listmb = '<div class="sbox"><div class="sboxL1"><div class="sboxL1in"><img src="$src"  alt="" width="73" height="73" style="position:absolute;"/><img src="img3/onPic.png"  alt="" width="73" height="73" style="position:absolute;"/></div></div><div class="sboxL2"><div class="sboxL3">$title <span class="sboxL3who">$who</span></div><div class="sboxL4">$ms</div></div></div>';
+        var listmb =
+          '<table width="98%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top" class="sboxL1"><div class="sboxL1in"><img src="$src"  alt="" width="73" height="73" style="position:absolute;"/><img src="img3/onPic.png"  alt="" width="73" height="73" style="position:absolute;"/></td><td class="sboxL2"><div class="sboxL3">$title <span class="sboxL3who">$who</span></div><div class="sboxL4">$ms</div></td></tr></table>';
+        var listLinemb =
+          '<div style="clear:both;"></div><div class="sboxLine"></div>';
+
+        //所有替换模板的法则
+        function listmbReplace(s, n) {
+          return s
+            .replace("$src", n.src)
+            .replace("$title", n.title)
+            .replace("$ms", n.ms)
+            .replace("$who", n.who);
+        }
+
+        /*
+		$("#sKey").change(function(e){
+			//alert($("#sKey").val());
+			if(13==e.keyCode)
+			{showList(100);}
+			else
+			{showList(4);}
+		});*/
+
+        $("#sKey").focus(function (e) {
+          $.mobile.silentScroll(140);
+        });
+
+        $("#sKey").bind("input propertychange", function () {
+          showList(4);
+        });
+
+        //$("#sKey").focusin(function() {            alert("k");        });
+
+        $("#listAll").click(function () {
+          showList(20);
+        });
+
+        //获取最新10条记录并显示出来
+        var getTop10Stat = false;
+        $("#getTop10").click(function (e) {
+          //这段代码直接重复了showList，没有进行函数抽象处理
+          //--------------------------------------------
+          if (false == getTop10Stat) {
+            var t = ""; //列表容器
+            var ii = 0;
+            listNum = 19; //显示前10个
+            var isInsertLine = false;
+            $.each(eArr, function (i, n) {
+              if (ii > listNum) return false;
+              ii++; //显示前多少个
+
+              if (isInsertLine) t += listLinemb; //插横线
+              isInsertLine = true;
+
+              if ("" == n.src) n.src = "img3/default.jpg"; //设置默认图
+              t += listmbReplace(listmb, n);
+              //t += listmb.replace("$src",n.src).replace("$title",n.title).replace("$ms",n.ms);
+            }); //each
+
+            $("#sKey").val("");
+            $("#content").html(t);
+
+            getTop10Stat = true;
+            $(this).html($(this).html().replace("↓", "↑"));
+          } else {
+            getTop10Stat = false;
+            $(this).html($(this).html().replace("↑", "↓"));
+            $("#content").html("");
+          }
+        }); //getTop10
+
+        function showList(listNum) {
+          var s = $("#sKey").val();
+          var t = ""; //列表容器
+          var ii = 0;
+
+          //检测空格
+          //if(s.indexOf(" ") >= 0) alert("有空格！");
+
+          var isInsertLine = false;
+
+          $.each(eArr, function (i, n) {
+            //t +="eArr "+i+" :"+" 描述->"+n.ms+"<br>";
+
+            var jg = true;
+            var sArr = s.split(" ");
+            for (var si = 0; si < sArr.length; si++) {
+              //jg = jg && (n.ms.indexOf(sArr[si]) >= 0 || n.hidekey.indexOf(sArr[si]) >= 0 || n.title.indexOf(sArr[si]) >= 0);
+              jg =
+                jg &&
+                (n.hidekey.indexOf(sArr[si]) >= 0 ||
+                  n.title.indexOf(sArr[si]) >= 0);
+            }
+
+            //if(n.ms.indexOf(s) >= 0)
+            if (jg) {
+              if (ii > listNum) return false;
+              ii++; //显示前多少个
+
+              if (isInsertLine) t += listLinemb; //插横线
+              isInsertLine = true;
+
+              if ("" == n.src) n.src = "img3/default.jpg"; //设置默认图
+              t += listmbReplace(listmb, n);
+              //t += listmb.replace("$src",n.src).replace("$title",n.title).replace("$ms",n.ms);
+            }
+          }); //each 结束符
+
+          if ($("#sKey").val() == "") t = "";
+
+          $("#content").html(t);
+        } //showList
+
+        //添加提示关键字
+        $(".addSkey").click(function () {
+          var addSkeyValue = $(this).html();
+          $("#sKey").val(function () {
+            //if("" == $(this).val()){return addSkeyValue;}else{return $(this).val() + " " +addSkeyValue;}
+            return addSkeyValue;
+          });
+
+          showList(4);
+          return false;
+        });
+      });
+    </script>
+    <style>
+      html {
+        overflow-y: scroll;
+      }
+      * {
+        font-family: "微软雅黑";
+      }
+      body {
+        background-color: #202020;
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+      div {
+        word-wrap: break-word;
+        word-break: normal;
+      }
+
+      .sboxL1 {
+        width: 80px;
+        background-repeat: no-repeat;
+      }
+      .sboxL1in {
+        background-repeat: no-repeat;
+        width: 73px;
+        height: 73px;
+      }
+      .sboxL2 {
+        padding-right: 0.2em;
+      }
+      .sboxL3 {
+        color: #fff;
+        font-size: 1em;
+        line-height: 16px;
+        padding-top: 3px;
+      }
+      .sboxL4 {
+        color: #fff;
+        font-size: 1em;
+        margin-top: 10px;
+        line-height: 1.5em;
+      }
+      .sboxLine {
+        border-bottom: 1px solid #464646;
+        border-top: 1px solid #000;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: auto;
+      }
+      .sboxL4 a {
+        color: #f2f2f2;
+        word-wrap: break-word;
+        width: 200px;
+        display: block;
+      }
+      .sboxL4 a:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .sLink,
+      .sTxt {
+        font-size: 14px;
+        color: #fff;
+        text-decoration: none;
+        margin-right: 8px;
+      }
+      .sLink:hover {
+        text-decoration: underline;
+      }
+      .sLink {
+        height: 30px;
+        line-height: 30px;
+      }
+      #listAll {
+        cursor: pointer;
+      }
+
+      .addSkey {
+        font-size: 12px;
+        color: #f6f6f6;
+        background-color: #666;
+        text-decoration: none;
+        margin-right: 8px;
+        padding: 4px 8px;
+        line-height: 30px;
+      }
+      .addSkey:hover {
+        background-color: #999;
+      }
+
+      .insertText {
+        margin-bottom: 6px;
+        height: 25px;
+        margin-top: 4px;
+        padding: 4px;
+      }
+      .insertDiv {
+        color: #fff;
+      }
+
+      .closeBtn,
+      .loginCloseBtn,
+      .setCloseBtn,
+      .modiCloseBtn {
+        color: #fff;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .closeBtn:hover,
+      .loginCloseBtn:hover,
+      .setCloseBtn:hover,
+      .modiCloseBtn:hover {
+        color: #ccc;
+      }
+      .xiaozi {
+        font-size: 12px;
+        font-family: "宋体";
+        color: #ccc;
+      }
+
+      .loginDiv,
+      .setDiv,
+      .myDiv {
+        color: #fff;
+      }
+      .juzhong {
+        width: 760px;
+        height: 300px;
+        position: absolute;
+        left: 48%;
+        top: -50%;
+        margin: -150px 0 0 -380px;
+        border: 4px solid #fff;
+        background-color: #3c3c3c;
+        color: #fff;
+        padding: 0 10px;
+        z-index: 99999;
+      }
+
+      .myListDiv {
+        border-bottom: 1px solid #333;
+        padding-bottom: 3px;
+        padding-top: 6px;
+        padding-left: 6px;
+        height: 25px;
+      }
+      .myListLi {
+        float: left;
+        height: 18px;
+        overflow: hidden;
+        margin-right: 10px;
+      }
+      .myListLi:hover {
+        border: 1px solid #999;
+      }
+      .myListLi a {
+        color: #fff;
+      }
+      .myListLi a:hover {
+        color: #f2f2f2;
+      }
+      .myListLi2 {
+        float: left;
+        height: 18px;
+        overflow: hidden;
+        margin-right: 10px;
+      }
+      .myListLi2 a {
+        color: #fff;
+      }
+      .myListLi2 a:hover {
+        color: #f2f2f2;
+      }
+
+      .xiahuaxian {
+        text-decoration: underline;
+      }
+
+      .myListDiv:hover {
+        background-color: #333;
+      }
+
+      .sboxL3who {
+        font-size: 12px;
+        color: #d8d8d8;
+        background-color: #636363;
+        -webkit-border-radius: 4px;
+        padding: 0 8px 0 7px;
+      }
+
+      input[type="search"] {
+        -webkit-appearance: textfield;
+        -webkit-box-sizing: content-box;
+        font-family: inherit;
+        font-size: 100%;
+      }
+      input::-webkit-search-decoration,
+      input::-webkit-search-cancel-button {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      style="
+        color: #fff;
+        background-color: #474747;
+        text-align: center;
+        font-family: '微软雅黑';
+        height: 2em;
+        font-size: 1.5em;
+        line-height: 2em;
+      "
+    >
+      美编N1·搜索
+    </div>
+
+    <div style="color: #fff; padding: 0.5em">
+      提示：此页面禁止发送朋友圈等散播！属于内部工具使用！
+    </div>
+
+    <!-- 搜索框下部关键字 -->
+    <div style="padding-left: 0.5em">
+      <a href="javascript:void(0);" class="sLink" id="getTop10">最新20条↓</a>
+      <a href="javascript:void(0);" class="addSkey">专题推荐</a>
+    </div>
+
+    <div style="padding: 0.5em">
+      <input
+        type="text"
+        name="sKey"
+        id="sKey"
+        placeholder="支持拼音搜索"
+        style="width: 200px; float: left"
+      /><button style="float: left" id="listAll" type="button">显示全部</button>
+    </div>
+
+    <div style="clear: both"></div>
+
+    <div id="content" style="clear: both; height: 900px"></div>
+
+    <div style="height: 30px; clear: both"></div>
+  </body>
+</html>
