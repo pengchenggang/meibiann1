@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>X展架推荐</title>
+    <style>
+      ul,
+      ul li p {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+      body {
+        background-image: url(../images/main1/bg1.jpg);
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+      .tbody,
+      .tbody2 {
+        padding: 30px;
+        padding-right: 0px;
+        padding-top: 10px;
+      }
+      .tbody ul li img {
+        width: 115px;
+        height: 259px;
+        border: 0;
+      }
+      .tbody2 ul li img {
+        /*width:140px; height:140px;*/
+        border: 0;
+      }
+      .h140 {
+        width: 140px;
+        height: 140px;
+        text-align: center;
+        margin: 0 auto;
+      }
+      .v140 {
+        width: 140px;
+        height: 120px;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 20px;
+      }
+      ul li a p {
+        font-size: 14px;
+        display: block;
+        width: 160px;
+        text-align: center;
+        line-height: 20px;
+        padding-top: 2px;
+        text-shadow: black 1px 1px 1px;
+      }
+      .tbody ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-family: "微软雅黑";
+        display: block;
+        padding-top: 20px;
+        width: 165px;
+        height: 330px;
+      }
+      .tbody2 ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-family: "微软雅黑";
+        display: block;
+        padding-top: 20px;
+        width: 165px;
+        height: 215px;
+      }
+      .tbody ul li a:hover {
+        background-image: url(../images/main12/xahover.png);
+        background-repeat: no-repeat;
+      }
+      .tbody2 ul li a:hover {
+        background-image: url(../images/main12/dmahover.png);
+        background-repeat: no-repeat;
+      }
+      ul li {
+        list-style-type: none;
+        width: 165px;
+        text-align: center;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 15px;
+        height: 330px;
+      }
+      .tbody2 ul li {
+        list-style-type: none;
+        width: 165px;
+        text-align: center;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 15px;
+        height: 220px;
+      }
+
+      .tTop {
+        height: 37px;
+        line-height: 37px;
+        padding-left: 15px;
+        font-size: 12px;
+        color: #fff;
+        background-image: url(images/37p10.png);
+      }
+
+      ul li a img {
+        -moz-border-radius: 11px;
+        -khtml-border-radius: 11px;
+        -webkit-border-radius: 11px;
+        border-radius: 11px;
+      }
+
+      ul.rj li img {
+        width: 90px;
+        height: 90px;
+        border: 0;
+      }
+      .rj li a p {
+        font-size: 14px;
+        display: block;
+        width: 140px;
+        text-align: center;
+        line-height: 25px;
+        text-shadow: black 1px 1px 1px;
+      }
+      .rj li a {
+        text-decoration: none;
+        color: #fff;
+        font-family: "微软雅黑";
+        display: block;
+        padding-top: 20px;
+        width: 140px;
+        height: 130px;
+      }
+      .rj li a:hover {
+        background-image: url(../images/main2/ahover.png);
+        background-repeat: no-repeat;
+      }
+      .rj li {
+        list-style-type: none;
+        width: 140px;
+        text-align: center;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 15px;
+        height: 150px;
+      }
+
+      .rj li a.e1 {
+        width: 10px;
+        height: 10px;
+        margin: -140px 0 0 120px;
+        padding: 0;
+        display: none;
+        background-image: url(../images/core/dd.png);
+        opacity: 0.3;
+      }
+      .rj li:hover a.e1 {
+        display: block;
+      }
+      .rj li:hover a.e1:hover {
+        opacity: 0.9;
+      }
+
+      .rj li a.e2 {
+        width: 10px;
+        height: 10px;
+        margin: 5px 0 0 120px;
+        padding: 0;
+        display: none;
+        background-image: url(../images/core/dd.png);
+        opacity: 0.3;
+      }
+      .rj li:hover a.e2 {
+        display: block;
+      }
+      .rj li:hover a.e2:hover {
+        opacity: 0.9;
+      }
+
+      .rj li a img {
+        -moz-border-radius: 11px;
+        -khtml-border-radius: 11px;
+        -webkit-border-radius: 11px;
+        border-radius: 11px;
+      }
+    </style>
+    <script src="../jquery-1.11.0.min.js"></script>
+    <script src="../showLeft.js"></script>
+    <script src="main12data.js"></script>
+    <script>
+      $(document).ready(function () {
+        function getList(list) {
+          return list
+            .map(function (item) {
+              var t = template;
+              var ret1 = t
+                .replace("$href", item.href)
+                .replace("$src", item.src)
+                .replace("$name", item.name);
+              var t2 = template2;
+              var ret2 = "";
+              if (item.e1Href) {
+                ret2 = t2.replace("$e1Href", item.e1Href);
+              }
+              return ret1 + ret2;
+            })
+            .join("");
+        }
+        var template = `
+    <li>
+      <a href="$href" target="_blank"
+        ><img src="$src" />
+        <p>$name</p></a
+      >
+    </li>
+    `;
+        var template2 = `
+    <a
+        href="$e1Href"
+        target="_blank"
+        class="e1"
+      ></a>
+    `;
+
+        var outHtml = getList(list);
+        $("#content").html(outHtml);
+        $("#content2").html(getList(list2));
+        $("#content3").html(getList(list3));
+        $("#content4").html(getList(list4));
+        $("#content5").html(getList(list5));
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="tTop">
+      <div style="float: left">美编N1 &gt; X展架列表</div>
+      <div style="float: right; margin-top: 6px; margin-right: 15px">
+        <a
+          ><img
+            src="images/xBtn2.png"
+            width="25"
+            height="25"
+            title="设计组群公告获取密码"
+        /></a>
+      </div>
+    </div>
+    <div class="tbody">
+      <ul id="content"></ul>
+    </div>
+
+    <div class="tTop" style="clear: both">
+      <div style="float: left">美编N1 &gt; DM单</div>
+      <div style="float: right; margin-top: 6px; margin-right: 15px">
+        <a
+          ><img
+            src="images/xBtn2.png"
+            width="25"
+            height="25"
+            title="设计组群公告获取密码"
+        /></a>
+      </div>
+    </div>
+    <div class="tbody2">
+      <ul id="content2"></ul>
+    </div>
+
+    <div class="tTop" style="clear: both">
+      <div style="float: left">美编N1 &gt; 背板</div>
+      <div style="float: right; margin-top: 6px; margin-right: 15px">
+        <a
+          ><img
+            src="images/xBtn2.png"
+            width="25"
+            height="25"
+            title="设计组群公告获取密码"
+        /></a>
+      </div>
+    </div>
+
+    <div class="tbody2">
+      <ul id="content3"></ul>
+    </div>
+
+    <div class="tTop" style="clear: both">
+      <div style="float: left">美编N1 &gt; 其他</div>
+      <div style="float: right; margin-top: 6px; margin-right: 15px">
+        <a
+          ><img
+            src="images/xBtn2.png"
+            width="25"
+            height="25"
+            title="设计组群公告获取密码"
+        /></a>
+      </div>
+    </div>
+    <div class="tbody2">
+      <ul id="content4"></ul>
+    </div>
+    <div class="tTop" style="clear: both">
+      <div style="float: left">美编N1 &gt; 软件</div>
+      <div style="float: right; margin-top: 6px; margin-right: 15px">
+        <a
+          ><img
+            src="images/xBtn2.png"
+            width="25"
+            height="25"
+            title="设计组群公告获取密码"
+        /></a>
+      </div>
+    </div>
+    <div class="rj" style="padding: 15px 30px">
+      <ul id="content5"></ul>
+    </div>
+  </body>
+</html>
