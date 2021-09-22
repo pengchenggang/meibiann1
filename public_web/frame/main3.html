@@ -1,0 +1,836 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>main3-设计灵感</title>
+    <style>
+      ul,
+      ul li p {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+      body {
+        background-image: url(../images/main1/bg1.jpg);
+        padding: 30px;
+        padding-right: 0px;
+        padding-top: 10px;
+      }
+      ul li img {
+        width: 90px;
+        height: 90px;
+        border: 0;
+      }
+      ul li a p {
+        font-size: 14px;
+        display: block;
+        width: 140px;
+        text-align: center;
+        line-height: 25px;
+        text-shadow: black 1px 1px 1px;
+      }
+      ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-family: "微软雅黑";
+        display: block;
+        padding-top: 20px;
+        width: 140px;
+        height: 130px;
+      }
+      ul li a:hover {
+        background-image: url(../images/main1/ahover.png);
+        background-repeat: no-repeat;
+      }
+      ul li {
+        list-style-type: none;
+        width: 140px;
+        text-align: center;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 15px;
+        height: 150px;
+      }
+
+      ul li a img {
+        -moz-border-radius: 11px;
+        -khtml-border-radius: 11px;
+        -webkit-border-radius: 11px;
+        border-radius: 11px;
+      }
+
+      ul li a.e1 {
+        width: 10px;
+        height: 10px;
+        margin: -140px 0 0 120px;
+        padding: 0;
+        display: none;
+        background-image: url(../images/core/dd.png);
+        opacity: 0.3;
+      }
+      ul li:hover a.e1 {
+        display: block;
+      }
+      ul li:hover a.e1:hover {
+        opacity: 0.9;
+      }
+    </style>
+    <script src="../jquery-1.11.0.min.js"></script>
+    <script src="../showLeft.js"></script>
+    <script>
+      $(document).ready(function () {
+        var template = `
+      <li>
+        <a href="$href" target="_blank"
+          ><img src="$src" />
+          <p>$name</p></a
+        >
+      </li>
+      `;
+        var template2 = `
+      <a
+          href="$e1Href"
+          target="_blank"
+          class="e1"
+        ></a>
+      `;
+        var list = [
+          {
+            name: "花瓣网",
+            href: "http://huaban.com/all/",
+            src: "../images/main1/huabanwang.png",
+          },
+          {
+            name: "创客贴 微信横图模板",
+            href: "https://www.chuangkit.com/startdesign",
+            src: "../images/main3/chuangketie.jpg",
+          },
+          {
+            name: "ps饭团教程",
+            href: "http://psefan.com/tutorials",
+            src: "../images/main3/psefan.jpg",
+          },
+          {
+            name: "国外海报 flyer",
+            href: "http://huaban.com/boards/30498684/",
+            src: "../images/main3/flyerz01.jpg",
+          },
+          {
+            name: "wallhaven 壁纸",
+            href: "https://alpha.wallhaven.cc/random",
+            src: "../images/main3/wallhaven.jpg",
+          },
+          {
+            name: "Dribbble",
+            href: "https://dribbble.com/search?q=skeuomorphic",
+            src: "../images/main3/dribbble.jpg",
+          },
+          {
+            name: "TGideas",
+            href: "http://tgideas.qq.com/",
+            src: "../images/main3/tgideas.jpg",
+          },
+          {
+            name: "淘宝教育",
+            href: "http://xue.taobao.com/",
+            src: "../images/main3/jiaoyutaobao.jpg",
+          },
+          {
+            name: "千图网",
+            href: "http://www.58pic.com/",
+            src: "../images/main3/qiantuwang.png",
+          },
+          {
+            name: "千库网",
+            href: "http://588ku.com/",
+            src: "../images/main3/qianku.jpg",
+          },
+          {
+            name: "配色表-58pic",
+            href: "http://www.58pic.com/peisebiao/",
+            src: "../images/main3/peisebiao.jpg",
+          },
+          {
+            name: "站酷",
+            href: "http://www.zcool.com.cn/",
+            src: "../images/main1/zcool.png",
+          },
+          {
+            name: "昵图网",
+            href: "http://www.nipic.com/index.html",
+            src: "../images/main1/nipic.png",
+          },
+          {
+            name: "UI中国",
+            href: "http://www.ui.cn/",
+            src: "../images/main3/uicn.jpg",
+          },
+          {
+            name: "70度 H5制作",
+            href: "http://www.70c.com/index.html",
+            src: "../images/main3/70c.jpg",
+          },
+          {
+            name: "ih5.cn",
+            href: "http://www.ih5.cn/",
+            src: "../images/main3/ih5cn.jpg",
+          },
+          {
+            name: "任性资源网 C4D",
+            href: "http://ren-xing.cn/",
+            src: "../images/main3/renxing.jpg",
+          },
+          {
+            name: "求字体",
+            href: "http://www.qiuziti.com/",
+            src: "../images/main3/qiuziti.jpg",
+          },
+          {
+            name: "pinterest",
+            href: "http://www.pinterest.com/",
+            src: "../images/main3/huabantadie.png",
+          },
+          {
+            name: "主创网 zcooler",
+            href: "http://www.zcooler.com/",
+            src: "../images/main3/zcooler.jpg",
+          },
+          {
+            name: "网页设计师联盟",
+            href: "http://www.68design.net/",
+            src: "../images/main1/68design.png",
+          },
+          {
+            name: "百度音乐",
+            href: "http://music.baidu.com/",
+            src: "../images/main1/baiduyinyue.png",
+          },
+          {
+            name: "爱库网",
+            href: "http://ikeepu.com/",
+            src: "../images/main1/aiku.png",
+          },
+          {
+            name: "全景",
+            href: "http://www.quanjing.com/",
+            src: "../images/main1/quanjing.png",
+          },
+          {
+            name: "苏打苏塔",
+            href: "http://sudasuta.com/",
+            src: "../images/main1/sudasuta.png",
+          },
+          {
+            name: "堆糖网",
+            href: "http://www.duitang.com/",
+            src: "../images/main1/duitang.png",
+          },
+          {
+            name: "优美图片",
+            href: "http://www.topit.me/",
+            src: "../images/main1/topitme.png",
+          },
+          {
+            name: "懒人图库",
+            href: "http://www.lanrentuku.com/",
+            src: "../images/main1/lanrentuku.png",
+          },
+          {
+            name: "FreePsds",
+            href: "http://www.premiumpixels.com/",
+            src: "../images/main1/freepsds.png",
+          },
+          {
+            name: "点点网",
+            href: "http://www.diandian.com/",
+            src: "../images/main1/diandian.png",
+          },
+          {
+            name: "NewCGer",
+            href: "http://www.newcger.com/",
+            src: "../images/main1/cger.png",
+          },
+          {
+            name: "优设 UISDC",
+            href: "http://www.uisdc.com/",
+            src: "../images/main1/youshe.png",
+          },
+          {
+            name: "Subtle Patterns",
+            href: "http://subtlepatterns.com/",
+            src: "../images/main1/subtlepatterns.png",
+          },
+          {
+            name: "游戏UI设计",
+            href: "http://www.g-ui.net/",
+            src: "../images/main1/gameui.png",
+          },
+          {
+            name: "艺术创作平台",
+            href: "http://dribbble.com/",
+            src: "../images/main1/dribbble.png",
+          },
+          {
+            name: "用户体验导航",
+            href: "http://uxbees.com/",
+            src: "../images/main1/uxbees.png",
+          },
+          {
+            name: "PS联盟",
+            href: "http://www.68ps.com/",
+            src: "../images/main3/68.png",
+          },
+          {
+            name: "如何搞定客户04",
+            href: "http://www.zcool.com.cn/work/ZMTg4NjY5Mg==.html",
+            src: "../images/main1/gdkehu.png",
+          },
+          {
+            name: "宴贼花瓣-邓伟俊",
+            href: "http://huaban.com/cactus/",
+            src: "../images/main1/yanzei.png",
+          },
+          {
+            name: "邹星星花瓣",
+            href: "http://huaban.com/designjason/",
+            src: "../images/main1/zouxingxing.png",
+          },
+          {
+            name: "专题技巧浅析",
+            href: "http://www.zcool.com.cn/article/ZNDExMzI=.html",
+            src: "../images/main1/ztjiqiao.png",
+          },
+          {
+            name: "站酷&middot;彭成刚",
+            href: "http://pengchenggang.zcool.com.cn/",
+            src: "../images/main1/zcoolpeng.png",
+          },
+          {
+            name: "配色神器",
+            href: "http://www.symenty.com/designerTool/",
+            src: "../images/main3/DesignerTool.png",
+          },
+          {
+            name: "设计师网址导航",
+            href: "http://www.uisdc.com/123sdc/",
+            src: "../images/main3/shejishidaohang.png",
+          },
+          {
+            name: "设计师名站目录",
+            href: "http://hao.uisdc.com/designer/",
+            src: "../images/main3/shejishi.png",
+          },
+          {
+            name: "优秀网页设计",
+            href: "http://e.weibo.com/uidesign",
+            src: "../images/main3/webdesign.png",
+          },
+          {
+            name: "蓝调设计",
+            href: "http://www.bluesdesign.cn",
+            src: "../images/main3/landiaosheji.png",
+          },
+          {
+            name: "19UED营销专家",
+            href: "http://www.19ued.com",
+            src: "../images/main3/19ued.png",
+          },
+          {
+            name: "乐居美编群",
+            href: "http://e.weibo.com/lejumeibian",
+            src: "../images/main3/lejumeibianqun.png",
+          },
+          {
+            name: "网页设计师阿新",
+            href: "http://www.axinweb.com/",
+            src: "../images/main3/axin.png",
+          },
+          {
+            name: "彩色画廊",
+            href: "http://reeoo.com/category/red",
+            src: "../images/main3/reeoo.png",
+          },
+          {
+            name: "猫铭-设计爱好者",
+            href: "http://www.zcool.com.cn/u/908435",
+            src: "../images/main3/maoming.png",
+          },
+          {
+            name: "图片文字滚动(孟艳)",
+            href: "http://sinaleju.sinaapp.com/meibiann1/arti/20131009mengyan01/index.html",
+            src: "../images/main3/gezhonggundong.png",
+          },
+          {
+            name: "Flame光线光效",
+            href: "http://vdisk.weibo.com/s/l93gBiKzcpW",
+            src: "../images/main3/FlamePainter.png",
+          },
+          {
+            name: "三色扁平化",
+            href: "http://huaban.com/boards/24706180/",
+            src: "../images/main3/zhikaiD.jpg",
+          },
+          {
+            name: "糖皮网",
+            href: "http://www.tpway.com",
+            src: "../images/main3/tpway.jpg",
+          },
+          {
+            name: "快速配色",
+            href: "http://bj.house.sina.com.cn/2015-12-09/5892968136931879910/6080268986774499544.html",
+            src: "../images/main3/walkr.jpg",
+          },
+          {
+            name: "室内一角-全景",
+            href: "http://720yun.com/t/8e426js8jbs",
+            src: "../images/main3/360quanjing.jpg",
+          },
+          {
+            name: "视享集 - 案例分享",
+            href: "http://www.jpgzip.com/",
+            src: "../images/main3/jpgzip.jpg",
+          },
+          {
+            name: "A站 ACFUN",
+            href: "http://www.acfun.tv/",
+            src: "../images/main3/acfun.jpg",
+          },
+          {
+            name: "B站 哔哩哔哩",
+            href: "http://www.bilibili.com/",
+            src: "../images/main3/bilibili.jpg",
+          },
+          {
+            name: "音悦Tai 高清MV",
+            href: "http://www.yinyuetai.com/",
+            src: "../images/main3/yinyuetai.jpg",
+          },
+          {
+            name: "小猫鼬子",
+            href: "http://huaban.com/t4vgtjcqfiq/",
+            src: "../images/main3/liying.jpg",
+          },
+        ];
+        var outHtml = list
+          .map(function (item) {
+            var t = template;
+            var ret1 = t
+              .replace("$href", item.href)
+              .replace("$src", item.src)
+              .replace("$name", item.name);
+            var t2 = template2;
+            var ret2 = "";
+            if (item.e1Href) {
+              ret2 = t2.replace("$e1Href", item.e1Href);
+            }
+            return ret1 + ret2;
+          })
+          .join("");
+        $("#content").html(outHtml);
+      });
+    </script>
+  </head>
+
+  <body>
+    <ul id="content"></ul>
+    <!-- <ul>
+      <li>
+        <a href="http://huaban.com/all/" target="_blank"
+          ><img src="../images/main1/huabanwang.png" />
+          <p>花瓣网</p></a
+        >
+      </li>
+      <li>
+        <a href="https://www.chuangkit.com/startdesign" target="_blank"
+          ><img src="../images/main3/chuangketie.jpg" />
+          <p>创客贴 微信横图模板</p></a
+        >
+      </li>
+      <li>
+        <a href="http://psefan.com/tutorials" target="_blank"
+          ><img src="../images/main3/psefan.jpg" />
+          <p>ps饭团教程</p></a
+        >
+      </li>
+      <li>
+        <a href="http://huaban.com/boards/30498684/" target="_blank"
+          ><img src="../images/main3/flyerz01.jpg" />
+          <p>国外海报 flyer</p></a
+        >
+      </li>
+      <li>
+        <a href="https://alpha.wallhaven.cc/random" target="_blank"
+          ><img src="../images/main3/wallhaven.jpg" />
+          <p>wallhaven 壁纸</p></a
+        >
+      </li>
+      <li>
+        <a href="https://dribbble.com/search?q=skeuomorphic" target="_blank"
+          ><img src="../images/main3/dribbble.jpg" />
+          <p>Dribbble</p></a
+        >
+      </li>
+      <li>
+        <a href="http://tgideas.qq.com/" target="_blank"
+          ><img src="../images/main3/tgideas.jpg" />
+          <p>TGideas</p></a
+        >
+      </li>
+
+      <li>
+        <a href="http://xue.taobao.com/" target="_blank"
+          ><img src="../images/main3/jiaoyutaobao.jpg" />
+          <p>淘宝教育</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.58pic.com/" target="_blank"
+          ><img src="../images/main3/qiantuwang.png" alt="城市剪影" />
+          <p>千图网</p></a
+        >
+      </li>
+      <li>
+        <a href="http://588ku.com/" target="_blank"
+          ><img src="../images/main3/qianku.jpg" />
+          <p>千库网</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.58pic.com/peisebiao/" target="_blank"
+          ><img src="../images/main3/peisebiao.jpg" />
+          <p>配色表-58pic</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.zcool.com.cn/" target="_blank"
+          ><img src="../images/main1/zcool.png" />
+          <p>站酷</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.nipic.com/index.html" target="_blank"
+          ><img src="../images/main1/nipic.png" />
+          <p>昵图网</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.ui.cn/" target="_blank"
+          ><img src="../images/main3/uicn.jpg" />
+          <p>UI中国</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.70c.com/index.html" target="_blank"
+          ><img src="../images/main3/70c.jpg" />
+          <p>70度 H5制作</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.ih5.cn/" target="_blank"
+          ><img src="../images/main3/ih5cn.jpg" />
+          <p>ih5.cn</p></a
+        >
+      </li>
+      <li>
+        <a href="http://ren-xing.cn/" target="_blank"
+          ><img src="../images/main3/renxing.jpg" />
+          <p>任性资源网 C4D</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.qiuziti.com/" target="_blank"
+          ><img src="../images/main3/qiuziti.jpg" />
+          <p>求字体</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.pinterest.com/" target="_blank"
+          ><img src="../images/main3/huabantadie.png" />
+          <p>pinterest</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.zcooler.com/" target="_blank"
+          ><img src="../images/main3/zcooler.jpg" />
+          <p>主创网 zcooler</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.68design.net/" target="_blank"
+          ><img src="../images/main1/68design.png" />
+          <p>网页设计师联盟</p></a
+        >
+      </li>
+      <li>
+        <a href="http://music.baidu.com/" target="_blank"
+          ><img src="../images/main1/baiduyinyue.png" />
+          <p>百度音乐</p></a
+        >
+      </li>
+      <li>
+        <a href="http://ikeepu.com/" target="_blank"
+          ><img src="../images/main1/aiku.png" />
+          <p>爱库网</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.quanjing.com/" target="_blank"
+          ><img src="../images/main1/quanjing.png" />
+          <p>全景</p></a
+        >
+      </li>
+      <li>
+        <a href="http://sudasuta.com/" target="_blank"
+          ><img src="../images/main1/sudasuta.png" />
+          <p>苏打苏塔</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.duitang.com/" target="_blank"
+          ><img src="../images/main1/duitang.png" />
+          <p>堆糖网</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.topit.me/" target="_blank"
+          ><img src="../images/main1/topitme.png" />
+          <p>优美图片</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.lanrentuku.com/" target="_blank"
+          ><img src="../images/main1/lanrentuku.png" />
+          <p>懒人图库</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.premiumpixels.com/" target="_blank"
+          ><img src="../images/main1/freepsds.png" />
+          <p>FreePsds</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.diandian.com/" target="_blank"
+          ><img src="../images/main1/diandian.png" />
+          <p>点点网</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.newcger.com/" target="_blank" title="AE素材"
+          ><img src="../images/main1/cger.png" />
+          <p>NewCGer</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.uisdc.com/" target="_blank"
+          ><img src="../images/main1/youshe.png" />
+          <p>优设 UISDC</p></a
+        >
+      </li>
+      <li>
+        <a href="http://subtlepatterns.com/" target="_blank" title="背景素材"
+          ><img src="../images/main1/subtlepatterns.png" />
+          <p>Subtle Patterns</p></a
+        >
+      </li>
+      <li>
+        <a href="http://dribbble.com/" target="_blank"
+          ><img src="../images/main1/dribbble.png" />
+          <p>艺术创作平台</p></a
+        >
+      </li>
+      <li>
+        <a href="http://uxbees.com/" target="_blank"
+          ><img src="../images/main1/uxbees.png" />
+          <p>用户体验导航</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.68ps.com/" target="_blank"
+          ><img src="../images/main3/68.png" />
+          <p>PS联盟</p></a
+        >
+      </li>
+      <li>
+        <a
+          href="http://www.zcool.com.cn/work/ZMTg4NjY5Mg==.html"
+          target="_blank"
+          ><img src="../images/main1/gdkehu.png" />
+          <p>如何搞定客户04</p></a
+        >
+      </li>
+      <li>
+        <a href="http://huaban.com/cactus/" target="_blank"
+          ><img src="../images/main1/yanzei.png" />
+          <p>宴贼花瓣-邓伟俊</p></a
+        >
+      </li>
+      <li>
+        <a href="http://huaban.com/designjason/" target="_blank"
+          ><img src="../images/main1/zouxingxing.png" />
+          <p>邹星星花瓣</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.zcool.com.cn/article/ZNDExMzI=.html" target="_blank"
+          ><img src="../images/main1/ztjiqiao.png" />
+          <p>专题技巧浅析</p></a
+        >
+      </li>
+      <li>
+        <a href="http://pengchenggang.zcool.com.cn/" target="_blank"
+          ><img src="../images/main1/zcoolpeng.png" />
+          <p>站酷&middot;彭成刚</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.symenty.com/designerTool/" target="_blank"
+          ><img src="../images/main3/DesignerTool.png" />
+          <p>配色神器</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.uisdc.com/123sdc/" target="_blank"
+          ><img src="../images/main3/shejishidaohang.png" />
+          <p>设计师网址导航</p></a
+        >
+      </li>
+      <li>
+        <a href="http://hao.uisdc.com/designer/" target="_blank"
+          ><img src="../images/main3/shejishi.png" />
+          <p>设计师名站目录</p></a
+        >
+      </li>
+      <li>
+        <a href="http://e.weibo.com/uidesign" target="_blank"
+          ><img src="../images/main3/webdesign.png" />
+          <p>优秀网页设计</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.bluesdesign.cn" target="_blank"
+          ><img src="../images/main3/landiaosheji.png" />
+          <p>蓝调设计</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.19ued.com" target="_blank"
+          ><img src="../images/main3/19ued.png" />
+          <p>19UED营销专家</p></a
+        >
+      </li>
+      <li>
+        <a href="http://e.weibo.com/lejumeibian" target="_blank"
+          ><img src="../images/main3/lejumeibianqun.png" />
+          <p>乐居美编群</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.axinweb.com/" target="_blank"
+          ><img src="../images/main3/axin.png" />
+          <p>网页设计师阿新</p></a
+        >
+      </li>
+      <li>
+        <a href="http://reeoo.com/category/red" target="_blank"
+          ><img src="../images/main3/reeoo.png" />
+          <p>彩色画廊</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.zcool.com.cn/u/908435" target="_blank"
+          ><img src="../images/main3/maoming.png" />
+          <p>猫铭-设计爱好者</p></a
+        >
+      </li>
+      <li>
+        <a
+          href="http://sinaleju.sinaapp.com/meibiann1/arti/20131009mengyan01/index.html"
+          target="_blank"
+          ><img src="../images/main3/gezhonggundong.png" />
+          <p>图片文字滚动(孟艳)</p></a
+        >
+      </li>
+
+      <li>
+        <a href="http://vdisk.weibo.com/s/l93gBiKzcpW" target="_blank"
+          ><img src="../images/main3/FlamePainter.png" />
+          <p>Flame光线光效</p></a
+        >
+      </li>
+
+      <li>
+        <a href="http://huaban.com/boards/24706180/" target="_blank"
+          ><img src="../images/main3/zhikaiD.jpg" />
+          <p>三色扁平化</p></a
+        >
+      </li>
+      <li>
+        <a href="http://www.tpway.com" target="_blank"
+          ><img src="../images/main3/tpway.jpg" />
+          <p>糖皮网</p></a
+        >
+      </li>
+
+      <li>
+        <a
+          href="http://bj.house.sina.com.cn/2015-12-09/5892968136931879910/6080268986774499544.html"
+          target="_blank"
+          ><img src="../images/main3/walkr.jpg" />
+          <p>快速配色</p></a
+        >
+        <a
+          href="http://www.walkrgame.com/zh-TW/"
+          target="_blank"
+          class="e1"
+        ></a>
+      </li>
+
+      <li>
+        <a href="http://720yun.com/t/8e426js8jbs" target="_blank"
+          ><img src="../images/main3/360quanjing.jpg" />
+          <p>室内一角-全景</p></a
+        >
+        <a
+          href="http://www.cnblogs.com/pengpengsay/p/5435156.html"
+          target="_blank"
+          class="e1"
+        ></a>
+      </li>
+      <li>
+        <a href="http://www.jpgzip.com/" target="_blank"
+          ><img src="../images/main3/jpgzip.jpg" />
+          <p>视享集 - 案例分享</p></a
+        >
+      </li>
+
+      <li>
+        <a href="http://www.acfun.tv/" target="_blank"
+          ><img src="../images/main3/acfun.jpg" />
+          <p>A站 ACFUN</p></a
+        >
+      </li>
+
+      <li>
+        <a href="http://www.bilibili.com/" target="_blank"
+          ><img src="../images/main3/bilibili.jpg" />
+          <p>B站 哔哩哔哩</p></a
+        >
+      </li>
+
+      <li>
+        <a href="http://www.yinyuetai.com/" target="_blank"
+          ><img src="../images/main3/yinyuetai.jpg" />
+          <p>音悦Tai 高清MV</p></a
+        >
+      </li>
+
+      <li>
+        <a href="http://huaban.com/t4vgtjcqfiq/" target="_blank"
+          ><img src="../images/main3/liying.jpg" />
+          <p>小猫鼬子</p></a
+        >
+      </li>
+    </ul> -->
+  </body>
+</html>
