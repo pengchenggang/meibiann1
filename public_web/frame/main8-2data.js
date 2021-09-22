@@ -3,11 +3,13 @@ var list = [
     name: "2014年专题总结",
     href: "main8.html",
     src: "../images/main8-1/2014icon-n1.png",
+    noBlank: true,
   },
   {
     name: "2015年专题总结",
     href: "main8-1.html",
     src: "../images/main8-2/2015icon-n1.png",
+    noBlank: true,
   },
   {
     name: "不可思议的乐居2015",

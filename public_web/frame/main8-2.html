@@ -113,7 +113,12 @@
 
         var outHtml = list
           .map(function (item) {
-            var t = template;
+            var t = "";
+            if (item.noBlank) {
+              t = template.replace('target="_blank"', "");
+            } else {
+              t = template;
+            }
             var ret1 = t
               .replace("$href", item.href)
               .replace("$src", item.src)
