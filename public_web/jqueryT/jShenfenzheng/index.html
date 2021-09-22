@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>身份证转换工具</title>
+    <style>
+      body {
+        background-color: #2a2a2a;
+      }
+      .k1000 {
+        width: 1000px;
+        margin: 0 auto;
+      }
+      .kTitle {
+        color: #e9e9e9;
+        font-family: "微软雅黑";
+        font-size: 39px;
+        text-align: center;
+      }
+      .kTxt {
+        color: #e9e9e9;
+        font-family: "微软雅黑";
+        font-size: 20px;
+      }
+      .kInput {
+        height: 25px;
+        font-family: 微软雅黑;
+        font-size: 18px;
+      }
+      .kArea {
+        height: 300px;
+        width: 400px;
+        font-family: 微软雅黑;
+        font-size: 30px;
+      }
+    </style>
+    <script src="jquery-1.11.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        function getX(x, n) {
+          var o = "";
+          for (var i = 0; i < n; i++) {
+            o += x;
+          }
+          return o;
+        }
+
+        $("#cBtn").click(function () {
+          var nStart = $("#nStart").val(); //从第几位开始
+          var nEnd = $("#nEnd").val(); //持续几位
+          var nStr = $("#nStr").val(); //替换字符
+          var dataIn = $("#dataIn").val();
+          var dataInArr = dataIn.replace(/\n/g, "|").split("|");
+
+          var out = "";
+          var k1 = "";
+          var k2 = "";
+          var k2bak = "";
+          var k3 = "";
+          for (j = 0; j < parseInt(nEnd); j++) {
+            k2bak += nStr;
+          }
+          for (i = 0; i < dataInArr.length; i++) {
+            k1 = dataInArr[i].substring(0, parseInt(nStart) - 1);
+            k2 = k2bak;
+            k3 = dataInArr[i].substring(parseInt(nStart) - 1 + parseInt(nEnd));
+            if (dataInArr[i].length < parseInt(nStart) - 1 + parseInt(nEnd)) {
+              k2 = getX(nStr, dataInArr[i].length - (parseInt(nStart) - 1));
+            }
+            out += k1 + k2 + k3;
+            if (i + 1 < dataInArr.length) {
+              out += "\n";
+            }
+          }
+          $("#dataOut").val(out);
+          //alert(nStart+nEnd+nStr+dataIn);
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="k1000 kTitle">
+      <img src="150shenfenzhengIcon.jpg" width="150" height="95" alt="" /><br />
+      身份证转换工具
+    </div>
+    <div style="height: 10px"></div>
+    <div class="k1000 kTxt">
+      <span
+        >第几位开始：<input
+          name="nStart"
+          type="text"
+          id="nStart"
+          value="5"
+          size="3"
+          maxlength="2"
+          class="kInput"
+      /></span>
+      <span style="margin-left: 25px"
+        >持续几位：<input
+          name="nEnd"
+          type="text"
+          id="nEnd"
+          value="4"
+          size="3"
+          maxlength="1"
+          class="kInput"
+      /></span>
+      <span style="margin-left: 25px"
+        >替换字符：<input
+          name="nStr"
+          type="text"
+          id="nStr"
+          value="X"
+          size="3"
+          maxlength="1"
+          class="kInput"
+      /></span>
+      <span style="margin-left: 25px; color: #9a9a9a; font-size: 14px"
+        >提示：身份证长度为18</span
+      >
+    </div>
+
+    <div style="height: 10px"></div>
+
+    <!-- 主体框 -->
+    <div class="k1000">
+      <div style="width: 400px; height: 362px; float: left">
+        <img src="biaochi.jpg" width="406" height="62" alt="" />
+        <textarea class="kArea" id="dataIn">120102198001061981</textarea>
+      </div>
+
+      <div style="width: 200px; height: 362px; float: left; text-align: center">
+        <div style="height: 130px"></div>
+        <input
+          name="cBtn"
+          type="button"
+          id="cBtn"
+          style="
+            height: 40px;
+            width: 150px;
+            font-family: 微软雅黑;
+            font-size: 16px;
+          "
+          value="进行转换&gt;&gt;"
+        />
+      </div>
+
+      <div style="width: 400px; height: 362px; float: left">
+        <img src="biaochi.jpg" width="406" height="62" alt="" />
+        <textarea class="kArea" id="dataOut"></textarea>
+      </div>
+    </div>
+
+    <div style="height: 10px; clear: both"></div>
+
+    <div class="k1000 kTxt" style="text-align: center">
+      <span style="color: #9a9a9a; font-size: 14px"
+        >开发日期：2016年9月7日 作者：彭成刚</span
+      >
+    </div>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>加减法生成器</title>
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="jiajian.png">
+<script src="jquery-1.11.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	
+	var o;
+		
+	var rNum ;
+	var jiahao;
+	var jianhao;
+	
+	var tishu = 16;//一共多少到题
+	var tishuCurr = 0;//当前应该显示的题
+		
+	$("#doIt").click(function(e) {
+		
+		doit();
+    });
+	
+	
+	function doit()
+	{
+		tishuCurr = 0;//生成新题初始化计数器;
+		
+		o = "";
+		
+		//rNum = $("#rNum").val();
+		rNum = 22;
+		//jiahao = $("#jiahao").is(":checked");
+		jiahao = true;
+		//jianhao = $("#jianhao").is(":checked");
+		jianhao = true;
+	
+		o = "";
+		var myDate = new Date();
+		o += myDate.toLocaleString()+"\r\n\r\n";
+		//if(jiahao) o+= "+";
+		//if(jianhao) o+= "-";
+        //$("#tiList").html(raNum(1,rNum));
+		for(var i = 0;i<tishu;i++)
+		{
+			o += one(i);
+			//if(i<tishu-1)
+			o += "\r\n";
+		}
+		
+		o += "\r\n"+"design by jqueryT/jkousuan";
+		
+		//$("#tiList").html(o);
+		$("#tiList2").html(o);
+	}
+	
+	doit();
+	
+	function one(i)
+	{
+		op = raOp();
+		n1 = raNum(1,rNum);
+		n2 = raNum(1,rNum);
+		var t;
+		if(op == "-")
+		{
+			if(n1<n2)
+			{
+				t = n1;
+				n1 = n2;
+				n2 = t;
+			}
+		}
+		
+		//计算结果
+		var jieguo;
+		if(op == "+")
+		{
+			jieguo = n1 + n2;
+		}
+		else
+		{
+			jieguo = n1 - n2;
+		}
+		//var jieguoStr = "<span style='display:none;' id='jieguo"+i+"'>"+jieguo+"</span>";
+		//return "<div class='mbox'>"+n1+op+n2+"="+jieguoStr+"</div>";
+		return n1+op+n2+"=";
+	}
+	
+	//随机数   1 - 12 b是1 e是12
+	function raNum(b,e){   
+		if(!b && b!=0 || !e){return "?";}   
+		return Math.floor( ( Math.random() * e ) + b );   
+	}
+	
+	//产生加减号 根据选项生成
+	function raOp()
+	{
+		if(jiahao == true && jianhao == false)
+			return "+";
+		if(jiahao == false && jianhao == true)
+			return "-";
+		if(jiahao == true && jianhao == true)
+			if(Math.random()>0.5)
+			{
+				return "+";
+			}
+			else
+			{
+				return "-";
+			}
+	}
+	
+	
+	$(document).keypress(function(e) {  
+		if(event.keyCode == 100)
+		{
+			//按字母d 显示答案 按一下 出一个答案
+			$("#jieguo"+tishuCurr).show();
+			if(tishuCurr < tishu)
+				tishuCurr++;
+		}
+	}) ;
+
+	
+	
+});
+</script>
+<meta name="viewport" content="width=350, user-scalable=no">
+<style>
+body{background-position:center center; background-attachment:fixed; background-color:#464646;}
+/*.mbox {width:272px; height:97px; background-image:url(images/0.png); line-height:97px; padding-left:40px; font-family:微软雅黑; font-size:48px; float:left; margin-right:30px; margin-bottom:30px;}*/
+</style>
+</head>
+
+<body>
+<form id="randform" style="display:none;">
+多少以内的数字：<input name="rNum" id="rNum" value="30" size="5" /> 加号<input name="jiahao" type="checkbox" id="jiahao" checked> 减号<input name="jianhao" type="checkbox" id="jianhao" checked> <input name="doIt" type="button" id="doIt" value="生成题库"> 按字母d显示答案
+</form>
+<div id="tiList" style="padding:20px; color:#fff; display:none;">请点击 生成题库 按钮
+</div>
+
+<textarea name="tiList2" id="tiList2" cols="40" rows="20"></textarea>
+</body>
+</html> 

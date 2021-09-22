@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>踢号程序</title>
+    <script src="jquery-1.11.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#doBtn").click(function (e) {
+          var box1 = $("#box1").val();
+          var box2 = $("#box2").val();
+          var box1Arr = box1.replace(/\n/g, "|").split("|");
+          var box2Arr = box2.replace(/\n/g, "|").split("|");
+
+          var outTxt = "";
+
+          for (i = 0; i < box2Arr.length; i++) {
+            chongfu = false;
+            for (j = 0; j < box1Arr.length; j++) {
+              if (box1Arr[j] == box2Arr[i]) {
+                chongfu = true;
+                continue;
+              }
+            }
+            if (!chongfu) {
+              outTxt += box2Arr[i] + "\n";
+            }
+          }
+          $("#box3").val(outTxt);
+        });
+      });
+    </script>
+    <style>
+      body {
+        background-image: url(images/101.jpg);
+        background-position: center center;
+        background-attachment: fixed;
+      }
+      textarea {
+        -webkit-appearance: none;
+        outline: 0;
+        border: 0;
+        resize: none;
+      }
+      .doBtn {
+        width: 275px;
+        height: 112px;
+        background-image: url(images/tiquBtn.png);
+        display: block;
+        margin: 0 auto;
+      }
+      .doBtn:hover {
+        background-image: url(images/tiquBtn2.png);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="text-align: center; margin-top: 10px">
+      <img src="images/tLogo.png" width="222" height="130" alt="" />
+    </div>
+
+    <div style="width: 950px; margin: 0 auto; margin-top: 10px; height: 70px">
+      <div style="float: left">
+        <img src="images/已摇出数据.png" width="350" height="65" alt="" />
+      </div>
+      <div style="float: right">
+        <img src="images/全部数据.png" width="283" height="66" alt="" />
+      </div>
+    </div>
+
+    <div
+      style="
+        width: 985px;
+        height: 301px;
+        margin: 0 auto;
+        margin-top: 10px;
+        background-image: url(images/topBox.png);
+      "
+    >
+      <div style="float: left; margin: 20px 0 0 20px">
+        <textarea
+          name="box1"
+          id="box1"
+          cols="45"
+          rows="5"
+          style="width: 460px; height: 260px"
+        ></textarea>
+      </div>
+      <div style="float: right; margin: 20px 20px 0 0">
+        <textarea
+          name="box2"
+          id="box2"
+          cols="45"
+          rows="5"
+          style="width: 435px; height: 260px"
+        ></textarea>
+      </div>
+    </div>
+
+    <div style="text-align: center; height: 112px; margin-top: 10px">
+      <a href="javascript:void();" class="doBtn" id="doBtn"></a>
+    </div>
+
+    <div
+      style="
+        width: 985px;
+        height: 161px;
+        margin: 0 auto;
+        margin-top: 10px;
+        background-image: url(images/bottomBox.png);
+      "
+    >
+      <div style="height: 20px"></div>
+      <div style="margin-left: 20px; width: 947px">
+        <textarea
+          name="box3"
+          id="box3"
+          cols="45"
+          rows="5"
+          style="width: 940px; height: 120px"
+        ></textarea>
+      </div>
+    </div>
+  </body>
+</html>
