@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=0.8,width=device-width, maximum-scale=0.8, user-scalable=no"
+    />
+    <title>main1-平板图标</title>
+    <style>
+      ul,
+      ul li p {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+      body {
+        background-image: url(../images/main1/bg1.jpg);
+        padding: 30px;
+        padding-right: 0px;
+        padding-top: 10px;
+      }
+      ul li img {
+        width: 90px;
+        height: 90px;
+        border: 0;
+      }
+      ul li a p {
+        font-size: 14px;
+        display: block;
+        width: 140px;
+        text-align: center;
+        line-height: 25px;
+        text-shadow: black 1px 1px 1px;
+      }
+      ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-family: "微软雅黑";
+        display: block;
+        padding-top: 20px;
+        width: 140px;
+        height: 130px;
+      }
+      ul li a:hover {
+        background-image: url(../images/main1/ahover.png);
+        background-repeat: no-repeat;
+      }
+      ul li {
+        list-style-type: none;
+        width: 140px;
+        text-align: center;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 15px;
+        height: 150px;
+      }
+
+      ul li a img {
+        -moz-border-radius: 11px;
+        -khtml-border-radius: 11px;
+        -webkit-border-radius: 11px;
+        border-radius: 11px;
+      }
+    </style>
+    <script src="../jquery-1.11.0.min.js"></script>
+    <script src="../showLeft.js"></script>
+    <script src="main1data.js"></script>
+    <script>
+      $(document).ready(function () {
+        var template = `
+    <li>
+      <a href="$href" target="_blank"
+        ><img src="$src" />
+        <p>$name</p></a
+      >
+    </li>
+    `;
+        var template2 = `
+    <a
+        href="$e1Href"
+        target="_blank"
+        class="e1"
+      ></a>
+    `;
+
+        var outHtml = list
+          .map(function (item) {
+            var t = template;
+            var ret1 = t
+              .replace("$href", item.href)
+              .replace("$src", item.src)
+              .replace("$name", item.name);
+            var t2 = template2;
+            var ret2 = "";
+            if (item.e1Href) {
+              ret2 = t2.replace("$e1Href", item.e1Href);
+            }
+            return ret1 + ret2;
+          })
+          .join("");
+        $("#content").html(outHtml);
+      });
+    </script>
+  </head>
+
+  <body>
+    <ul id="content"></ul>
+  </body>
+</html>
